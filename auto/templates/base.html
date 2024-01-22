@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Pharmacy Automation</title>
+
+    <style type='text/css'>
+        
+        #wrap{
+            min-height: 100%;
+            min-width: 100%;
+        }
+        #main{
+            overflow-y: scroll;
+            padding-right: 5px;
+            padding-bottom: 150px;
+        }
+        #titleDiv {
+            display: inline-block;
+            text-align: left;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 105px;
+            background-color: black;
+            left: 0;
+            top: 0px;
+            vertical-align: middle;
+            z-index: 3;
+        }
+
+        
+        table.titleBar{
+            table-layout: fixed;
+            background-color: white;
+            padding: 15;
+            font-family: Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            color: black;
+            text-transform: uppercase; 
+            font-weight: none;    
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        h1{
+            font-family: cambria, baskerville, courier new;
+            font-size: 30pt;
+            font-style: bold;
+            margin-bottom: 0;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap"><div class="main">
+    {% block header %}
+    
+    <div class="titleDiv">
+        <table class="titleBar">
+            <tr>
+                <td>&nbsp;</td>
+                <td width=65%><h1>Pharmacy Automation</h1></td>
+                <td>&nbsp;</td>
+                <td width=30% align=center>Login</td>
+            </tr>
+        </table>
+    </div>
+    
+    {% endblock %}
+
+    {% block menu %} {% endblock %}
+
+    {% block content %} {% endblock %}
+
+    {% block footer %} {% endblock %}
+
+    </div></div>
+</body>
+
+</html>

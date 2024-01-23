@@ -37,7 +37,20 @@ class OmnicellList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+class OmnicellView(UpdateView):
+    model = Omnicell
+    template_name = 'omnicell_view.html'
+    form_class = OmnicellForm
+
+    def form_valid(self, form):
+        messages.success(self.request, "Omnicell Updated")
+        return super(OmnicellView, self).form_valid(form)
     
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy("omnicell", kwargs={'pk': pk})
+
 class OmnicellUpdate(UpdateView):
     model = Omnicell
     template_name = 'omnicell_update.html'

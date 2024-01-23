@@ -22,5 +22,7 @@ from auto.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('omnicell/', OmnicellList.as_view(), name='omnicells')
+    path('omnicell/', OmnicellList.as_view(), name='omnicells'),
+    path('omnicell/view/<int:pk>', OmnicellView.as_view(), name='viewOmnicell'),
+    path('omnicell/update/<int:pk>', OmnicellUpdate.as_view(), name='updateOmnicell'),
 ]

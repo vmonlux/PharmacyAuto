@@ -33,10 +33,10 @@
 <div id="main">
 <table class="list" width=90%>
     <tr class="rowList">
-        <th class="tdList" width=80px>Serial</th>
         <th class="tdList" width=150px>Omnicell</th>
         <th class="tdList">Description</th>
-        <th class="tdList" width=100px>Building</th>
+        <th class="tdList" width=80px>Serial</th>
+        <th class="tdList" width=100px></th>
         <th></th>
     </tr>
 
@@ -45,11 +45,11 @@
     </tr>
 {% for object in object_list %}
     <tr class="rowList">
-        <td class="tdList">{{ object.Serial_Number }}</td>
         <td class="tdList">{{ object.Omni_Id }}</td>
         <td class="tdList">{{ object.Omni_Description }}</td>
-        <td class="tdList">{{ object.Building.Name }}</td>
-        <td><a class="rowLink" href="">  </a></td>
+        <td class="tdList">{{ object.Serial_Number }}</td>
+        <td class="tdList"></td>
+        <td><a class="rowLink" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
     </tr>
 {% endfor %}
 </table>

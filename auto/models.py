@@ -14,7 +14,7 @@ class Omnicell(models.Model):
     Serial_Number = models.CharField(max_length=7, blank=True, null=True)
     Model = models.ForeignKey("OmnicellModel", on_delete=models.SET_NULL, blank=True, null=True)
     CT_Version = models.CharField(max_length=10, blank=True, null=True)
-    PC_Name = models.CharField(max_length=10, blank=True, null=True)
+    PC_Name = models.CharField(max_length=20, blank=True, null=True)
     Ivanti = models.BooleanField(default=False)
     
     Site = models.ForeignKey("Site", on_delete=models.SET_NULL, blank=True, null=True)

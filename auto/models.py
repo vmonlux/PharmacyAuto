@@ -17,8 +17,8 @@ class Omnicell(models.Model):
     PC_Name = models.CharField(max_length=10, blank=True, null=True)
     Ivanti = models.BooleanField(default=False)
     
-    # Site
-    # Building
+    Site = models.ForeignKey("Site", on_delete=models.SET_NULL, blank=True, null=True)
+    Building = models.ForeignKey("Building", on_delete=models.SET_NULL, blank=True, null=True)
     Area = models.CharField(max_length=10, blank=True, null=True)
     Room = models.CharField(max_length=10, blank=True, null=True)
     Emergency = models.BooleanField(default=False)
@@ -27,7 +27,7 @@ class Omnicell(models.Model):
 
     # Metadata
     class Meta:
-        ordering = ['id']
+        ordering = ['Site', 'Building', 'Area', 'Omni_Id']
     
     # Methods
     def __str__(self):
@@ -39,14 +39,16 @@ class Refrigerator(models.Model):
     #Fields
     id = models.BigAutoField(primary_key=True)
     Facilities_Id = models.CharField(max_length=50, blank=True, null=True)
+    Omnicell = models.ForeignKey("Omnicell", on_delete=models.SET_NULL, blank=True, null=True)
+    Type = models.CharField(max_length=50, blank=True, null=True)
 
     # Metadata
     class Meta:
-        ordering = ['id']
+        ordering = ['Omnicell', 'Type', 'Facilities_Id']
     
     # Methods
     def __str__(self):
-        return self.id
+        return self.Type
 
 class OmnicellModel(models.Model):
     """Class for storing Omnicell Models """
@@ -88,11 +90,11 @@ class Building(models.Model):
 
     # Metadata
     class Meta:
-        ordering = ['id']
+        ordering = ['Name']
     
     # Methods
     def __str__(self):
-        return self.id
+        return self.Name
 
 # class theclass(models.Model):
 #     """Class Description"""

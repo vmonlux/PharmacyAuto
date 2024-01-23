@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'auto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-if DEVELOPMENT_MODE is 'True':
+if DEVELOPMENT_MODE == 'True':
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",

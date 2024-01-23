@@ -14,8 +14,18 @@
 {% block content %}
 
 <div id="searchBar">
-    <table>
+    <center>
+    <table width=80%>
+        <tr>
+            <td><h2> {{ object_list.count }} Omnicells </h2></td>
+            <td align=right>
+                <form action="" method="get">
+                    <input name="q" type="text" placeholder="Search..."> <input type="submit" value="Search">
+                </form>
+            </td>
+            <td width=3%>&nbsp;</td>
     </table>
+</center>
 </div>
 
 <div id="viewer">

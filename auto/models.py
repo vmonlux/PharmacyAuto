@@ -11,8 +11,19 @@ class Omnicell(models.Model):
     id = models.BigAutoField(primary_key=True)
     Omni_Id = models.CharField(max_length=50, blank=True, null=True)
     Omni_Description = models.CharField(max_length=50, blank=True, null=True)
-    # Site = ?
-    # Type = ?
+    Serial_Number = models.CharField(max_length=7, blank=True, null=True)
+    Model = models.ForeignKey("OmnicellModel", on_delete=models.SET_NULL, blank=True, null=True)
+    CT_Version = models.CharField(max_length=10, blank=True, null=True)
+    PC_Name = models.CharField(max_length=10, blank=True, null=True)
+    Ivanti = models.BooleanField(default=False)
+    
+    # Site
+    # Building
+    Area = models.CharField(max_length=10, blank=True, null=True)
+    Room = models.CharField(max_length=10, blank=True, null=True)
+    Emergency = models.BooleanField(default=False)
+    
+    
 
     # Metadata
     class Meta:
@@ -67,6 +78,21 @@ class Site(models.Model):
     # Methods
     def __str__(self):
         return self.Name
+    
+class Building(models.Model):
+    """Class Description"""
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    Name = models.CharField(max_length=50, blank=True, null=True)
+
+    # Metadata
+    class Meta:
+        ordering = ['id']
+    
+    # Methods
+    def __str__(self):
+        return self.id
 
 # class theclass(models.Model):
 #     """Class Description"""

@@ -35,7 +35,7 @@
         <tr>
             <td align="right" width="150px" style="padding-right:10px;">Facilities ID:</td>
             <td>{{object.Facilities_Id}}</td>
-            <td rowspan=3><a class="omni" href="{% url 'viewOmnicell' object.Omnicell.pk %}">Go to<br>{{object.Omnicell}}</a></td>
+            <td rowspan=3>{%if object.Omnicell%}<a class="omni" href="{% url 'viewOmnicell' object.Omnicell.pk %}">Go to<br>{{object.Omnicell}}</a>{%endif%}</td>
         </tr>
 
         <tr>

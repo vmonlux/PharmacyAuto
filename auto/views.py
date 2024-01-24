@@ -55,7 +55,7 @@ class OmnicellView(UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("omnicell", kwargs={'pk': pk})
+        return reverse_lazy("omnicellView", kwargs={'pk': pk})
 
 class OmnicellUpdate(UpdateView):
     model = Omnicell
@@ -68,4 +68,4 @@ class OmnicellUpdate(UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("omnicell", kwargs={'pk': pk})
+        return reverse_lazy("viewOmnicell", kwargs={'pk': pk})

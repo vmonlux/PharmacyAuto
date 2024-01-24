@@ -6,7 +6,7 @@ from auto.models import *
 class OmnicellForm(ModelForm):
     class Meta:
         model = Omnicell
-        fields = ['Serial_Number', 'Omni_Id', 'Omni_Description', 'Emergency', 'Model', 'CT_Version', 'PC_Name', 'Ivanti', 'Site', 'Building', 'Area', 'Room']
+        fields = ['Serial_Number', 'Omni_Description', 'Emergency', 'Model', 'CT_Version', 'PC_Name', 'Ivanti', 'Site', 'Building', 'Area', 'Room']
         widgets = {
-            'Omni_Id': forms.TextInput(attrs={'class': 'inputField'}),
+            'Serial_Number': forms.TextInput(attrs={'class': 'inputField'}),
         }

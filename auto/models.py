@@ -48,7 +48,7 @@ class Refrigerator(models.Model):
     
     # Methods
     def __str__(self):
-        return self.Type
+        return self.Facilities_Id
 
 class OmnicellModel(models.Model):
     """Class for storing Omnicell Models """

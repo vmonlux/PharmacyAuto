@@ -4,8 +4,8 @@
 
 <table class='menuBar'>
     <tr>
-        <td><a class="vMenuSelect" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="{% url 'refigerators' %}">Refrigerators</a></td>
+        <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
+        <td><a class="vMenuSelect" href="">Refrigerators</a></td>
     </tr>
 </table>
 
@@ -33,9 +33,9 @@
 <div id="main">
 <table class="list" width=90%>
     <tr class="rowList">
-        <th class="tdList" width="5%">Omnicell</th>
-        <th class="tdList">Description</th>
-        <th class="tdList" width="5%">Serial</th>
+        <th class="tdList" width="20%">Omnicell</th>
+        <th class="tdList" width="10%">Refrigerator</th>
+        <th class="tdList">Type</th>
         <th></th>
     </tr>
 
@@ -44,10 +44,10 @@
     </tr>
 {% for object in object_list %}
     <tr class="rowList">
-        <td class="tdList">{{ object.Omni_Id }} {%if object.Emergency%}<font style="color:red;">!</font>{%endif%}</td>
-        <td class="tdList">{{ object.Omni_Description|truncatechars:28 }}</td>
-        <td class="tdList">{{ object.Serial_Number }}</td>
-        <td><a class="rowLink" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
+        <td class="tdList">{{ object.Omnicell }}</td>
+        <td class="tdList">{{ object.Facilities_Id }}</td>
+        <td class="tdList">{{ object.Type }}</td>
+        <td><a class="rowLink" href="{% url 'viewRefrigerator' object.pk %}">  </a></td>
     </tr>
 {% endfor %}
 </table>

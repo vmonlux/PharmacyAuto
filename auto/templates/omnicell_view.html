@@ -5,7 +5,7 @@
 <table class='menuBar'>
     <tr>
         <td><a class="vMenuSelect" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="">Refrigerators</a></td>
+        <td><a class="vMenu" href="{% url 'refigerators' %}">Refrigerators</a></td>
     </tr>
 </table>
 
@@ -40,7 +40,7 @@
                     <tr>
                         {% for Refrigerator in Refrigerators %}
                             
-                            <td><a class='ref' href=''>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
+                            <td><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
                             
                         {% endfor %}
                     </tr>

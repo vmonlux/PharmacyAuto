@@ -203,7 +203,7 @@
             text-align: center;
             white-space: nowrap;
         }
-        a.submenu, input.submenu{
+        a.submenu, input[type=submit]{
             background-color: whitesmoke;
             color: black;
             padding: 1em 0.5em;
@@ -264,6 +264,26 @@
             vertical-align: middle;
             white-space: nowrap;
         }
+        a.omni{
+            background-color: white;
+            color: black;
+            padding: 1em 0.5em;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: solid;
+            border-color: #11161d;
+            border-radius: 5px;
+            font-weight: none;
+            font-size: 1em;
+            font-family: cambria;
+            font-stretch: ultra-condensed;
+            text-align: center;
+            display: inline-block;
+            width: 8em;
+            line-height: 3em;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
         a.menu:hover, a.menu:focus, input.menu:hover, input.menu:focus, 
         a.vMenu:hover, a.vMenu:focus, input.vMenu:hover, input.vMenu:focus,
         a.submenu:hover, a.submenu:focus, input.submenu:hover, input.submenu:focus{
@@ -276,7 +296,7 @@
         .rowList{
             position: relative;
             height: 3em;
-            vertical-align: top;            
+            vertical-align: top;           
         }
         th.tdList{
             font-size: 1.6em;
@@ -291,7 +311,7 @@
             font-size: 1.5em;
             font-weight: bold;
             padding-left: 10px;
-            padding-right: 5px;
+            padding-right: 10px;
             padding-top: 5px;
             padding-bottom: 5px;
         }
@@ -324,6 +344,7 @@
         }
         input[type=search]{
             text-align: right;
+            vertical-align: middle;
             padding: 5px;
             background: whitesmoke;
             color: black;
@@ -339,7 +360,7 @@
             color: black;
             font-size: 2em;
             width: 10em;
-            height: 2em;
+            height: 1.5em;
             maximum-scale: 1;
         }
         input[type=checkbox]{
@@ -348,7 +369,7 @@
             background: whitesmoke;
             color: black;
             font-size: 2em;
-            width: 10em;
+            width: 2em;
             height: 2em;
             maximum-scale: 1;
         }
@@ -359,10 +380,10 @@
             color: black;
             font-size: 2em;
             width: 10em;
-            height: 2em;
+            height: 1.5em;
             maximum-scale: 1;
         }
-        input[type=submit]{
+        {% comment %} input[type=submit]{
             text-align: center;
             padding: 5px;
             background: whitesmoke;
@@ -371,7 +392,7 @@
             width: 5em;
             height: 2.5em;
             border-radius: 10px;
-        }
+        } {% endcomment %}
     </style>
 
     

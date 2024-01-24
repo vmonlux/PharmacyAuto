@@ -22,7 +22,12 @@ from auto.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    
     path('omnicell/', OmnicellList.as_view(), name='omnicells'),
     path('omnicell/view/<int:pk>', OmnicellView.as_view(), name='viewOmnicell'),
     path('omnicell/update/<int:pk>', OmnicellUpdate.as_view(), name='updateOmnicell'),
+    
+    path('refrigerator/', RefrigeratorList.as_view(), name='refigerators'),
+    path('refrigerator/view/<int:pk>', RefrigeratorView.as_view(), name='viewRefrigerator'),
+    path('refrigerator/update/<int:pk>', RefrigeratorUpdate.as_view(), name='updateRefrigerator'),
 ]

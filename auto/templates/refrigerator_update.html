@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+
+<table class='menuBar'>
+    <tr>
+        <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
+        <td><a class="vMenuSelect" href="{% url 'refigerators' %}">Refrigerators</a></td>
+    </tr>
+</table>
+
+{% endblock %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    <!-- Form Error Messages -->
+       {% if form.errors %}
+       <div class="alert">
+        <table class="alertTable">
+        {% for field in form %}
+          {% if field.errors %}
+            {% for error in field.errors %}
+              <Tr><Td> {{ error | escape }} </td></tr>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+        {% if form.non_field_errors %}
+            <Tr><Td> {{ form.non_field_errors }} </td></tr>
+        {% endif %}
+            </table>
+       </div>
+       <br><br>
+       {% endif %} 
+   <!-- End of Error Messages-->
+   
+       <!-- Security token -->
+       {% csrf_token %}
+    
+       <!-- Using the formset -->
+
+<div id="searchBar">
+    <center>
+    <table class='searchBar' width=90%>
+        <tr>
+            <tr>
+                <td width="10%"><input type=submit value="SAVE"></td>
+                <td width="10%"><a class='submenu' href='{% url "viewRefrigerator" object.pk %}'>Cancel</a></td>
+                <td align=center><h2>{{object.Facilities_Id}}</h2></td>
+            </tr>
+    </table>
+</center>
+</div>
+<br>
+<div id="viewer">
+
+<div id="main">
+
+    <table width="90%" class='detail'>
+        
+
+        <tr>
+            <td align="right" width="150px" style="padding-right:10px;">Facilities ID:</td>
+            <td>{{form.Facilities_Id}}</td>
+           
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-right:10px;">Omnicell:</td>
+            <td>{{form.Omnicell}}</td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-right:10px;">Model:</td>
+            <td>{{form.Type}}</td>
+        </tr>
+
+       
+    </table>
+
+</div>
+</div>
+</form>
+{% endblock %}

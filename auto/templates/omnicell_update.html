@@ -5,7 +5,7 @@
 <table class='menuBar'>
     <tr>
         <td><a class="vMenuSelect" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="">Refrigerators</a></td>
+        <td><a class="vMenu" href="{% url 'refigerators' %}">Refrigerators</a></td>
     </tr>
 </table>
 
@@ -43,7 +43,8 @@
     <table class='searchBar' width=90%>
         <tr>
             <tr>
-                <td width="25%"><input type=submit value="SAVE"></td>
+                <td width="10%"><input type=submit value="SAVE"></td>
+                <td width="10%"><a class='submenu' href='{% url "viewOmnicell" object.pk %}'>Cancel</a></td>
                 <td align=center><h2>{{object.Omni_Id}}</h2></td>
             </tr>
     </table>
@@ -60,16 +61,8 @@
         <tr>
             <td align="right" width="150px" style="padding-right:10px;">Description:</td>
             <td>{{form.Omni_Description}}</td>
-            <td rowspan="3" style="border-left: 1px solid black; width:40%;">
-                <table>
-                    <tr>
-                        {% for Refrigerator in Refrigerators %}
-                            
-                            <td><a class='ref' href=''>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
-                            
-                        {% endfor %}
-                    </tr>
-                </table>
+            <td rowspan="3" style="width:40%;">
+                
             </td>
         </tr>
 
@@ -81,6 +74,11 @@
         <tr>
             <td align="right" style="padding-right:10px;">Model:</td>
             <td>{{form.Model}}</td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-right:10px;">Emergency:</td>
+            <td>{{form.Emergency}}</td>
         </tr>
 
         <tr>

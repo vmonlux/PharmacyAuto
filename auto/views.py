@@ -31,7 +31,7 @@ class OmnicellList(ListView):
                 Q(Building__Name__icontains=query) |
                 Q(Area__icontains=query) |
                 Q(Serial_Number__icontains=query) |
-                Q(Model__icontains=query)
+                Q(Model__Model__icontains=query)
             )
             return filter
     

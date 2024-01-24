@@ -12,82 +12,82 @@
 {% endblock %}
 
 {% block content %}
-
+<br>
 <div id="searchBar">
     <center>
-    <table width=80%>
+    <table width=90%>
         <tr>
             <tr>
-                <td width="25%">EDIT</td>
+                <td width="25%"><a class="submenu" href="">EDIT</a></td>
                 <td><h2>{{object.Omni_Id}}</h2></td>
             </tr>
     </table>
 </center>
 </div>
-
+<br>
 <div id="viewer">
 
 <div id="main">
 
-    <table width="90%">
+    <table width="90%" class='detail'>
         
 
         <tr>
-            <td align="right" width="150px">Description:</td>
+            <td align="right" width="150px" style="padding-right:10px;">Description:</td>
             <td>{{object.Omni_Description}}</td>
             <td rowspan="3">Refrigerators</td>
         </tr>
 
         <tr>
-            <td align="right">Serial #:</td>
+            <td align="right" style="padding-right:10px;">Serial #:</td>
             <td>{{object.Serial_Number}}</td>
         </tr>
 
         <tr>
-            <td align="right">Model:</td>
+            <td align="right" style="padding-right:10px;">Model:</td>
             <td>{{object.Model}}</td>
         </tr>
 
         <tr>
-            <td colspan="2"><hr></td>
+            <td colspan="3"><hr></td>
         </tr>
 
         <tr>
-            <td align="right">Building:</td>
+            <td align="right" style="padding-right:10px;">Building:</td>
             <td>{{object.Building}}</td>
             <td></td>
         </tr>
 
         <tr>
-            <td align="right">Area:</td>
+            <td align="right" style="padding-right:10px;">Area:</td>
             <td>{{object.Area}}</td>
             <td></td>
         </tr>
 
         <tr>
-            <td align="right">Room:</td>
+            <td align="right" style="padding-right:10px;">Room:</td>
             <td>{{object.Room}}</td>
             <td></td>
         </tr>
 
         <tr>
-            <td colspan="2"><hr></td>
+            <td colspan="3"><hr></td>
         </tr>
 
         <tr>
-            <td align="right">CT Version:</td> 
+            <td align="right" style="padding-right:10px;">CT Version:</td> 
             <td>{{object.CT_Version}}</td>
             <td></td>
         </tr>
 
         <tr>
-            <td align="right">Ivanti:</td>
+            <td align="right" style="padding-right:10px;">Ivanti:</td>
             <td>{{object.Ivanti}}</td>
             <td></td>
         </tr>
 
         <tr>
-            <td align="right">Notes:</td>
+            <td align="right" style="padding-right:10px;">Notes:</td>
             <td colspan="2">Note</td>
         </tr>
     </table>

@@ -75,6 +75,23 @@
             vertical-align: top;
             border-collapse: collapse;
         }
+        table.detail{
+            margin-left: auto;
+            margin-right: auto;
+            font-family: verdana;
+            color: black;
+            text-transform: uppercase;
+            font-weight: lighter;
+            font-size: 1.7em;
+            font-weight: none;
+            text-align: left;
+            width: 100%;
+            white-space: nowrap;
+            margin-top: 0px;
+            margin-bottom: 0px; 
+            vertical-align: top;
+            border-collapse: collapse;
+        }
 
         h1{
             font-family: cambria, baskerville, courier new;
@@ -176,8 +193,50 @@
             text-align: center;
             white-space: nowrap;
         }
+        a.submenu, input.submenu{
+            background-color: whitesmoke;
+            color: black;
+            padding: 1em 0.5em;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: solid;
+            border-color: #11161d;
+            border-radius: 5px;
+            font-weight: none;
+            font-size: 1.5em;
+            font-family: cambria;
+            font-stretch: ultra-condensed;
+            display: inline-block;
+            width: 150px;
+            min-width: 100px;
+            max-width: 200px;
+            line-height: 1em;
+            vertical-align: middle;
+            text-align: center;
+            white-space: nowrap;
+        }
+        a.submenuSelect{
+            background-color: whitesmoke;
+            color: black;
+            padding: 1em 0.5em;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: solid;
+            border-color: #11161d;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 2em;
+            font-family: cambria;
+            font-stretch: ultra-condensed;
+            display: inline-block;
+            min-width: 50%;
+            line-height: 1.2em;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
         a.menu:hover, a.menu:focus, input.menu:hover, input.menu:focus, 
-        a.vMenu:hover, a.vMenu:focus, input.vMenu:hover, input.vMenu:focus{
+        a.vMenu:hover, a.vMenu:focus, input.vMenu:hover, input.vMenu:focus,
+        a.submenu:hover, a.submenu:focus, input.submenu:hover, input.submenu:focus{
             background-color: #73C2FB;
             transition: 500ms;
             border-color: 003151;
@@ -272,6 +331,7 @@
             </tr>
         </table>
     </div>
+    <br>
     
     {% endblock %}
 

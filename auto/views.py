@@ -43,6 +43,11 @@ class OmnicellView(UpdateView):
     model = Omnicell
     template_name = 'omnicell_view.html'
     form_class = OmnicellForm
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["Refrigerators"] = Refrigerator.objects.filter(Omnicell=self.kwargs['pk'])
+        return context
 
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Updated")

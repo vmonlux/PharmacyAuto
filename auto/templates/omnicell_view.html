@@ -35,7 +35,17 @@
         <tr>
             <td align="right" width="150px" style="padding-right:10px;">Description:</td>
             <td>{{object.Omni_Description}}</td>
-            <td rowspan="3">Refrigerators</td>
+            <td rowspan="3" style="border-left: 1px solid black; width:40%;">
+                <table>
+                    <tr>
+                        {% for Refrigerator in Refrigerators %}
+                            
+                            <td><a class='ref' href=''>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
+                            
+                        {% endfor %}
+                    </tr>
+                </table>
+            </td>
         </tr>
 
         <tr>

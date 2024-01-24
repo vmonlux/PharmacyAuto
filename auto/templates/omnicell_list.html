@@ -2,7 +2,7 @@
 
 {% block menu %}
 
-<table>
+<table class='menuBar'>
     <tr>
         <td><a class="vMenuSelect" href="{% url 'omnicells' %}">Omnicells</a></td>
         <td><a class="vMenu" href="">Refrigerators</a></td>
@@ -12,15 +12,15 @@
 {% endblock %}
 
 {% block content %}
-<br>
+
 <div id="searchBar">
     <center>
-    <table width=80%>
+    <table class='searchBar' width=80%>
         <tr>
             <td></td>
             <td align=right>
                 <form action="" method="get">
-                    <input name="q" type="text" placeholder="Search..."> <input type="submit" value="Search">
+                    <input name="q" type="search" placeholder="Search..."> <input type="submit" value="Search">
                 </form>
             </td>
             <td width=3%>&nbsp;</td>

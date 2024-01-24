@@ -42,19 +42,30 @@
         }
         #body{
             font-size: 24pt;
+            background-color: #F9F6EE;
         }
         
         table.titleBar{
             table-layout: fixed;
-            background-color: #73C2FB;
-            padding: 15;
+            background-color: #15390c;
+            padding: 15px;
             font-family: Geneva, Tahoma, sans-serif;
             font-size: 3em;
-            color: black;
+            color: #F9F6EE;
             text-transform: uppercase; 
             font-weight: none;    
             white-space: nowrap;
             width: 100%;
+        }
+        table.menuBar{
+            background-color: #295225;
+            width: 100%;
+            padding: 15px;
+        }
+        table.searchBar{
+            background-color: #3e6a40;
+            width: 100%;
+            padding: 15px;
         }
         table.list{
             margin-left: auto;
@@ -98,7 +109,6 @@
             font-size: 2.5em;
             font-style: bold;
             margin-bottom: 0;
-            color: black;
         }
         h2{
             font-family: cambria, baskerville, courier new;
@@ -110,7 +120,7 @@
 
 
         a.menu, input.menu{
-            background-color: whitesmoke;
+            background-color: #F9F6EE;
             color: black;
             padding: 1em 0.5em;
             text-decoration: none;
@@ -131,7 +141,7 @@
             white-space: nowrap;
         }
         a.menuSelect{
-            background-color: whitesmoke;
+            background-color: #87A96B;
             color: black;
             padding: 1em 0.5em;
             text-decoration: none;
@@ -150,7 +160,7 @@
             white-space: nowrap;
         }
         a.vMenu, input.vMenu{
-            background-color: whitesmoke;
+            background-color: #F9F6EE;
             color: black;
             padding: 1em 0.5em;
             text-decoration: none;
@@ -172,7 +182,7 @@
             white-space: nowrap;
         }
         a.vMenuSelect{
-            background-color: #73C2FB;
+            background-color: #87A96B;
             color: black;
             padding: 1em 0.5em;
             text-decoration: none;
@@ -257,7 +267,7 @@
         a.menu:hover, a.menu:focus, input.menu:hover, input.menu:focus, 
         a.vMenu:hover, a.vMenu:focus, input.vMenu:hover, input.vMenu:focus,
         a.submenu:hover, a.submenu:focus, input.submenu:hover, input.submenu:focus{
-            background-color: #73C2FB;
+            background-color: #87A96B;
             transition: 500ms;
             border-color: 003151;
             transition: 500ms;
@@ -312,7 +322,7 @@
             font-size: 2em;
             width: 100px;
         }
-        input[type=text]{
+        input[type=search]{
             text-align: right;
             padding: 5px;
             background: whitesmoke;
@@ -320,6 +330,36 @@
             font-size: 2em;
             width: 15em;
             height: 2.5em;
+            maximum-scale: 1;
+        }
+        input[type=text]{
+            text-align: right;
+            padding: 5px;
+            background: whitesmoke;
+            color: black;
+            font-size: 2em;
+            width: 10em;
+            height: 2em;
+            maximum-scale: 1;
+        }
+        input[type=checkbox]{
+            text-align: right;
+            padding: 5px;
+            background: whitesmoke;
+            color: black;
+            font-size: 2em;
+            width: 10em;
+            height: 2em;
+            maximum-scale: 1;
+        }
+        select{
+            text-align: right;
+            padding: 5px;
+            background: whitesmoke;
+            color: black;
+            font-size: 2em;
+            width: 10em;
+            height: 2em;
             maximum-scale: 1;
         }
         input[type=submit]{
@@ -351,7 +391,7 @@
             </tr>
         </table>
     </div>
-    <br>
+    
 
     {% endblock %}
 

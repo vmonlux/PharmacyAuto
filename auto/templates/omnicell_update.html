@@ -2,7 +2,7 @@
 
 {% block menu %}
 
-<table>
+<table class='menuBar'>
     <tr>
         <td><a class="vMenuSelect" href="{% url 'omnicells' %}">Omnicells</a></td>
         <td><a class="vMenu" href="">Refrigerators</a></td>
@@ -37,10 +37,10 @@
        {% csrf_token %}
     
        <!-- Using the formset -->
-<br>
+
 <div id="searchBar">
     <center>
-    <table width=90%>
+    <table class='searchBar' width=90%>
         <tr>
             <tr>
                 <td width="25%"><input type=submit value="SAVE"></td>

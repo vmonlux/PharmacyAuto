@@ -2,27 +2,53 @@
 <head>
     <title>Pharmacy Automation - Omni Master</title>
 
+    <link href="https://db.onlinewebfonts.com/c/1a4d54b0835ab704ab312c1053401429?family=Co+Headline+Bold" rel="stylesheet">
+
     <style type='text/css'>
-        
+
+        @font-face {
+            font-family: 'Co Headline Bold', sans-serif;
+            font-weight: bold;
+            src: url("https://db.onlinewebfonts.com/t/1a4d54b0835ab704ab312c1053401429.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            scrollbar-width:thin;
+            scrollbar-color: grey black;
+        }
+        *::-webkit-scrollbar {
+            width: 12px;
+        }
+        *::-webkit-scrollbar-track {
+            background: black;
+        }
+    
+        *::-webkit-scrollbar-thumb {
+            background-color: grey;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+
         #wrap{
             min-height: 100%;
             min-width: 100%;
         }
+
         #main{
             overflow-y: scroll;
             padding-right: 5px;
-            padding-bottom: 150px;
         }
+
         #titleDiv {
             display: inline-block;
             text-align: left;
             position: fixed;
             bottom: 0;
             width: 100%;
-            height: 105px;
-            background-color: black;
             left: 0;
-            top: 0px;
+            top: 0;
             vertical-align: middle;
             z-index: 3;
         }
@@ -40,37 +66,50 @@
             background-color: #030304;
             display: block;
         }
+
         #body{
             font-size: 24pt;
             background-color: #F9F6EE;
         }
         
         table.titleBar{
+            position: absolute;
             table-layout: fixed;
             background-color: #39373E;
             padding: 15px;
-            font-family: "Co Headline", "lucida console", Lucida, "Monaco", Tahoma, sans-serif;
+            font-family: "Co Headline Bold", sans-serif!important;
             font-size: 3em;
             color: #F9F6EE;
             text-transform: none; 
             font-weight: bold;    
             white-space: nowrap;
             width: 100%;
+            display: inline-block;
         }
+
         table.menuBar{
-            font-family: Lucida, "Monaco";
+            position: absolute;
+            top: 150px;
+            font-family: Tahoma;
             background-color: #525352;
             width: 100%;
             padding: 15px;
+            display: inline-block;
         }
         table.searchBar{
-            font-family: Lucida, "Monaco";
+            position: absolute;
+            top: 320px;
+            font-family: "MS PGothic", Tahoma, sans-serif;
             background-color: #5e6a71;
             width: 100%;
             padding: 15px;
             color: #F9F6EE;
+            white-space: nowrap;
         }
+
         table.list{
+            position: absolute;
+            top: 440px;
             margin-left: auto;
             margin-right: auto;
             font-family: "MS PGothic", Arial, Lucida, "Monaco", verdana;
@@ -89,10 +128,11 @@
             vertical-align: top;
             border-collapse: collapse;
         }
+
         table.detail{
             margin-left: auto;
             margin-right: auto;
-            font-family: verdana;
+            font-family: "MS PGothic", Arial, Lucida, "Monaco", verdana;
             color: #39373E;
             text-transform: uppercase;
             font-weight: lighter;
@@ -108,13 +148,12 @@
         }
 
         h1{
-            font-family: "lucida console", cambria, baskerville, courier new;
+            
             font-size: 2.5em;
             font-style: bold;
             margin-bottom: 0;
         }
         h2{
-            font-family: cambria, baskerville, courier new;
             font-size: 3em;
             font-style: bold;
             margin-bottom: 0;
@@ -132,7 +171,6 @@
             border-radius: 20px;
             font-weight: none;
             font-size: 2em;
-            font-family: cambria;
             font-stretch: ultra-condensed;
             display: inline-block;
             width: 150px;
@@ -153,7 +191,6 @@
             border-radius: 20px;
             font-weight: bold;
             font-size: 2em;
-            font-family: cambria;
             font-stretch: ultra-condensed;
             display: inline-block;
             min-width: 50%;
@@ -172,7 +209,6 @@
             border-radius: 20px;
             font-weight: none;
             font-size: 2.5em;
-            font-family: cambria;
             font-stretch: ultra-condensed;
             display: inline-block;
             width: 10em;
@@ -192,7 +228,6 @@
             border-radius: 20px;
             font-weight: none;
             font-size: 2.5em;
-            font-family: cambria;
             font-stretch: ultra-condensed;
             display: inline-block;
             width: 10em;
@@ -203,7 +238,7 @@
             text-align: center;
             white-space: nowrap;
         }
-        a.submenu, input[type=submit]{
+        a.submenu, input.submenu, input[type=submit]{
             background-color: #f6f6f6;
             color: #39373E;
             padding: 1em 0.5em;
@@ -212,15 +247,13 @@
             border: solid;
             border-color: #39373E;
             border-radius: 20px;
+            font-family: "MS PGothic", Tahoma, sans-serif;
             font-weight: none;
             font-size: 1.5em;
-            font-family: cambria;
             font-stretch: ultra-condensed;
             display: inline-block;
-            width: 150px;
-            min-width: 100px;
-            max-width: 200px;
-            line-height: 1em;
+            width: 6em;
+            line-height: 1.2em;
             vertical-align: middle;
             text-align: center;
             white-space: nowrap;
@@ -236,7 +269,7 @@
             border-radius: 20px;
             font-weight: bold;
             font-size: 2em;
-            font-family: cambria;
+            font-family: "MS PGothic", Tahoma, sans-serif;
             font-stretch: ultra-condensed;
             display: inline-block;
             min-width: 50%;
@@ -252,11 +285,11 @@
             text-transform: uppercase;
             border: solid;
             border-color: #39373E;
-            border-radius: 20px;
+            border-radius: 10px;
             font-weight: none;
-            font-size: 1em;
-            font-family: cambria;
-            font-stretch: ultra-condensed;
+            font-size: 1.2em;
+            font-family: Tahoma;
+            font-stretch: condensed;
             text-align: center;
             display: inline-block;
             width: 8em;
@@ -300,7 +333,14 @@
             height: 4em;
             vertical-align: top;           
         }
+        th{
+            top: 0;
+            position: sticky;
+            padding: 10px;
+        }
         th.tdList{
+            top: 0;
+            position: sticky;
             font-size: 1.6em;
             font-weight: bold;
         }
@@ -319,8 +359,8 @@
         }
         .rowLink{
             position: absolute;
-            left: 5px;
-            top: 0;
+            left: 0;
+            vertical-align: top;
             height: 4em;
             width: 99%;
             text-align: right;
@@ -345,6 +385,7 @@
             width: 100px;
         }
         input[type=search]{
+            font-family: "MS PGothic", Tahoma, sans-serif;
             text-align: right;
             vertical-align: middle;
             padding: 5px;
@@ -355,6 +396,7 @@
             height: 2em;
         }
         input[type=text]{
+            font-family: "MS PGothic", Tahoma, sans-serif;
             text-align: right;
             padding: 5px;
             background: whitesmoke;
@@ -373,6 +415,7 @@
             height: 2em;
         }
         select{
+            font-family: "MS PGothic", Tahoma, sans-serif;
             text-align: right;
             padding: 5px;
             background: whitesmoke;
@@ -382,14 +425,8 @@
             height: 1.5em;
         }
         input[type=submit]{
+            font-family: "MS PGothic", Tahoma, sans-serif;
             text-align: center;
-            padding: 5px;
-            background: whitesmoke;
-            color: black;
-            font-size: 2em;
-            width: 5em;
-            height: 2.5em;
-            border-radius: 10px;
         }
     </style>
 
@@ -404,8 +441,7 @@
         <table class="titleBar">
             <tr>
                 <td>&nbsp;</td>
-                <td width=65%><h1>Omni Master</h1></td>
-                <td>&nbsp;</td>
+                <td width=65%><h1>OmniMaster</h1></td>
                 <td width=30% align=center></td>
             </tr>
         </table>

@@ -37,7 +37,7 @@
         }
 
         #main{
-            overflow-y: scroll;
+            
             padding-right: 5px;
         }
 
@@ -50,11 +50,11 @@
             left: 0;
             top: 0;
             vertical-align: middle;
-            z-index: 3;
+            z-index: 10;
         }
 
         div.viewer{
-            overflow-y: scroll;
+            overflow-y: auto;
             padding: 2%;
             width: 100%;
             height: 100%;
@@ -65,18 +65,23 @@
             border-color: white;
             background-color: #030304;
             display: block;
+            z-index: 1;
+            
         }
 
         #body{
             font-size: 24pt;
             background-color: #F9F6EE;
         }
+        #blocker{
+            z-index: 6;
+        }
         
         table.titleBar{
-            position: absolute;
+            position: fixed;
             table-layout: fixed;
             background-color: #39373E;
-            padding: 15px;
+            padding-left: 5px;
             font-family: "Co Headline Bold", sans-serif!important;
             font-size: 3em;
             color: #F9F6EE;
@@ -85,31 +90,36 @@
             white-space: nowrap;
             width: 100%;
             display: inline-block;
+            z-index: 10;
         }
 
         table.menuBar{
-            position: absolute;
-            top: 150px;
+            position: fixed;
+            top: 100px;
             font-family: Tahoma;
             background-color: #525352;
             width: 100%;
             padding: 15px;
+            padding-top: 50px;
             display: inline-block;
+            z-index: 9;
         }
         table.searchBar{
-            position: absolute;
-            top: 320px;
+            position: fixed;
+            top: 270px;
             font-family: "MS PGothic", Tahoma, sans-serif;
             background-color: #5e6a71;
             width: 100%;
             padding: 15px;
+            padding-top: 50px;
             color: #F9F6EE;
             white-space: nowrap;
+            z-index: 8;
         }
 
         table.list{
             position: absolute;
-            top: 440px;
+            top: 450px;
             margin-left: auto;
             margin-right: auto;
             font-family: "MS PGothic", Arial, Lucida, "Monaco", verdana;
@@ -119,7 +129,8 @@
             font-size: 1.3em;
             font-weight: none;
             text-align: left;
-            padding: 5px 5px 5px 5px;
+            padding: 5px;
+            left: 10px;
             width: 100%;
             white-space: nowrap;
             margin-top: 0px;
@@ -127,6 +138,7 @@
             border-spacing: 0px; 
             vertical-align: top;
             border-collapse: collapse;
+            z-index: 1;
         }
 
         table.detail{
@@ -147,6 +159,7 @@
             margin-bottom: 0px; 
             vertical-align: top;
             border-collapse: collapse;
+            z-index: 1;
         }
 
         h1{

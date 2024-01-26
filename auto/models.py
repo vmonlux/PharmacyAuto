@@ -27,7 +27,7 @@ class Omnicell(models.Model):
 
     # Metadata
     class Meta:
-        ordering = ['Site', 'Building', 'Area', 'Omni_Id']
+        ordering = ['Omni_Id', 'Site', 'Building', 'Area']
     
     # Methods
     def __str__(self):

@@ -81,13 +81,13 @@
 
         <tr>
             <td align="right" style="padding-right:10px;">Ivanti:</td>
-            <td>{{object.Ivanti}}</td>
+            <td>{% if object.Ivanti %}Yes{%else%}No{%endif%}</td>
             
         </tr>
 
         <tr>
             <td align="right" style="padding-right:10px;">Notes:</td>
-            <td colspan="2">Note</td>
+            <td colspan="2"></td>
         </tr>
 
         <tr>
@@ -96,7 +96,7 @@
         
         {% if Refrigerators %}
         <tr>
-            <td align="right" valign=middle style="padding-right:10px;">Ref:</td>
+            <td align="right" valign=middle style="padding-right:10px;">Refrigerators:</td>
             <td valign=middle>
                 <table>
                     <tr>
@@ -113,13 +113,13 @@
 
         {% if Auxs %}
         <tr>
-            <td align="right" valign=middle style="padding-right:10px;">Ref:</td>
+            <td align="right" valign=middle style="padding-right:10px;">Aux Cabinets:</td>
             <td valign=middle>
                 <table>
                     <tr>
                         {% for Aux in Auxs %}
                             
-                            <td><a class='ref' href='{% url "viewAux" Aux.pk %}'>{{Aux.Serial_Number}}<br>{{Aux.Model}}</a></td>
+                            <td><a class='aux' href='{% url "viewAux" Aux.pk %}'>{{Aux.Serial_Number}}<br>{{Aux.Model}}</a></td>
                             
                         {% endfor %}
                     </tr>

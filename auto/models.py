@@ -49,7 +49,7 @@ class Aux(models.Model):
     
     # Methods
     def __str__(self):
-        return str("Aux "+self.Model)
+        return str(self.Model)
 
 class Refrigerator(models.Model):
     """ Class for storing Refrigerators """

@@ -48,6 +48,7 @@ class OmnicellView(UpdateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["Refrigerators"] = Refrigerator.objects.filter(Omnicell=self.kwargs['pk'])
+        context["Auxs"] = Aux.objects.filter(Omnicell=self.kwargs['pk'])
         return context
 
     def form_valid(self, form):

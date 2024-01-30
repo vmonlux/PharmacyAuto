@@ -71,6 +71,62 @@ class OmnicellUpdate(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy("viewOmnicell", kwargs={'pk': pk})
 
+class AuxList(ListView):
+    model = Aux
+    context_object_name = 'aux_list'
+    template_name = 'aux_list.html'
+    
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        queryset = super(AuxList, self).get_queryset()
+        if query == None:
+            return queryset
+        else:
+            filter = queryset.filter(
+                Q(Omnicell__Omni_Id__icontains=query) |
+                Q(Omnicell__Omni_Description__icontains=query) |
+                Q(Omnicell__Building__Name__icontains=query) |
+                Q(Omnicell__Area__icontains=query) |
+                Q(Serial_Number__icontains=query) |
+                Q(Model__Model__icontains=query)
+            )
+            return filter
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+    
+
+class AuxView(UpdateView):
+    model = Aux
+    template_name = 'aux_view.html'
+    form_class = AuxForm
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def form_valid(self, form):
+        messages.success(self.request, "Aux Updated")
+        return super(AuxView, self).form_valid(form)
+    
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy("viewAux", kwargs={'pk': pk})
+
+class AuxUpdate(UpdateView):
+    model = Aux
+    template_name = 'aux_update.html'
+    form_class = AuxForm
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Aux Updated")
+        return super(AuxUpdate, self).form_valid(form)
+    
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy("viewAux", kwargs={'pk': pk})
+
 
 class RefrigeratorList(ListView):
     model = Refrigerator

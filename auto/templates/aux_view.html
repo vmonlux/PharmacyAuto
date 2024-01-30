@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+
+<table class='menuBar'>
+    <tr>
+        <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
+        <td><a class="vMenu" href="{% url 'refigerators' %}">Refrigerators</a></td>
+    </tr>
+</table>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="searchBar">
+    <center>
+    <table class="searchBar" width=90%>
+        <tr>
+            <tr>
+                <td width="25%"><a class="submenu" href="{% url 'updateAux' object.pk %}">EDIT</a></td>
+                <td align=center><h2>Aux {{object.Model}}</h2></td>
+            </tr>
+    </table>
+</center>
+</div>
+<br>
+<div id="viewer">
+
+<div id="main">
+
+    <table width="90%" class='detail'>
+        
+
+        <tr>
+            <td align="right" width="150px" style="padding-right:10px;">Omnicell:</td>
+            <td>{{object.Omnicell}}</td>
+            <td rowspan=3>{%if object.Omnicell%}<a class="omni" href="{% url 'viewOmnicell' object.Omnicell.pk %}">Go to<br>{{object.Omnicell}}</a>{%endif%}</td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-right:10px;">Serial_Number:</td>
+            <td>{{object.Serial_Number}}</td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-right:10px;">Model:</td>
+            <td>{{object.Model}}</td>
+        </tr>
+
+    </table>
+
+</div>
+</div>
+
+{% endblock %}

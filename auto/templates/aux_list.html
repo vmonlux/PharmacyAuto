@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+
+<table class='menuBar'>
+    <tr>
+        <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
+        <td><a class="vMenu" href="">Refrigerators</a></td>
+    </tr>
+</table>
+
+{% endblock %}
+
+{% block content %}
+
+<div id="searchBar">
+    <center>
+    <table class='searchBar' width=80%>
+        <tr>
+            <td></td>
+            <td align=right>
+                <form action="" method="get">
+                    <input name="q" type="search" placeholder="Search..."> <input type="submit" value="Search">
+                </form>
+            </td>
+            <td width=3%>&nbsp;</td>
+    </table>
+</center>
+</div>
+<br>
+<div id="viewer">
+
+
+<table class="list" width=90%>
+    <tr class="rowList">
+        <th class="tdList" width="20%">Omnicell</th>
+        <th class="tdList" width="10%">Refrigerator</th>
+        <th class="tdList">Type</th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+{% for object in object_list %}
+    <tr class="rowList">
+        <td class="tdList">{{ object.Omnicell }}</td>
+        <td class="tdList">{{ object.Serial_Number }}</td>
+        <td class="tdList">{{ object.Model }}</td>
+        <td><a class="rowLink" href="{% url 'viewAux' object.pk %}">  </a></td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+</div>
+{% endblock %}

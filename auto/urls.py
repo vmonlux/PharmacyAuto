@@ -27,6 +27,10 @@ urlpatterns = [
     path('omnicell/view/<int:pk>', OmnicellView.as_view(), name='viewOmnicell'),
     path('omnicell/update/<int:pk>', OmnicellUpdate.as_view(), name='updateOmnicell'),
     
+    path('aux/', AuxList.as_view(), name='auxs'),
+    path('aux/view/<int:pk>', AuxView.as_view(), name='viewAux'),
+    path('aux/view/<int:pk>', AuxUpdate.as_view(), name='updateAux'),
+    
     path('refrigerator/', RefrigeratorList.as_view(), name='refigerators'),
     path('refrigerator/view/<int:pk>', RefrigeratorView.as_view(), name='viewRefrigerator'),
     path('refrigerator/update/<int:pk>', RefrigeratorUpdate.as_view(), name='updateRefrigerator'),

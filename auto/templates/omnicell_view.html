@@ -93,8 +93,11 @@
         <tr>
             <td colspan="3"><br><hr><br></td>
         </tr>
+        
+        {% if Refrigerators %}
         <tr>
-            <td>
+            <td align="right" valign=middle style="padding-right:10px;">Ref:</td>
+            <td valign=middle>
                 <table>
                     <tr>
                         {% for Refrigerator in Refrigerators %}
@@ -103,13 +106,32 @@
                             
                         {% endfor %}
                     </tr>
-                </table>
+                </table><Br><br>
             </td>
         </tr>
+        {% endif %}
+
+        {% if Auxs %}
+        <tr>
+            <td align="right" valign=middle style="padding-right:10px;">Ref:</td>
+            <td valign=middle>
+                <table>
+                    <tr>
+                        {% for Aux in Auxs %}
+                            
+                            <td><a class='ref' href='{% url "viewAux" Aux.pk %}'>{{Aux.Serial_Number}}<br>{{Aux.Model}}</a></td>
+                            
+                        {% endfor %}
+                    </tr>
+                </table><Br><br>
+            </td>
+        </tr>
+        {% endif %}
+
     </table>
 
 
 </div>
-<br><br>
+<br><br><Br><Br>
 
 {% endblock %}

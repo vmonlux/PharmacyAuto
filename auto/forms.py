@@ -10,6 +10,11 @@ class OmnicellForm(ModelForm):
         widgets = {
             'Serial_Number': forms.TextInput(attrs={'class': 'inputField'}),
         }
+
+class AuxForm(ModelForm):
+    class Meta:
+        model = Aux
+        fields = ['Omnicell', 'Serial_Number', 'Model']
         
 class RefrigeratorForm(ModelForm):
     class Meta:

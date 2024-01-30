@@ -33,6 +33,24 @@ class Omnicell(models.Model):
     def __str__(self):
         return str(self.Omni_Id)
 
+class Aux(models.Model):
+    """ Class for storing Aux Towers """
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    Omnicell = models.ForeignKey("Omnicell", on_delete=models.SET_NULL, blank=True, null=True)
+    Serial_Number = models.CharField(max_length=7, blank=True, null=True)
+    Model = models.ForeignKey("OmnicellModel", on_delete=models.SET_NULL, blank=True, null=True)   
+    
+
+    # Metadata
+    class Meta:
+        ordering = ['Omnicell', 'Model', 'Serial_Number']
+    
+    # Methods
+    def __str__(self):
+        return str("Aux "+self.Model)
+
 class Refrigerator(models.Model):
     """ Class for storing Refrigerators """
 

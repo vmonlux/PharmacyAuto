@@ -27,7 +27,7 @@
 <br>
 <div id="viewer">
 
-<div id="main">
+
 
     <table width="90%" class='detail'>
         
@@ -93,19 +93,23 @@
         <tr>
             <td colspan="3"><br><hr><br></td>
         </tr>
-    </table>
-
-    <table>
         <tr>
-            {% for Refrigerator in Refrigerators %}
-                
-                <td><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
-                
-            {% endfor %}
+            <td>
+                <table>
+                    <tr>
+                        {% for Refrigerator in Refrigerators %}
+                            
+                            <td><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
+                            
+                        {% endfor %}
+                    </tr>
+                </table>
+            </td>
         </tr>
     </table>
 
+
 </div>
-</div>
+<br><br>
 
 {% endblock %}

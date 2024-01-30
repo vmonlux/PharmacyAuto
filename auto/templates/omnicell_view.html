@@ -35,17 +35,6 @@
         <tr>
             <td align="right" width="150px" style="padding-right:10px;">Description:</td>
             <td>{{object.Omni_Description}}</td>
-            <td rowspan="3" style="border-left: 1px solid black; width:40%;">
-                <table>
-                    <tr>
-                        {% for Refrigerator in Refrigerators %}
-                            
-                            <td><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
-                            
-                        {% endfor %}
-                    </tr>
-                </table>
-            </td>
         </tr>
 
         <tr>
@@ -59,46 +48,60 @@
         </tr>
 
         <tr>
-            <td colspan="3"><hr></td>
+            <td colspan="3"><br><hr><br></td>
         </tr>
 
         <tr>
             <td align="right" style="padding-right:10px;">Building:</td>
             <td>{{object.Building}}</td>
-            <td></td>
+            
         </tr>
 
         <tr>
             <td align="right" style="padding-right:10px;">Area:</td>
             <td>{{object.Area}}</td>
-            <td></td>
+            
         </tr>
         {% if object.Room %}
         <tr>
             <td align="right" style="padding-right:10px;">Room:</td>
             <td>{{object.Room}}</td>
-            <td></td>
+            
         </tr>
         {% endif %}
         <tr>
-            <td colspan="3"><hr></td>
+            <td colspan="3"><br><hr><br></td>
         </tr>
 
         <tr>
             <td align="right" style="padding-right:10px;">CT Version:</td> 
             <td>{{object.CT_Version}}</td>
-            <td></td>
+            
         </tr>
 
         <tr>
             <td align="right" style="padding-right:10px;">Ivanti:</td>
             <td>{{object.Ivanti}}</td>
-            <td></td>
+            
         </tr>
 
         <tr>
             <td align="right" style="padding-right:10px;">Notes:</td>
             <td colspan="2">Note</td>
+        </tr>
+
+        <tr>
+            <td colspan="3"><br><hr><br></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            {% for Refrigerator in Refrigerators %}
+                
+                <td><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
+                
+            {% endfor %}
         </tr>
     </table>
 

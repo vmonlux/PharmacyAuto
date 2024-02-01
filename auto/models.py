@@ -21,8 +21,9 @@ class Omnicell(models.Model):
     Building = models.ForeignKey("Building", on_delete=models.SET_NULL, blank=True, null=True)
     Area = models.CharField(max_length=10, blank=True, null=True)
     Room = models.CharField(max_length=10, blank=True, null=True)
+    Door_Code = models.CharField(max_length=10, blank=True, null=True)
     Emergency = models.BooleanField(default=False)
-    
+    Note = models.TextField(max_length=500, blank=True, null=True)
     
 
     # Metadata

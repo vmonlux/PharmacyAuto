@@ -66,7 +66,13 @@
         <tr>
             <td align="right" style="padding-right:10px;">Room:</td>
             <td>{{object.Room}}</td>
-            
+        </tr>
+        {% endif %}
+
+        {% if object.Door_Code %}
+        <tr>
+            <td align="right" style="padding-right:10px;">Room:</td>
+            <td>{{object.Room}}</td>
         </tr>
         {% endif %}
         <tr>
@@ -87,7 +93,7 @@
 
         <tr>
             <td align="right" style="padding-right:10px;">Notes:</td>
-            <td colspan="2"></td>
+            <td colspan="2">{{ object.Note }}</td>
         </tr>
 
         <tr>

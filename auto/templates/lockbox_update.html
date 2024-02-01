@@ -30,8 +30,8 @@
     <table class="menuBar">
         <tr>
             <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
-            <td><a class="vMenuSelect" href="{% url 'auxs' %}">Aux</a></td>
-            <td><a class="vMenu" href="{% url 'lockboxes' %}">Lockbox</a></td>
+            <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
+            <td><a class="vMenuSelect" href="{% url 'lockboxes' %}">Lockbox</a></td>
             
         </tr>
     </table>
@@ -72,8 +72,12 @@
         <tr>
             <tr>
                 <td width="10%"><input type=submit value="SAVE"></td>
-                <td width="10%"><a class='submenu' href='{% url "viewAux" object.pk %}'>Cancel</a></td>
-                <td align=center><h2>Aux {{object.Model}}</h2></td>
+                <td width="10%"><a class='submenu' href='{% url "viewLockbox" object.pk %}'>Cancel</a></td>
+                <td align=center><h2>{{ object.Refrigerator.Omnicell}}
+                    {% if object.Medication 
+                        %} | {{object.Medication}} Lockbox
+                    {% endif %}
+                    </h2></td>
             </tr>
     </table>
 </center>
@@ -86,19 +90,24 @@
         
 
         <tr>
-            <td align="right" width="150px" style="padding-right:10px;">Omnicell:</td>
-            <td>{{form.Omnicell}}</td>
+            <td align="right" width="150px" style="padding-right:10px;">Refrigerator:</td>
+            <td>{{form.Refrigerator}}</td>
            
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Serail_Number:</td>
-            <td>{{form.Serial_Number}}</td>
+            <td align="right" style="padding-right:10px;">Key:</td>
+            <td>{{form.Key}}</td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Model:</td>
-            <td>{{form.Model}}</td>
+            <td align="right" style="padding-right:10px;">Medication:</td>
+            <td>{{form.Medication}}</td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-right:10px;">Description:</td>
+            <td>{{form.Description}}</td>
         </tr>
 
        

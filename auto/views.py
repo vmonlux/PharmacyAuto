@@ -128,6 +128,61 @@ class AuxUpdate(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy("viewAux", kwargs={'pk': pk})
 
+class LockboxList(ListView):
+    model = Lockbox
+    context_object_name = 'lockbox_list'
+    template_name = 'lockbox_list.html'
+    
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        queryset = super(LockboxList, self).get_queryset()
+        if query == None:
+            return queryset
+        else:
+            filter = queryset.filter(
+                Q(Refrigerator__Omnicell__Omni_Id__icontains=query) |
+                Q(Refrigerator__Omnicell__Omni_Description__icontains=query) |
+                Q(Refrigerator__Omnicell__Building__Name__icontains=query) |
+                Q(Refrigerator__Omnicell__Area__icontains=query) |
+                Q(Medication__icontains=query)
+            )
+            return filter
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+    
+
+class LockboxView(UpdateView):
+    model = Lockbox
+    template_name = 'lockbox_view.html'
+    form_class = LockboxForm
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def form_valid(self, form):
+        messages.success(self.request, "Lockbox Updated")
+        return super(LockboxView, self).form_valid(form)
+    
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy("viewLockbox", kwargs={'pk': pk})
+
+class LockboxUpdate(UpdateView):
+    model = Lockbox
+    template_name = 'lockbox_update.html'
+    form_class = LockboxForm
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Lockbox Updated")
+        return super(LockboxUpdate, self).form_valid(form)
+    
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy("viewLockbox", kwargs={'pk': pk})
+
 
 class RefrigeratorList(ListView):
     model = Refrigerator

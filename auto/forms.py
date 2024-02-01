@@ -15,6 +15,11 @@ class AuxForm(ModelForm):
     class Meta:
         model = Aux
         fields = ['Omnicell', 'Serial_Number', 'Model']
+
+class LockboxForm(ModelForm):
+    class Meta:
+        model = Lockbox
+        fields = ['Refrigerator', 'Medication', 'Key', 'Description']
         
 class RefrigeratorForm(ModelForm):
     class Meta:

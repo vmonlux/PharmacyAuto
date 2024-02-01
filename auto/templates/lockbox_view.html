@@ -30,8 +30,8 @@
     <table class="menuBar">
         <tr>
             <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
-            <td><a class="vMenuSelect" href="{% url 'auxs' %}">Aux</a></td>
-            <td><a class="vMenu" href="{% url 'lockboxes' %}">Lockbox</a></td>
+            <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
+            <td><a class="vMenuSelect" href="{% url 'lockboxes' %}">Lockbox</a></td>
             
         </tr>
     </table>
@@ -46,9 +46,13 @@
     <table class="searchBar" width=90%>
         <tr>
             <tr>
-                <td width="25%"><a class="submenu" href="{% url 'updateAux' object.pk %}">EDIT</a></td>
-                <td align=center><h2>Aux {{object.Model}}</h2></td>
-            </tr>
+                <td width="25%"><a class="submenu" href="{% url 'updateLockbox' object.pk %}">EDIT</a></td>
+                <td align=center><h2>{{ object.Refrigerator.Omnicell}}
+                    {% if object.Medication 
+                        %} | {{object.Medication}} Lockbox
+                    {% endif %}
+                    </h2></td>
+            </tr>   
     </table>
 </center>
 </div>
@@ -62,18 +66,23 @@
 
         <tr>
             <td align="right" width="150px" style="padding-right:10px;">Omnicell:</td>
-            <td>{{object.Omnicell}}</td>
-            <td rowspan=3>{%if object.Omnicell%}<a class="omni" href="{% url 'viewOmnicell' object.Omnicell.pk %}">Go to<br>{{object.Omnicell}}</a>{%endif%}</td>
+            <td>{{object.Refrigerator.Omnicell}}</td>
+            <td rowspan=3>{%if object.Refrigerator.Omnicell%}<a class="omni" href="{% url 'viewOmnicell' object.Refrigerator.Omnicell.pk %}">Go to<br>{{object.Refrigerator.Omnicell}}</a>{%endif%}</td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Serial_Number:</td>
-            <td>{{object.Serial_Number}}</td>
+            <td align="right" style="padding-right:10px;">Key:</td>
+            <td>{{object.Key}}</td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Model:</td>
-            <td>{{object.Model}}</td>
+            <td align="right" style="padding-right:10px;">Medication:</td>
+            <td>{{object.Medication}}</td>
+        </tr>
+
+        <tr>
+            <td align="right" style="padding-right:10px;">Description:</td>
+            <td>{{object.Description}}</td>
         </tr>
 
     </table>

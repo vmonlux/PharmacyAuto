@@ -30,8 +30,8 @@
     <table class="menuBar">
         <tr>
             <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
-            <td><a class="vMenuSelect" href="{% url 'auxs' %}">Aux</a></td>
-            <td><a class="vMenu" href="{% url 'lockboxes' %}">Lockbox</a></td>
+            <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
+            <td><a class="vMenuSelect" href="{% url 'lockboxes' %}">Lockbox</a></td>
             
         </tr>
     </table>
@@ -62,8 +62,8 @@
 <table class="list" width=90%>
     <tr class="rowList">
         <th class="tdList" width="20%">Omnicell</th>
-        <th class="tdList" width="10%">Serial Number</th>
-        <th class="tdList">Model</th>
+        <th class="tdList" width="10%">Medication</th>
+        <th class="tdList">Key</th>
         <th></th>
     </tr>
 
@@ -72,9 +72,9 @@
     </tr>
 {% for object in object_list %}
     <tr class="rowList">
-        <td class="tdList">{{ object.Omnicell }}</td>
-        <td class="tdList">{{ object.Serial_Number }}</td>
-        <td class="tdList">{{ object.Model }}</td>
+        <td class="tdList">{{ object.Refrigerator.Omnicell }}</td>
+        <td class="tdList">{{ object.Medication }}</td>
+        <td class="tdList">{{ object.Key }}</td>
         <td><a class="rowLink" href="{% url 'viewAux' object.pk %}">  </a></td>
     </tr>
 {% endfor %}

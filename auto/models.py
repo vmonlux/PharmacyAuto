@@ -122,6 +122,7 @@ class Lockbox(models.Model):
     id = models.BigAutoField(primary_key=True)
     Refrigerator = models.ForeignKey("Refrigerator", on_delete=models.SET_NULL, blank=True, null=True)
     Key = models.CharField(max_length=10, blank=True, null=True)
+    Medication = models.CharField(max_length=50, blank=True, null=True)
     Description = models.CharField(max_length=50, blank=True, null=True)
 
     # Metadata

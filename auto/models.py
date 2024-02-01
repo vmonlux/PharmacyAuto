@@ -115,6 +115,23 @@ class Building(models.Model):
     def __str__(self):
         return self.Name
 
+class Lockbox(models.Model):
+    """Class for storing lockboxes"""
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    Refrigerator = models.ForeignKey("Refrigerator", on_delete=models.SET_NULL, blank=True, null=True)
+    Key = models.CharField(max_length=10, blank=True, null=True)
+    Description = models.CharField(max_length=50, blank=True, null=True)
+
+    # Metadata
+    class Meta:
+        ordering = ['Refrigerator']
+    
+    # Methods
+    def __str__(self):
+        return str(self.Description) + " | " + str(self.Key)
+
 # class theclass(models.Model):
 #     """Class Description"""
 

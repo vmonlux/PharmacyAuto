@@ -2,13 +2,40 @@
 
 {% block menu %}
 
+<script>
+    function toggleMenu(){
+        var menu1 = document.getElementById('menu1');
+        var menu2 = document.getElementById('menu2');
+        if(menu1.style.display == "none"){
+            menu1.style.display = "block";
+            menu2.style.display = "none";
+        }else{
+            menu1.style.display = "none";
+            menu2.style.display = "block";
+        }
+    }
+</script>
+
+<div id="menu1" style="display:block">
 <table class="menuBar">
     <tr>
         <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="">Refrigerators</a></td>
+        <td><a class="vMenu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
+        <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()">></a></td>
     </tr>
 </table>
+</div>
 
+<div id="menu2" style="display:none">
+    <table class="menuBar">
+        <tr>
+            <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
+            <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
+            <td><a class="vMenu" href="">Lockbox</a></td>
+            
+        </tr>
+    </table>
+</div>
 
 {% endblock %}
 

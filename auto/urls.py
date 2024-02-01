@@ -31,7 +31,7 @@ urlpatterns = [
     path('aux/view/<int:pk>', AuxView.as_view(), name='viewAux'),
     path('aux/view/<int:pk>', AuxUpdate.as_view(), name='updateAux'),
     
-    path('refrigerator/', RefrigeratorList.as_view(), name='refigerators'),
+    path('refrigerator/', RefrigeratorList.as_view(), name='refrigerators'),
     path('refrigerator/view/<int:pk>', RefrigeratorView.as_view(), name='viewRefrigerator'),
     path('refrigerator/update/<int:pk>', RefrigeratorUpdate.as_view(), name='updateRefrigerator'),
 ]

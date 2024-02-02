@@ -74,8 +74,8 @@
                 <td width="10%"><input type=submit value="SAVE"></td>
                 <td width="10%"><a class='submenu' href='{% url "viewLockbox" object.pk %}'>Cancel</a></td>
                 <td align=center><h2>{{ object.Refrigerator.Omnicell}}
-                    {% if object.Medication 
-                        %} | {{object.Medication}} Lockbox
+                    {% if object.Medication %}
+                     | {{object.Medication}} Lockbox
                     {% endif %}
                     </h2></td>
             </tr>

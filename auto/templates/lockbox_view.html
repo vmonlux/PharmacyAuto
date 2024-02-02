@@ -48,8 +48,8 @@
             <tr>
                 <td width="25%"><a class="submenu" href="{% url 'updateLockbox' object.pk %}">EDIT</a></td>
                 <td align=center><h2>{{ object.Refrigerator.Omnicell}}
-                    {% if object.Medication 
-                        %} | {{object.Medication}} Lockbox
+                    {% if object.Medication %}
+                     | {{object.Medication}} Lockbox
                     {% endif %}
                     </h2></td>
             </tr>   

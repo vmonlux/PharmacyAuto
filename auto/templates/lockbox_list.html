@@ -75,7 +75,7 @@
         <td class="tdList">{{ object.Refrigerator.Omnicell }}</td>
         <td class="tdList">{{ object.Medication }}</td>
         <td class="tdList">{{ object.Key }}</td>
-        <td><a class="rowLink" href="{% url 'viewAux' object.pk %}">  </a></td>
+        <td><a class="rowLink" href="{% url 'viewLockbox' object.pk %}">  </a></td>
     </tr>
 {% endfor %}
 </table>

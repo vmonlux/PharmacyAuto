@@ -27,6 +27,8 @@ class Omnicell(models.Model):
     Emergency = models.BooleanField(default=False)
     Note = models.TextField(max_length=500, blank=True, null=True)
     
+    
+    
 
     # Metadata
     class Meta:
@@ -62,6 +64,7 @@ class Refrigerator(models.Model):
     Facilities_Id = models.CharField(max_length=50, blank=True, null=True)
     Omnicell = models.ForeignKey("Omnicell", on_delete=models.SET_NULL, blank=True, null=True)
     Type = models.CharField(max_length=50, blank=True, null=True)
+    Broken = models.BooleanField(default=False)
 
     # Metadata
     class Meta:

@@ -1,0 +1,38 @@
+[
+    {
+      "model": "auto.lockbox",
+      "pk": 1,
+      "fields": {
+        "Refrigerator": 4,
+        "Key": "Unknown",
+        "Medication": null,
+        "Description": null
+      }
+    },
+    {
+      "model": "auto.lockbox",
+      "pk": 2,
+      "fields": {
+        "Refrigerator": 5,
+        "Key": "Unknown",
+        "Medication": "Lorazepam",
+        "Description": "SentrySafe"
+      }
+    },
+    {
+      "model": "auto.lockbox",
+      "pk": 3,
+      "fields": {
+        "Refrigerator": 1,
+        "Key": "Unknown",
+        "Medication": null,
+        "Description": "SentrySafe"
+      }
+    },
+    {
+      "model": "auto.lockbox",
+      "pk": 4,
+      "fields": {
+        "Refrigerator": 3,
+        "Key": "Unknown",
+        "Medication":null, "Description":"SentrySafe"}}]

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from auto.models import *
 from auto.forms import *
 
+admin.site.register(User)
 admin.site.register(Omnicell)
 admin.site.register(Refrigerator)
 admin.site.register(OmnicellModel)

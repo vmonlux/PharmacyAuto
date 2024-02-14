@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     
+    path('backup/', views.backup, name="backup"),
+    
     path('omnicell/', OmnicellList.as_view(), name='omnicells'),
     path('omnicell/view/<int:pk>', OmnicellView.as_view(), name='viewOmnicell'),
     path('omnicell/update/<int:pk>', OmnicellUpdate.as_view(), name='updateOmnicell'),

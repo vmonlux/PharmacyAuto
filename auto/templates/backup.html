@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="viewer">
+    <table class="list">
+        <tr>
+            <td>Backup</td>
+        </tr>
+        <tr>
+            <td><embed type="" src="{% static 'backup.json' %}" width=100% height=400px style="background-color:white;color:black;"><td>
+    </table>
+
+</div>
+
+{% endblock %}

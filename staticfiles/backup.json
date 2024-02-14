@@ -1,0 +1,59 @@
+[
+{
+  "model": "auto.omnicell",
+  "pk": 1,
+  "fields": {
+    "Omni_Id": "UFNTTEST",
+    "Omni_Description": "Test Omnicell",
+    "Serial_Number": "123467",
+    "Model": null,
+    "CT_Version": null,
+    "PC_Name": null,
+    "Ivanti": true,
+    "Site": null,
+    "Building": null,
+    "Area": null,
+    "Room": null,
+    "Door_Code": null,
+    "Emergency": true,
+    "Note": null
+  }
+},
+{
+  "model": "auto.aux",
+  "pk": 1,
+  "fields": {
+    "Omnicell": 1,
+    "Serial_Number": "142356",
+    "Model": null
+  }
+},
+{
+  "model": "auto.refrigerator",
+  "pk": 1,
+  "fields": {
+    "Facilities_Id": "REFRIG0122",
+    "Omnicell": 1,
+    "Type": "Small Helmer"
+  }
+},
+{
+  "model": "auto.refrigerator",
+  "pk": 2,
+  "fields": {
+    "Facilities_Id": "REFRIG0139",
+    "Omnicell": 1,
+    "Type": "Medium Helmer"
+  }
+},
+{
+  "model": "auto.lockbox",
+  "pk": 1,
+  "fields": {
+    "Refrigerator": 2,
+    "Key": "TS8",
+    "Medication": "Lorazepam",
+    "Description": "SentrySafe"
+  }
+}
+]

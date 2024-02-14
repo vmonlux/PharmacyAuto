@@ -6,9 +6,13 @@ from django.contrib import messages
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.db.models import Q
+from django.http import HttpResponse, FileResponse
 
 from auto.forms import *
 from .models import *
+
+def backup(request):
+    return render(request, 'backup.html')
 
 
 def home(request):

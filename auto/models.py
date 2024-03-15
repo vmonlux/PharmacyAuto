@@ -136,7 +136,7 @@ class Lockbox(models.Model):
     
     # Methods
     def __str__(self):
-        return str(self.Description) + " | " + str(self.Key)
+        return str(self.Refrigerator) + " | " + str(self.Medication)
 
 # class theclass(models.Model):
 #     """Class Description"""

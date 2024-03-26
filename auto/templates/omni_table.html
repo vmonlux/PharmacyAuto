@@ -7,7 +7,7 @@
 {% block content %}
 
 <div id="viewer">
-<table class="masterlist">
+<table class="list">
     <tr>
         <th>Omni ID</th>
         <th>Hospital</th>
@@ -23,16 +23,16 @@
 
     {% for object in object_list %}
     <tr class="rowList">
-        <td>{{object.Omni_Id}}</td>
-        <td>{{object.Building}}</td>
-        <td>{{object.Area}}</td>
-        <td>{{object.Room}}</td>
-        <td>{{object.Serial_Number}}</td>
-        <td>{{object.Omni_Description}}</td>
-        <td>{{object.Model}}</td>
-        <td>{{object.CT_Version}}</td>
-        <td>{{object.PC_Name}}</td>
-        <td>{{object.Emergency}}</td>
+        <td class="tdList">{{object.Omni_Id}}</td>
+        <td class="tdList">{{object.Building}}</td>
+        <td class="tdList">{{object.Area}}</td>
+        <td class="tdList">{{object.Room}}</td>
+        <td class="tdList">{{object.Serial_Number}}</td>
+        <td class="tdList">{{object.Omni_Description}}</td>
+        <td class="tdList">{{object.Model}}</td>
+        <td class="tdList">{{object.CT_Version}}</td>
+        <td class="tdList">{{object.PC_Name}}</td>
+        <td class="tdList">{{object.Emergency}}</td>
     </tr>
     {% endfor %}
 

@@ -240,3 +240,10 @@ class RefrigeratorUpdate(UpdateView):
     def get_success_url(self):
         pk = self.kwargs['pk']
         return reverse_lazy("viewRefrigerator", kwargs={'pk': pk})
+    
+
+# Master table views
+
+class OmniMaster(ListView):
+    model = Omnicell
+    template_name='omni_table.html'

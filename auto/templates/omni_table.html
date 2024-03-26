@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="viewer">
+<table class="list">
+    <tr>
+        <th>Omni ID</th>
+        <th>Hospital</th>
+        <th>Area</th>
+        <th>Room</th>
+        <th>Serial No</th>
+        <th>Description</th>
+        <th>Model</th>
+        <th>CT Version</th>
+        <th>PC Name</th>
+        <th>Emergency</th>
+    </tr>
+
+    {% for object in object_list %}
+    <tr class="rowList">
+        <td>{{object.Omni_Id}}</td>
+        <td>{{object.Building}}</td>
+        <td>{{object.Area}}</td>
+        <td>{{object.Room}}</td>
+        <td>{{object.Serial_Number}}</td>
+        <td>{{object.Omni_Description}}</td>
+        <td>{{object.Model}}</td>
+        <td>{{object.CT_Version}}</td>
+        <td>{{object.PC_Name}}</td>
+        <td>{{object.Emergency}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</div>
+
+{% endblock }

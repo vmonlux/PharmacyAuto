@@ -40,5 +40,7 @@ urlpatterns = [
     path('lockbox/', LockboxList.as_view(), name='lockboxes'),
     path('lockbox/view/<int:pk>', LockboxView.as_view(), name='viewLockbox'),
     path('lockbox/update/<int:pk>', LockboxUpdate.as_view(), name='updateLockbox'),
+
+    path('master/omnicell', OmniMaster.as_view(), name='omnimaster'),
 ]
 

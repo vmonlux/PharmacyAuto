@@ -42,5 +42,8 @@ urlpatterns = [
     path('lockbox/update/<int:pk>', LockboxUpdate.as_view(), name='updateLockbox'),
 
     path('master/omnicell', OmniMaster.as_view(), name='omnimaster'),
+    path('master/refrigerator', FlexMaster.as_view(), name='flexmaster'),
+    path('master/lockbox', LockMaster.as_view(), name='lockmaster'),
+    path('master/aux', AuxMaster.as_view(), name='auxmaster'),
 ]
 

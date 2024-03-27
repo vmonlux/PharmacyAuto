@@ -247,3 +247,15 @@ class RefrigeratorUpdate(UpdateView):
 class OmniMaster(ListView):
     model = Omnicell
     template_name='omni_table.html'
+
+class FlexMaster(ListView):
+    model = Refrigerator
+    template_name='omni_table.html'
+
+class LockMaster(ListView):
+    model = Lockbox
+    template_name='omni_table.html'
+
+class AuxMaster(ListView):
+    model = Aux
+    template_name='omni_table.html'

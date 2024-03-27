@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="viewer">
+    <table class="masterlist">
+        <tr>
+            <th>Omni ID</th>
+            <th>Ref ID</th>
+            <th>Type</th>
+        </tr>
+    
+        {% for object in object_list %}
+        <tr class="list">
+            <td class="list">{{object.Omnicell}}</td>
+            <td class="list">{{object.Facilities_Id}}</td>
+            <td class="list">{%if object.Type%}{{object.Type}}{%endif%}</td>
+        </tr>
+        {% endfor %}
+    
+    </table>
+    
+    </div>
+
+{% endblock %}
+

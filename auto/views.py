@@ -250,12 +250,12 @@ class OmniMaster(ListView):
 
 class FlexMaster(ListView):
     model = Refrigerator
-    template_name='omni_table.html'
+    template_name='flex_table.html'
 
 class LockMaster(ListView):
     model = Lockbox
-    template_name='omni_table.html'
+    template_name='lockbox_table.html'
 
 class AuxMaster(ListView):
     model = Aux
-    template_name='omni_table.html'
+    template_name='aux_table.html'

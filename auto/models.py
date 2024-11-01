@@ -138,6 +138,27 @@ class Lockbox(models.Model):
     def __str__(self):
         return str(self.Refrigerator) + " | " + str(self.Medication)
 
+class RefrigeratorModel(models.Model):
+    """Class Description"""
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    ModelName = models.CharField(max_length=50, blank=True, null=True)
+    Screen = models.BooleanField(default=False)
+    Window = models.BooleanField(default=False)
+    InteriorVolume = models.DecimalField(blank=True, null=True, max_digits=3, decimal_places=1)
+    Height = models.DecimalField(blank=True, null=True, max_digits=3, decimal_places=1)
+    Width = models.DecimalField(blank=True, null=True, max_digits=3, decimal_places=1)
+    Depth = models.DecimalField(blank=True, null=True, max_digits=3, decimal_places=1)
+
+    # Metadata
+    class Meta:
+        ordering = ['id']
+    
+    # Methods
+    def __str__(self):
+        return self.id
+
 # class theclass(models.Model):
 #     """Class Description"""
 

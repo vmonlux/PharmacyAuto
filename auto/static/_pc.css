@@ -70,7 +70,6 @@ table.title{
     width: 100%;
     height:100%;
     display: inline-block;
-    z-index: 10;
 }
 
 div.menu{
@@ -91,7 +90,6 @@ table.menu{
     height: 80px;
     padding: 0px;
     display: inline-block;
-    z-index: 9;
 }
 a.menu{
     font-family: Lato, sans-serif;
@@ -153,23 +151,20 @@ table.search{
     height: 100%;
     color: #F9F6EE;
     white-space: nowrap;
-    z-index: 8;
 }
 
 div.content{
     position: absolute;
     top: 220 px;
-    left: 0;
+    left: 0px;
     height: calc(100vh - 220px);
     width: 100vw;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     border: solid;
     border-width: 1px;
-    border-style: outset;
     border-color: red;
     display: block;
-    z-index: 1; 
 }
 
 #body{
@@ -178,9 +173,7 @@ div.content{
     font-size: 24pt;
     background-color: #F9F6EE;
 }
-#blocker{
-    z-index: 6;
-}
+
 
 
 
@@ -414,14 +407,12 @@ tr.list{
 }
 
 th{
-    top: 0;
-    position: sticky;
+
     padding: 10px;
     text-align: left;
 }
 th.tdList{
-    top: 0;
-    position: sticky;
+
     font-size: 1.6em;
     font-weight: bold;
 }
@@ -433,10 +424,6 @@ th.tdList{
     text-align: left;
     font-size: 1.5em;
     font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 td.list{
     padding: 0px;
@@ -445,10 +432,7 @@ td.list{
     border-right: 1px dotted black;
     text-align: left;
     font-weight: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+
 
 }
 .rowLink{

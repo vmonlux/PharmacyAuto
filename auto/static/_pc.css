@@ -151,8 +151,6 @@ table.search{
     background-color: black;
     width: 100%;
     height: 100%;
-    padding: 15px;
-    padding-top: 50px;
     color: #F9F6EE;
     white-space: nowrap;
     z-index: 8;
@@ -166,16 +164,12 @@ div.content{
     width: 100vw;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    padding: 2px;
     border: solid;
-    border-radius: 10px;
-    border-width: 1px 0 0 1px;
+    border-width: 1px;
     border-style: outset;
-    border-color: white;
-    background-color: #030304;
+    border-color: red;
     display: block;
-    z-index: 1;
-    
+    z-index: 1; 
 }
 
 #body{
@@ -194,8 +188,6 @@ div.content{
 
 
 table.list{
-    margin-left: auto;
-    margin-right: auto;
     font-family: Lato, sans-serif;
     color: #39373E;
     text-transform: uppercase;
@@ -203,15 +195,11 @@ table.list{
     font-size: 1.3em;
     font-weight: none;
     text-align: left;
-    padding: 5px;
     width: 100%;
     white-space: nowrap;
-    margin-top: 0px;
-    margin-bottom: 0px;
     border-spacing: 0px; 
     vertical-align: top;
     border-collapse: collapse;
-    z-index: 1;
 }
 
 table.masterlist{

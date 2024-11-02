@@ -152,10 +152,25 @@ table.search{
     color: #F9F6EE;
     white-space: nowrap;
 }
+input.search[type=search]{
+    font-family: "MS PGothic", Tahoma, sans-serif;
+    text-align: right;
+    vertical-align: middle;
+    padding: 5px;
+    background: whitesmoke;
+    color: black;
+    font-size: 2em;
+    width: 15em;
+    height: 55px;;
+}
+input.search[type=submit]{
+    font-family: "MS PGothic", Tahoma, sans-serif;
+    text-align: center;
+}
 
 div.content{
     position: absolute;
-    top: 220 px;
+    top: 220px;
     left: 0px;
     height: calc(100vh - 220px);
     width: 100vw;
@@ -462,17 +477,7 @@ input[type=number]{
     font-size: 2em;
     width: 100px;
 }
-input[type=search]{
-    font-family: "MS PGothic", Tahoma, sans-serif;
-    text-align: right;
-    vertical-align: middle;
-    padding: 5px;
-    background: whitesmoke;
-    color: black;
-    font-size: 2.5em;
-    width: 15em;
-    height: 2em;
-}
+
 input[type=text]{
     font-family: "MS PGothic", Tahoma, sans-serif;
     text-align: right;
@@ -502,10 +507,7 @@ select{
     width: 10em;
     height: 1.5em;
 }
-input[type=submit]{
-    font-family: "MS PGothic", Tahoma, sans-serif;
-    text-align: center;
-}
+
 
 
 }

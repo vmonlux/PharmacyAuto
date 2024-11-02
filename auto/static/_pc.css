@@ -45,6 +45,7 @@ h2{
 div.wrap{
     height: 100vh;
     width: 100vw;
+    overflow: clip;
 }
 
 

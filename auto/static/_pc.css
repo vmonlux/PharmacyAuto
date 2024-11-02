@@ -78,8 +78,8 @@ div.menu{
     left: 0;
     height: 80px;
     width: 100vw;
-    border: none;
-    border-color: red;
+    border: solid;
+    border-color: blue;
     overflow: clip;
 
 }
@@ -138,9 +138,8 @@ div.search{
     left: 0;
     height: 60px;
     width: 100vw;
-    border: none;
-    border-color: red;
-    overflow: clip;
+    border: solid;
+    border-color: purple;
     background-color: black;
     overflow: clip;
 }
@@ -178,8 +177,8 @@ div.content{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     border: solid;
-    border-width: 5px;
     border-color: red;
+    background-color: black;
 }
 
 #body{

@@ -16,18 +16,21 @@
     }
 </script>
 
-<div id="menu1" style="display:block">
-<table class="menuBar">
+<div class="menu pc">
+<table class="menu">
     <tr>
-        <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-        <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()">></a></td>
+        <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
+        <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
+        <td><a class="menu" href="{% url 'omnicells' %}">Lockboxes</a></td>
     </tr>
 </table>
 </div>
 
-<div id="menu2" style="display:none">
-    <table class="menuBar">
+<div class="search">
+    </div>
+</div>
+<!-- <div class="menu mobile">
+    <table class="menu">
         <tr>
             <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
             <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
@@ -35,7 +38,7 @@
             
         </tr>
     </table>
-</div>
+</div> -->
 
 {% endblock %}
 

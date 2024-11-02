@@ -178,9 +178,8 @@ div.content{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     border: solid;
-    border-width: 1px;
+    border-width: 5px;
     border-color: red;
-    display: block;
 }
 
 #body{
@@ -189,12 +188,6 @@ div.content{
     font-size: 24pt;
     background-color: #F9F6EE;
 }
-
-
-
-
-
-
 
 table.list{
     font-family: Lato, sans-serif;

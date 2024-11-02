@@ -2,20 +2,6 @@
 
 {% block menu %}
 
-<script>
-    function toggleMenu(){
-        var menu1 = document.getElementById('menu1');
-        var menu2 = document.getElementById('menu2');
-        if(menu1.style.display == "none"){
-            menu1.style.display = "block";
-            menu2.style.display = "none";
-        }else{
-            menu1.style.display = "none";
-            menu2.style.display = "block";
-        }
-    }
-</script>
-
 <div class="menu pc">
 <table class="menu">
     <tr>
@@ -26,6 +12,9 @@
 </table>
 </div>
 
+{% endblock %}
+
+{% block search %}
 <div class="search">
     </div>
 </div>

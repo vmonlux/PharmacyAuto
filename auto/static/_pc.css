@@ -18,10 +18,36 @@
     border-radius: 20px;
     border: 3px solid black;
 }
+
+
+.pc{
+    visibility: visible;
+}
+.slim{
+    visibility: collapse;
+}
+.mobile{
+    visibility: collapse;
+}
+
+h1{
+    
+    font-size: 2.5em;
+    font-style: bold;
+    margin-bottom: 0;
+}
+h2{
+    font-size: 3em;
+    font-style: bold;
+    margin-bottom: 0;
+}
+
 div.wrap{
     height: 100vh;
     width: 100vw;
 }
+
+
 div.title{
     position: absolute;
     top: 0;
@@ -46,6 +72,7 @@ table.title{
     display: inline-block;
     z-index: 10;
 }
+
 div.menu{
     position: absolute;
     top: 80px;
@@ -106,6 +133,7 @@ input.menu{
     vertical-align: middle;
     white-space: nowrap;
 }
+
 div.search{
     position: absolute;
     top: 160px;
@@ -116,7 +144,20 @@ div.search{
     border-color: red;
     overflow: clip;
     background-color: black;
+    overflow: clip;
 }
+table.search{
+    font-family: Lato, sans-serif;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    padding-top: 50px;
+    color: #F9F6EE;
+    white-space: nowrap;
+    z-index: 8;
+}
+
 div.viewer{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -147,18 +188,7 @@ div.viewer{
 
 
 
-table.searchBar{
-    position: fixed;
-    top: 270px;
-    font-family: Lato, sans-serif;
-    background-color: #5e6a71;
-    width: 100%;
-    padding: 15px;
-    padding-top: 50px;
-    color: #F9F6EE;
-    white-space: nowrap;
-    z-index: 8;
-}
+
 
 table.list{
     position: absolute;
@@ -230,17 +260,7 @@ table.detail{
     z-index: 1;
 }
 
-h1{
-    
-    font-size: 2.5em;
-    font-style: bold;
-    margin-bottom: 0;
-}
-h2{
-    font-size: 3em;
-    font-style: bold;
-    margin-bottom: 0;
-}
+
 
 
 

@@ -2,15 +2,15 @@
 
 {% block menu %}
 
-<div id="menu1" style="display:block">
-<table class="menuBar">
-    <tr>
-        <td><a class="vMenuSelect" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-        <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()">></a></td>
-    </tr>
-</table>
-</div>
+<div class="menu pc">
+    <table class="menu">
+        <tr>
+            <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
+            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
+            <td><a class="menu" href="{% url 'omnicells' %}">Lockboxes</a></td>
+        </tr>
+    </table>
+    </div>
 
 {% endblock %}
 

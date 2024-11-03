@@ -249,7 +249,7 @@ a.link{
     left: 0;
     vertical-align: top;
     height: 43px;
-    width: 100%;
+    width: calc(100vw - 5px);
     text-align: right;
     cursor: 'pointer';
     

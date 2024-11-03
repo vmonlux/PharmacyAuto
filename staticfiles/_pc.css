@@ -152,6 +152,9 @@ table.search{
     white-space: nowrap;
     text-align: left;
 }
+td.button{
+    width: 150px;
+}
 input.search[type=search]{
     font-family: "MS PGothic", Tahoma, sans-serif;
     text-align: right;
@@ -169,6 +172,7 @@ input.search[type=submit]{
     height: 55px;
     display: inline;
     line-height: 0px;
+    width: 150px;
     vertical-align: middle;
     white-space: nowrap;
 }
@@ -185,7 +189,7 @@ a.search{
     font-size: 1.5em;
     font-stretch: ultra-condensed;
     display: inline-block;
-    width: 6em;
+    width: 150px;
     line-height: 50px;
     vertical-align: middle;
     text-align: center;

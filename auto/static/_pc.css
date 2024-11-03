@@ -174,7 +174,7 @@ input.search[type=submit]{
 
 div.content{
     position: absolute;
-    top: 220px;
+    top: 218px;
     left: 0px;
     height: calc(100vh - 220px);
     width: 100vw;

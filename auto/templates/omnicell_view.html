@@ -19,10 +19,9 @@
 <div class="search">
     <table class="search">
         <tr>
-            <tr>
-                <td width="25%"><a class="submenu" href="{% url 'updateOmnicell' object.pk %}">EDIT</a></td>
-                <td align=center><h2>{{object.Omni_Id}}</h2></td>
-            </tr>
+            <td><a class="search" href="{% url 'updateOmnicell' object.pk %}">EDIT</a></td>
+            <td align=center><h2>{{object.Omni_Id}}</h2></td>
+        </tr>
     </table>
 </div>
 

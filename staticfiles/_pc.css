@@ -37,7 +37,7 @@ h1{
     margin-bottom: 0;
 }
 h2{
-    font-size: 3em;
+    font-size: 2.5em;
     font-style: bold;
     margin-bottom: 0;
 }
@@ -169,6 +169,26 @@ input.search[type=submit]{
     display: inline;
     line-height: 0px;
     vertical-align: middle;
+    white-space: nowrap;
+}
+a.search{
+    background-color: #f6f6f6;
+    color: #39373E;
+    padding: 1em 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: solid;
+    border-color: #39373E;
+    border-radius: 20px;
+    font-family: "MS PGothic", Tahoma, sans-serif;
+    font-weight: none;
+    font-size: 1.5em;
+    font-stretch: ultra-condensed;
+    display: inline-block;
+    width: 6em;
+    line-height: 1em;
+    vertical-align: middle;
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -453,7 +473,7 @@ a.aux{
 
 a.menu:hover, a.menu:focus, input.menu:hover, input.menu:focus, 
 a.vMenu:hover, a.vMenu:focus, input.vMenu:hover, input.vMenu:focus,
-a.submenu:hover, a.submenu:focus, input[type=submit]:hover, input[type=submit]:focus{
+a.search:hover, a.search:focus, input[type=submit]:hover, input[type=submit]:focus{
     background-color: #52941f;
     color: #F9F6EE;
     transition: 500ms;

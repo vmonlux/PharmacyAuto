@@ -201,6 +201,7 @@ table.list{
     border-spacing: 0px; 
     vertical-align: top;
     border-collapse: collapse;
+    padding: 5px;
 }
 tr.list{
     position: relative;
@@ -222,7 +223,8 @@ td.list{
     padding: 0px;
     text-align: left;
     vertical-align: middle;
-    border: 1px dotted black;
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
     text-align: left;
     font-weight: none;
     height: 45px;
@@ -239,14 +241,9 @@ a.link{
     cursor: 'pointer';
     
 }
-.rowLink:hover{
+a.link:hover{
     border: 2px solid black;
     border-radius: 4px;
-}
-.rowList{
-    position: relative;
-    height: 4em;
-    vertical-align: top;           
 }
 
 table.masterlist{

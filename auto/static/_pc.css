@@ -155,13 +155,14 @@ input.search[type=search]{
     background: whitesmoke;
     color: black;
     font-size: 1.5em;
-    width: 15em;
+    width: 25em;
     height: 55px;
 }
 input.search[type=submit]{
     font-family: "MS PGothic", Tahoma, sans-serif;
     text-align: center;
     height: 55px;
+    vertical-align: middle;
 }
 
 div.content{

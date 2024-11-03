@@ -229,6 +229,7 @@ th.list{
     position: sticky;
     top: 0;
     box-shadow: 0px -5px 0px 2px whitesmoke;
+    border-bottom: solid 2px black;
 }
 td.list{
     padding: 0px;
@@ -240,15 +241,10 @@ td.list{
     height: 45px;
     overflow: clip;
     border-collapse: collapse;
-}
-td.list:after{
-    content: "";
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    width: 80%;
-    margin: 0 auto;
-
 }
+
 a.link{
     position: absolute;
     top: 0;

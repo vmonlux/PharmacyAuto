@@ -202,6 +202,7 @@ table.list{
     vertical-align: top;
     border-collapse: collapse;
     padding: 5px;
+    border: 1px dashed black;
 }
 tr.list{
     position: relative;
@@ -209,7 +210,6 @@ tr.list{
 }
 
 th{
-    padding: 10px;
     text-align: left;
 }
 th.list{
@@ -218,6 +218,7 @@ th.list{
     height: 50px;
     z-index: 10;
     position: sticky;
+    top: 0;
 }
 td.list{
     padding: 0px;

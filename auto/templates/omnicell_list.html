@@ -32,18 +32,18 @@
 
 <table class="list">
     <tr class="list">
-        <th class="list"></th>
+        <th class="list"> </th>
         <th class="list">Omnicell</th>
         <th class="list">Description</th>
         <th class="list">Serial</th>
     </tr>
 {% for object in object_list %}
     <tr class="list">
-        <td class="'list">{%if object.Emergency%}<font style="font-weight:400;color:red;">&#x26A0;</font>{%endif%}</td>
+        <td class="list">{%if object.Emergency%}<font style="font-weight:400;color:red;">&#x26A0;</font>{%endif%}</td>
         <td class="list">{{ object.Omni_Id }} </td>
         <td class="list">{{ object.Omni_Description|truncatechars:28 }}</td>
         <td class="list">{{ object.Serial_Number }}</td>
-        <td><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
+        <td class="list"><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
     </tr>
 {% endfor %}
 </table>

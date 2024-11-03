@@ -153,6 +153,7 @@ table.search{
     text-align: left;
 }
 td.button{
+    display: inline-block;
     width: 150px;
 }
 input.search[type=search]{

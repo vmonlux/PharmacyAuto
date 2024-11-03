@@ -150,6 +150,8 @@ table.search{
     height: 100%;
     color: #F9F6EE;
     white-space: nowrap;
+    text-align: center;
+    align-content: center;
 }
 input.search[type=search]{
     font-family: "MS PGothic", Tahoma, sans-serif;
@@ -174,7 +176,6 @@ input.search[type=submit]{
 a.search{
     background-color: #f6f6f6;
     color: #39373E;
-    padding: 1em 0.5em;
     text-decoration: none;
     text-transform: uppercase;
     border: solid;
@@ -186,7 +187,7 @@ a.search{
     font-stretch: ultra-condensed;
     display: inline-block;
     width: 6em;
-    line-height: 1em;
+    line-height: 50px;
     vertical-align: middle;
     text-align: center;
     white-space: nowrap;

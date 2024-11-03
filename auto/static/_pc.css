@@ -222,7 +222,7 @@ td.list{
     padding: 0px;
     text-align: left;
     vertical-align: middle;
-    border-right: 1px dotted black;
+    border: 1px dotted black;
     text-align: left;
     font-weight: none;
     height: 45px;
@@ -237,10 +237,7 @@ a.link{
     width: 99%;
     text-align: right;
     cursor: 'pointer';
-    border-top: 1px dotted;
-    border-bottom: 1px dotted;
-    border-color: #11161d;
-    border-radius: 1px;
+    
 }
 .rowLink:hover{
     border: 2px solid black;

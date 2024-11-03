@@ -162,7 +162,10 @@ input.search[type=submit]{
     font-family: "MS PGothic", Tahoma, sans-serif;
     text-align: center;
     height: 55px;
+    display: inline;
+    line-height: 0px;
     vertical-align: middle;
+    white-space: nowrap;
 }
 
 div.content{
@@ -171,7 +174,6 @@ div.content{
     left: 0px;
     height: calc(100vh - 220px);
     width: 100vw;
-    padding: 5px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     background-color: black;
@@ -222,6 +224,7 @@ td.list{
     text-align: left;
     font-weight: none;
     height: 45px;
+    overflow: clip;
 }
 a.link{
     position: absolute;

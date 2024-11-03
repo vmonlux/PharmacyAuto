@@ -208,13 +208,16 @@ tr.list{
     position: relative;
     vertical-align: top;           
 }
-
+thead{
+    position: sticky;
+}
 th{
     text-align: left;
 }
 th.list{
     font-size: 1.6em;
     font-weight: bold;
+    background-color: whitesmoke;
     height: 50px;
     z-index: 10;
     position: sticky;

@@ -57,6 +57,7 @@ div.title{
     width: 100vw;
     overflow: clip;
     box-shadow: 0px 0px 0px 0px green inset;
+    z-index: 40;
 }
 table.title{
     background-color: #39373E;
@@ -79,6 +80,7 @@ div.menu{
     height: 80px;
     width: 100vw;
     box-shadow: 0px 0px 0px 0px blue inset;
+    z-index: 30;
 }
 table.menu{
     font-family: Lato, sans-serif;
@@ -138,6 +140,7 @@ div.search{
     background-color: black;
     overflow: clip;
     box-shadow: 0px 0px 0px 0px purple inset;
+    z-index: 20;
 }
 table.search{
     font-family: Lato, sans-serif;
@@ -178,6 +181,7 @@ div.content{
     -webkit-overflow-scrolling: touch;
     background-color: white;
     box-shadow: 0px 0px 0px 0px red inset;
+    z-index: 10;
 }
 
 #body{
@@ -202,7 +206,7 @@ table.list{
     vertical-align: top;
     border-collapse: collapse;
     padding: 5px;
-    border: 1px dashed black;
+    border: 1px dotted black;
 }
 tr.list{
     position: relative;
@@ -223,6 +227,7 @@ th.list{
     z-index: 10;
     position: sticky;
     top: 0;
+    border-top: 4px solid whitesmoke;
 }
 td.list{
     padding: 0px;
@@ -238,10 +243,11 @@ td.list{
 }
 a.link{
     position: absolute;
+    top: 0;
     left: 0;
     vertical-align: top;
     height: 45px;
-    width: 99%;
+    width: 100%;
     text-align: right;
     cursor: 'pointer';
     

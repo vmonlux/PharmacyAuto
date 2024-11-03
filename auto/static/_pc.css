@@ -215,6 +215,8 @@ th.list{
     font-size: 1.6em;
     font-weight: bold;
     height: 50px;
+    z-index: 10;
+    position: sticky;
 }
 td.list{
     padding: 0px;
@@ -225,6 +227,7 @@ td.list{
     font-weight: none;
     height: 45px;
     overflow: clip;
+    border-collapse: collapse;
 }
 a.link{
     position: absolute;

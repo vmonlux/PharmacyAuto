@@ -19,6 +19,7 @@
     border: 3px solid black;
 }
 
+
 .pc{
     visibility: visible;
 }
@@ -29,10 +30,24 @@
     visibility: collapse;
 }
 
+h1{
+    
+    font-size: 2.5em;
+    font-style: bold;
+    margin-bottom: 0;
+}
+h2{
+    font-size: 3em;
+    font-style: bold;
+    margin-bottom: 0;
+}
+
 div.wrap{
     height: 100vh;
     width: 100vw;
+    overflow: clip;
 }
+
 
 div.title{
     position: absolute;
@@ -41,8 +56,7 @@ div.title{
     height: 80px;
     width: 100vw;
     overflow: clip;
-    border: solid;
-    border-color: green;
+    box-shadow: 0px 0px 0px 10px green inset;
 }
 table.title{
     background-color: #39373E;
@@ -56,18 +70,15 @@ table.title{
     width: 100%;
     height:100%;
     display: inline-block;
-    z-index: 10;
 }
+
 div.menu{
     position: absolute;
     top: 80px;
     left: 0;
     height: 80px;
     width: 100vw;
-    border: none;
-    border-color: red;
-    overflow: clip;
-
+    box-shadow: 0px 0px 0px 10px blue inset;
 }
 table.menu{
     font-family: Lato, sans-serif;
@@ -76,7 +87,6 @@ table.menu{
     height: 80px;
     padding: 0px;
     display: inline-block;
-    z-index: 9;
 }
 a.menu{
     font-family: Lato, sans-serif;
@@ -118,32 +128,52 @@ input.menu{
     vertical-align: middle;
     white-space: nowrap;
 }
+
 div.search{
     position: absolute;
     top: 160px;
     left: 0;
     height: 60px;
     width: 100vw;
-    border: none;
-    border-color: red;
-    overflow: clip;
     background-color: black;
+    overflow: clip;
+    box-shadow: 0px 0px 0px 10px purple inset;
 }
-div.viewer{
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    padding: 2%;
+table.search{
+    font-family: Lato, sans-serif;
+    background-color: black;
     width: 100%;
     height: 100%;
-    border: solid;
-    border-radius: 10px;
-    border-width: 1px 0 0 1px;
-    border-style: outset;
-    border-color: white;
-    background-color: #030304;
-    display: block;
-    z-index: 1;
-    
+    color: #F9F6EE;
+    white-space: nowrap;
+}
+input.search[type=search]{
+    font-family: "MS PGothic", Tahoma, sans-serif;
+    text-align: right;
+    vertical-align: middle;
+    padding: 5px;
+    background: whitesmoke;
+    color: black;
+    font-size: 1.5em;
+    width: 15em;
+    height: 55px;
+}
+input.search[type=submit]{
+    font-family: "MS PGothic", Tahoma, sans-serif;
+    text-align: center;
+    height: 55px;
+}
+
+div.content{
+    position: absolute;
+    top: 220px;
+    left: 0px;
+    height: calc(100vh - 220px);
+    width: 100vw;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-color: black;
+    box-shadow: 0px 0px 0px 10px red inset;
 }
 
 #body{
@@ -152,31 +182,8 @@ div.viewer{
     font-size: 24pt;
     background-color: #F9F6EE;
 }
-#blocker{
-    z-index: 6;
-}
-
-
-
-
-table.searchBar{
-    position: fixed;
-    top: 270px;
-    font-family: Lato, sans-serif;
-    background-color: #5e6a71;
-    width: 100%;
-    padding: 15px;
-    padding-top: 50px;
-    color: #F9F6EE;
-    white-space: nowrap;
-    z-index: 8;
-}
 
 table.list{
-    position: absolute;
-    top: 440px;
-    margin-left: auto;
-    margin-right: auto;
     font-family: Lato, sans-serif;
     color: #39373E;
     text-transform: uppercase;
@@ -184,16 +191,11 @@ table.list{
     font-size: 1.3em;
     font-weight: none;
     text-align: left;
-    padding: 5px;
-    left: 10px;
     width: 100%;
     white-space: nowrap;
-    margin-top: 0px;
-    margin-bottom: 0px;
     border-spacing: 0px; 
     vertical-align: top;
     border-collapse: collapse;
-    z-index: 1;
 }
 
 table.masterlist{
@@ -242,17 +244,7 @@ table.detail{
     z-index: 1;
 }
 
-h1{
-    
-    font-size: 2.5em;
-    font-style: bold;
-    margin-bottom: 0;
-}
-h2{
-    font-size: 3em;
-    font-style: bold;
-    margin-bottom: 0;
-}
+
 
 
 
@@ -418,14 +410,12 @@ tr.list{
 }
 
 th{
-    top: 0;
-    position: sticky;
+
     padding: 10px;
     text-align: left;
 }
 th.tdList{
-    top: 0;
-    position: sticky;
+
     font-size: 1.6em;
     font-weight: bold;
 }
@@ -437,10 +427,6 @@ th.tdList{
     text-align: left;
     font-size: 1.5em;
     font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 td.list{
     padding: 0px;
@@ -449,10 +435,7 @@ td.list{
     border-right: 1px dotted black;
     text-align: left;
     font-weight: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+
 
 }
 .rowLink{
@@ -482,17 +465,7 @@ input[type=number]{
     font-size: 2em;
     width: 100px;
 }
-input[type=search]{
-    font-family: "MS PGothic", Tahoma, sans-serif;
-    text-align: right;
-    vertical-align: middle;
-    padding: 5px;
-    background: whitesmoke;
-    color: black;
-    font-size: 2.5em;
-    width: 15em;
-    height: 2em;
-}
+
 input[type=text]{
     font-family: "MS PGothic", Tahoma, sans-serif;
     text-align: right;
@@ -522,10 +495,7 @@ select{
     width: 10em;
     height: 1.5em;
 }
-input[type=submit]{
-    font-family: "MS PGothic", Tahoma, sans-serif;
-    text-align: center;
-}
+
 
 
 }

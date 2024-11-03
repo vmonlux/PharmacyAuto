@@ -200,7 +200,7 @@ table.list{
     font-weight: light;
     font-size: 1.5em;
     text-align: left;
-    width: 100%;
+    width: calc(100% - 5px);
     height: 10px;
     white-space: nowrap;
     border-spacing: 0px; 
@@ -249,7 +249,7 @@ a.link{
     left: 0;
     vertical-align: top;
     height: 43px;
-    width: calc(100vw - 5px);
+    width: calc(100% - 5px);
     text-align: right;
     cursor: 'pointer';
     

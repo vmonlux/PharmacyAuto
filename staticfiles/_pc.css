@@ -150,8 +150,7 @@ table.search{
     height: 100%;
     color: #F9F6EE;
     white-space: nowrap;
-    text-align: center;
-    align-content: center;
+    text-align: left;
 }
 input.search[type=search]{
     font-family: "MS PGothic", Tahoma, sans-serif;
@@ -161,7 +160,7 @@ input.search[type=search]{
     background: whitesmoke;
     color: black;
     font-size: 1.5em;
-    width: 25em;
+    width: 600px;
     height: 55px;
 }
 input.search[type=submit]{

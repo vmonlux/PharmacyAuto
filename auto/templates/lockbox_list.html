@@ -1,86 +1,57 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-
-<script>
-    function toggleMenu(){
-        var menu1 = document.getElementById('menu1');
-        var menu2 = document.getElementById('menu2');
-        if(menu1.style.display == "none"){
-            menu1.style.display = "block";
-            menu2.style.display = "none";
-        }else{
-            menu1.style.display = "none";
-            menu2.style.display = "block";
-        }
-    }
-</script>
-
-<div id="menu1" style="display:none">
-<table class="menuBar">
-    <tr>
-        <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-        <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()">></a></td>
-    </tr>
-</table>
-</div>
-
-<div id="menu2" style="display:block">
-    <table class="menuBar">
+<div class="menu">
+    <table class="menu">
         <tr>
-            <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
-            <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
-            <td><a class="vMenuSelect" href="{% url 'lockboxes' %}">Lockbox</a></td>
-            
+            <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
+            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
+            <td><a class="menu select" href="{% url 'lockboxes' %}">Lockboxes</a></td>
         </tr>
     </table>
 </div>
+{% endblock %}
 
+{% block search %}
+<div class="search">
+<table class='search'>
+    <tr>
+        <td>
+            <form action="" method="get">
+                <input name="q" type="search" class="search" placeholder="Search..."> <input type="submit" class="search" value="Search">
+            </form>
+        </td>
+    </tr>
+</table>
+</div>
 {% endblock %}
 
 {% block content %}
 
-<div id="searchBar">
-    <center>
-    <table class='searchBar' width=80%>
-        <tr>
-            <td></td>
-            <td align=right>
-                <form action="" method="get">
-                    <input name="q" type="search" placeholder="Search..."> <input type="submit" value="Search">
-                </form>
-            </td>
-            <td width=3%>&nbsp;</td>
+<div class="content">
+
+    <table class="list">
+        <thead>
+        <tr class="list">
+            <th class="list"> </th>
+            <th class="list">Omnicell</th>
+            <th class="list">Medication</th>
+            <th class="list">Key</th>
+            <th class="list"> </th>
+            <th class="list"> </th>
+        </tr>
+        </thead>
+    {% for object in object_list %}
+        <tr class="list">
+            <td class="list">{%if object.Emergency%}<font style="font-weight:400;color:red;">&#x26A0;</font>{%endif%}</td>
+            <td class="list">{{ object.Refrigerator.Omnicell }}</td>
+            <td class="list">{{ object.Medication }}</td>
+            <td class="list">{{ object.Key }}</td>
+            <td class="list"><a class="link" href="{% url 'viewLockbox' object.pk %}">  </a></td>
+        </tr>
+    {% endfor %}
     </table>
-</center>
-</div>
-<br>
-<div id="viewer">
-
-
-<table class="list" width=90%>
-    <tr class="rowList">
-        <th class="tdList" width="20%">Omnicell</th>
-        <th class="tdList" width="10%">Medication</th>
-        <th class="tdList">Key</th>
-        <th></th>
-    </tr>
-
-    <tr>
-        <td>&nbsp;</td>
-    </tr>
-{% for object in object_list %}
-    <tr class="rowList">
-        <td class="tdList">{{ object.Refrigerator.Omnicell }}</td>
-        <td class="tdList">{{ object.Medication }}</td>
-        <td class="tdList">{{ object.Key }}</td>
-        <td><a class="rowLink" href="{% url 'viewLockbox' object.pk %}">  </a></td>
-    </tr>
-{% endfor %}
-</table>
-
-
 
 </div>
+
 {% endblock %}

@@ -198,6 +198,49 @@ table.list{
     vertical-align: top;
     border-collapse: collapse;
 }
+tr.list{
+    position: relative;
+    vertical-align: top;           
+}
+
+th{
+    padding: 10px;
+    text-align: left;
+}
+th.list{
+    font-size: 1.6em;
+    font-weight: bold;
+}
+td.list{
+    padding: 0px;
+    text-align: left;
+    vertical-align: middle;
+    border-right: 1px dotted black;
+    text-align: left;
+    font-weight: none;
+}
+a.link{
+    position: absolute;
+    left: 0;
+    vertical-align: top;
+    height: 4em;
+    width: 99%;
+    text-align: right;
+    cursor: 'pointer';
+    border-top: 1px dotted;
+    border-bottom: 1px dotted;
+    border-color: #11161d;
+    border-radius: 1px;
+}
+.rowLink:hover{
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.rowList{
+    position: relative;
+    height: 4em;
+    vertical-align: top;           
+}
 
 table.masterlist{
     position: absolute;
@@ -399,63 +442,9 @@ a.submenu:hover, a.submenu:focus, input[type=submit]:hover, input[type=submit]:f
     transition: 500ms;
 }
 
-.rowList{
-    position: relative;
-    height: 4em;
-    vertical-align: top;           
-}
-
-tr.list{
-    position: relative;
-    vertical-align: top;           
-}
-
-th{
-
-    padding: 10px;
-    text-align: left;
-}
-th.tdList{
-
-    font-size: 1.6em;
-    font-weight: bold;
-}
-.tdList{
-    padding: 0px;
-    text-align: left;
-    vertical-align: middle;
-    border-right: 1px dotted black;
-    text-align: left;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-td.list{
-    padding: 0px;
-    text-align: left;
-    vertical-align: middle;
-    border-right: 1px dotted black;
-    text-align: left;
-    font-weight: none;
 
 
-}
-.rowLink{
-    position: absolute;
-    left: 0;
-    vertical-align: top;
-    height: 4em;
-    width: 99%;
-    text-align: right;
-    cursor: 'pointer';
-    border-top: 1px dotted;
-    border-bottom: 1px dotted;
-    border-color: #11161d;
-    border-radius: 1px;
-}
-.rowLink:hover{
-    border: 2px solid black;
-    border-radius: 4px;
-}
+
 
 
 input[type=number]{

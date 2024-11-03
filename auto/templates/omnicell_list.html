@@ -31,23 +31,19 @@
 
 
 <table class="list">
-    <tr class="rowList">
-        <th class="tdList"></th>
-        <th class="tdList" width="5%">Omnicell</th>
-        <th class="tdList">Description</th>
-        <th class="tdList" width="5%">Serial</th>
-    </tr>
-
-    <tr>
-        <td>&nbsp;</td>
+    <tr class="list">
+        <th class="list"></th>
+        <th class="list">Omnicell</th>
+        <th class="list">Description</th>
+        <th class="list">Serial</th>
     </tr>
 {% for object in object_list %}
-    <tr class="rowList">
-        <td class="'tdList">{%if object.Emergency%}<font style="font-weight:400;color:red;">&#x26A0;</font>{%endif%}</td>
-        <td class="tdList">{{ object.Omni_Id }} </td>
-        <td class="tdList">{{ object.Omni_Description|truncatechars:28 }}</td>
-        <td class="tdList">{{ object.Serial_Number }}</td>
-        <td><a class="rowLink" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
+    <tr class="list">
+        <td class="'list">{%if object.Emergency%}<font style="font-weight:400;color:red;">&#x26A0;</font>{%endif%}</td>
+        <td class="list">{{ object.Omni_Id }} </td>
+        <td class="list">{{ object.Omni_Description|truncatechars:28 }}</td>
+        <td class="list">{{ object.Serial_Number }}</td>
+        <td><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
     </tr>
 {% endfor %}
 </table>

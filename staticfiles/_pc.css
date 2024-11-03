@@ -235,13 +235,19 @@ td.list{
     padding-left: 5px;
     text-align: left;
     vertical-align: middle;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
     text-align: left;
     font-weight: none;
     height: 45px;
     overflow: clip;
     border-collapse: collapse;
+}
+td.list:after{
+    content: "";
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+
 }
 a.link{
     position: absolute;

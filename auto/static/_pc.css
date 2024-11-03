@@ -207,7 +207,7 @@ table.list{
     vertical-align: top;
     border-collapse: collapse;
     padding: 5px;
-    border: 1px dotted black;
+    border: 0px dotted black;
 }
 tr.list{
     position: relative;
@@ -235,8 +235,8 @@ td.list{
     padding-left: 5px;
     text-align: left;
     vertical-align: middle;
-    border-top: 1px dotted black;
-    border-bottom: 1px dotted black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     text-align: left;
     font-weight: none;
     height: 45px;
@@ -248,7 +248,7 @@ a.link{
     top: 0;
     left: 0;
     vertical-align: top;
-    height: 43px;
+    height: 42px;
     width: calc(100% - 5px);
     text-align: right;
     cursor: 'pointer';

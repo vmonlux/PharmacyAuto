@@ -323,6 +323,7 @@ table.detail{
     font-weight: bold;
     text-align: left;
     width: 100%;
+    height: 10px;
     white-space: nowrap;
     left: 30px;
     margin-top: 0px;

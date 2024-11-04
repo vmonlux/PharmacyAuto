@@ -48,7 +48,6 @@ div.wrap{
     overflow: clip;
 }
 
-
 div.title{
     position: absolute;
     top: 0;
@@ -290,9 +289,8 @@ table.detail{
     font-family: Lato, sans-serif;
     color: #39373E;
     text-transform: uppercase;
-    font-weight: lighter;
+    font-weight: 500;
     font-size: 1.5em;
-    font-weight: bold;
     text-align: left;
     width: 100%;
     height: 10px;

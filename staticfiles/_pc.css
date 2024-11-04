@@ -304,6 +304,8 @@ table.detail{
 th.detail{
     background-color: #23395d;
     color: white;
+    height: 15px;
+    padding: 15px;
 }
 td.label{
     padding: 10px;

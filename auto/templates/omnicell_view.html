@@ -111,10 +111,8 @@
         </tr>
 
         <tr>
-            {% for Refrigerator in Refrigerators %}
-                            
-            <td><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>
-                            
+            {% for Refrigerator in Refrigerators %}              
+            <td class="detail"><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>               
             {% endfor %}
         </tr>
         {% endif %}
@@ -125,18 +123,12 @@
 
         {% if Auxs %}
         <tr>
-            <td align="right" valign=middle style="padding-right:10px;">Aux Cabinets:</td>
-            <td valign=middle>
-                <table>
-                    <tr>
-                        {% for Aux in Auxs %}
-                            
-                            <td><a class='aux' href='{% url "viewAux" Aux.pk %}'>{{Aux.Serial_Number}}<br>{{Aux.Model}}</a></td>
-                            
-                        {% endfor %}
-                    </tr>
-                </table><Br><br>
-            </td>
+            <th colspan=100 class="detail">Aux Units</th>
+        </tr>
+        <tr>
+            {% for Aux in Auxs %}              
+            <td><a class='aux' href='{% url "viewAux" Aux.pk %}'>{{Aux.Serial_Number}}<br>{{Aux.Model}}</a></td>               
+            {% endfor %}
         </tr>
         {% endif %}
 

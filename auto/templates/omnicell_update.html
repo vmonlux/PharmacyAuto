@@ -2,38 +2,30 @@
 
 {% block menu %}
 
-<script>
-    function toggleMenu(){
-        var menu1 = document.getElementById('menu1');
-        var menu2 = document.getElementById('menu2');
-        if(menu1.style.display == "none"){
-            menu1.style.display = "block";
-            menu2.style.display = "none";
-        }else{
-            menu1.style.display = "none";
-            menu2.style.display = "block";
-        }
-    }
-</script>
-
-<div id="menu1" style="display:block">
-<table class="menuBar">
-    <tr>
-        <td><a class="vMenuSelect" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-        <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()">></a></td>
-    </tr>
-</table>
+<div class="menu">
+    <table class="menu">
+        <tr>
+            <td><a class="menu select" href="{% url 'omnicells' %}">Omnicells</a></td>
+            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
+            <td><a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a></td>
+        </tr>
+    </table>
 </div>
 
-<div id="menu2" style="display:none">
-    <table class="menuBar">
+{% endblock %}
+
+{% block search %}
+
+<div class="search">
+    <table class='search'>
         <tr>
-            <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
-            <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
-            <td><a class="vMenu" href="{% url 'lockboxes' %}">Lockbox</a></td>
-            
-        </tr>
+            <tr>
+                <td class="button"><input type=submit class='search' value="Save"></td>
+                <td class="button"></td>
+                <td class="button"><a class='search' href='{% url "viewOmnicell" object.pk %}'>Cancel</a></td>
+                <td class="search"><h2>{{object.Omni_Id}}</h2></td>
+                <td width="100%"></td>
+            </tr>
     </table>
 </div>
 
@@ -66,24 +58,11 @@
     
        <!-- Using the formset -->
 
-<div id="searchBar">
-    <center>
-    <table class='searchBar' width=90%>
-        <tr>
-            <tr>
-                <td width="10%"><input type=submit class='submenu' value="Save"></td>
-                <td width="10%"><a class='submenu' href='{% url "viewOmnicell" object.pk %}'>Cancel</a></td>
-                <td align=center><h2>{{object.Omni_Id}}</h2></td>
-            </tr>
-    </table>
-</center>
-</div>
-<br>
-<div id="viewer">
 
-<div id="main">
 
-    <table width="90%" class='detail'>
+<div name="content">
+
+    <table class='detail'>
         
 
         <tr>

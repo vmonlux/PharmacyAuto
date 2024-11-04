@@ -2,37 +2,28 @@
 
 {% block menu %}
 
-<script>
-    function toggleMenu(){
-        var menu1 = document.getElementById('menu1');
-        var menu2 = document.getElementById('menu2');
-        if(menu1.style.display == "none"){
-            menu1.style.display = "block";
-            menu2.style.display = "none";
-        }else{
-            menu1.style.display = "none";
-            menu2.style.display = "block";
-        }
-    }
-</script>
-
-<div id="menu1" style="display:block">
-<table class="menuBar">
-    <tr>
-        <td><a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a></td>
-        <td><a class="vMenuSelect" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-        <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()">></a></td>
-    </tr>
-</table>
+<div class="menu">
+    <table class="menu">
+        <tr>
+            <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
+            <td><a class="menu select" href="{% url 'refrigerators' %}">Refrigerators</a></td>
+            <td><a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a></td>
+        </tr>
+    </table>
 </div>
 
-<div id="menu2" style="display:none">
-    <table class="menuBar">
+{% endblock %}
+
+{% block search %}
+
+<div class="search">
+    <table class="search">
         <tr>
-            <td><a class="vMenu" style="width:1em;font-size:2.5em;" href="#" onClick="toggleMenu()"><</a></td>
-            <td><a class="vMenu" href="{% url 'auxs' %}">Aux</a></td>
-            <td><a class="vMenu" href="{% url 'lockboxes' %}">Lockbox</a></td>
-            
+            <td class="button"><a class="search" href="{% url 'updateRefrigerator' object.pk %}">EDIT</a></td>
+            <td class="button"></td>
+            <td class="button"></td>
+            <td><h2>{{object.Facilities_Id}}</h2></td>
+            <td width="100%"></td>
         </tr>
     </table>
 </div>
@@ -41,44 +32,28 @@
 
 {% block content %}
 
-<div id="searchBar">
-    <center>
-    <table class="searchBar" width=90%>
+<div class="content">
+
+    <table class='detail'>
         <tr>
-            <tr>
-                <td width="25%"><a class="submenu" href="{% url 'updateRefrigerator' object.pk %}">EDIT</a></td>
-                <td align=center><h2>{{object.Facilities_Id}}</h2></td>
-            </tr>
+            <th colspan=100 class="detail">Hardware</th>
+        </tr>
+        <tr>
+            <td class="label">Description:</td>
+            <td class="detail">{{object.Omni_Description}}</td>
+            <td width="100%"></td>
+        </tr>
+
+        <tr>
+            <td class="label">Serial #:</td>
+            <td class="detail">{{object.Serial_Number}}</td>
+        </tr>
+
+        <tr>
+            <td class="label">Model:</td>
+            <td class="detail">{{object.Model}}</td>
+        </tr>
     </table>
-</center>
-</div>
-<br>
-<div id="viewer">
-
-<div id="main">
-
-    <table width="90%" class='detail'>
-        
-
-        <tr>
-            <td align="right" width="150px" style="padding-right:10px;">Facilities ID:</td>
-            <td>{{object.Facilities_Id}}</td>
-            <td rowspan=3>{%if object.Omnicell%}<a class="omni" href="{% url 'viewOmnicell' object.Omnicell.pk %}">Go to<br>{{object.Omnicell}}</a>{%endif%}</td>
-        </tr>
-
-        <tr>
-            <td align="right" style="padding-right:10px;">Omnicell:</td>
-            <td>{{object.Omnicell}}</td>
-        </tr>
-
-        <tr>
-            <td align="right" style="padding-right:10px;">Type:</td>
-            <td>{{object.Type}}</td>
-        </tr>
-
-    </table>
-
-</div>
 </div>
 
 {% endblock %}

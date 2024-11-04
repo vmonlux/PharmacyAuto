@@ -301,6 +301,10 @@ table.detail{
     border-collapse: collapse;
     z-index: 1;
 }
+th.detail{
+    background-color: #23395d;
+    color: white;
+}
 td.label{
     padding: 10px;
     text-align: right;

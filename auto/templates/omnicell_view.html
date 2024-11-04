@@ -35,7 +35,9 @@
 <div class="content">
 
     <table class='detail'>
-        
+        <tr>
+            <th colspan=100 class="detail">Hardware</th>
+        </tr>
         <tr>
             <td class="label">Description:</td>
             <td class="detail">{{object.Omni_Description}}</td>
@@ -53,7 +55,7 @@
         </tr>
 
         <tr>
-            <td colspan="3"><br><hr><br></td>
+            <th colspan=100 class="detail">Location</th>
         </tr>
 
         <tr>
@@ -80,8 +82,9 @@
             <td class="detail">{{object.Door_Code}}</td>
         </tr>
         {% endif %}
+        
         <tr>
-            <td colspan="3"><br><hr><br></td>
+            <th colspan=100 class="detail">Software</th>
         </tr>
 
         <tr>
@@ -101,11 +104,11 @@
             <td colspan="2" class="detail">{{ object.Note }}</td>
         </tr>
 
-        <tr>
-            <td colspan="3"><br><hr><br></td>
-        </tr>
         
         {% if Refrigerators %}
+        <tr>
+            <th colspan=100 class="detail">Refrigerators</th>
+        </tr>
         <tr>
             <td align="right" valign=middle style="padding-right:10px;">Refrigerators:</td>
             <td valign=middle>

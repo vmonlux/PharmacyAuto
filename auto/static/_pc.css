@@ -294,13 +294,19 @@ table.detail{
     font-size: 1.5em;
     font-weight: bold;
     text-align: left;
-    padding: 15px;
     width: 100%;
     height: 10px;
     white-space: nowrap;
     vertical-align: top;
     border-collapse: collapse;
     z-index: 1;
+}
+td.label{
+    padding: 15px;
+    text-align: right;
+}
+td.detail{
+    padding: 15px;
 }
 
 

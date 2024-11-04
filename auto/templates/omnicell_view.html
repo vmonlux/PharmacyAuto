@@ -38,18 +38,18 @@
         
 
         <tr>
-            <td align="right" width="150px" style="padding-right:10px;">Description:</td>
-            <td>{{object.Omni_Description}}</td>
+            <td class="label">Description:</td>
+            <td class="detail">{{object.Omni_Description}}</td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Serial #:</td>
-            <td>{{object.Serial_Number}}</td>
+            <td class="label">Serial #:</td>
+            <td class="detail">{{object.Serial_Number}}</td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Model:</td>
-            <td>{{object.Model}}</td>
+            <td class="label">Model:</td>
+            <td class="detail">{{object.Model}}</td>
         </tr>
 
         <tr>
@@ -57,27 +57,27 @@
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Building:</td>
-            <td>{{object.Building}}</td>
+            <td class="label">Building:</td>
+            <td class="detail">{{object.Building}}</td>
             
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Area:</td>
-            <td>{{object.Area}}</td>
+            <td class="label">Area:</td>
+            <td class="detail">{{object.Area}}</td>
             
         </tr>
         {% if object.Room %}
         <tr>
-            <td align="right" style="padding-right:10px;">Room:</td>
-            <td>{{object.Room}}</td>
+            <td class="label">Room:</td>
+            <td class="detail">{{object.Room}}</td>
         </tr>
         {% endif %}
 
         {% if object.Door_Code %}
         <tr>
-            <td align="right" style="padding-right:10px;">Door Code:</td>
-            <td>{{object.Door_Code}}</td>
+            <td class="label">Door Code:</td>
+            <td class="detail">{{object.Door_Code}}</td>
         </tr>
         {% endif %}
         <tr>
@@ -85,20 +85,20 @@
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">CT Version:</td> 
-            <td>{{object.CT_Version}}</td>
+            <td class="label">CT Version:</td> 
+            <td class="detail">{{object.CT_Version}}</td>
             
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Ivanti:</td>
-            <td>{% if object.Ivanti %}Yes{%else%}No{%endif%}</td>
+            <td class="label">Ivanti:</td>
+            <td class="detail">{% if object.Ivanti %}Yes{%else%}No{%endif%}</td>
             
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Notes:</td>
-            <td colspan="2">{{ object.Note }}</td>
+            <td class="label">Notes:</td>
+            <td colspan="2" class="detail">{{ object.Note }}</td>
         </tr>
 
         <tr>

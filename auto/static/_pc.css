@@ -302,11 +302,11 @@ table.detail{
     z-index: 1;
 }
 td.label{
-    padding: 15px;
+    padding: 10px;
     text-align: right;
 }
 td.detail{
-    padding: 15px;
+    padding: 10px;
 }
 
 

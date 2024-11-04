@@ -21,8 +21,8 @@
         <tr>
             <tr>
                 <td class="button"><input type=submit class='search' value="Save"></td>
-                <td class="button"></td>
                 <td class="button"><a class='search' href='{% url "viewOmnicell" object.pk %}'>Cancel</a></td>
+                <td class="button"></td>
                 <td class="search"><h2>{{object.Omni_Id}}</h2></td>
                 <td width="100%"></td>
             </tr>
@@ -66,26 +66,27 @@
         
 
         <tr>
-            <td align="right" width="150px" style="padding-right:10px;">Description:</td>
-            <td>{{form.Omni_Description}}</td>
-            <td rowspan="3" style="width:40%;">
-                
-            </td>
+            <td class="label">Description:</td>
+            <td class="detail">{{form.Omni_Description}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Serial #:</td>
-            <td>{{form.Serial_Number}}</td>
+            <td class="label">Serial #:</td>
+            <td class="detail">{{form.Serial_Number}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Model:</td>
-            <td>{{form.Model}}</td>
+            <td class="label">Model:</td>
+            <td class="detail">{{form.Model}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Emergency:</td>
-            <td>{{form.Emergency}}</td>
+            <td class="label">Emergency:</td>
+            <td class="detail">{{form.Emergency}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
@@ -93,27 +94,27 @@
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Building:</td>
-            <td>{{form.Building}}</td>
-            <td></td>
+            <td class="label">Building:</td>
+            <td class="detail">{{form.Building}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Area:</td>
-            <td>{{form.Area}}</td>
-            <td></td>
+            <td class="label">Area:</td>
+            <td class="detail">{{form.Area}}</td>
+            <td width="100%"></td>
         </tr>
         
         <tr>
-            <td align="right" style="padding-right:10px;">Room:</td>
-            <td>{{form.Room}}</td>
-            <td></td>
+            <td class="label">Room:</td>
+            <td class="detail">{{form.Room}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Door Code:</td>
-            <td>{{form.Door_Code}}</td>
-            <td></td>
+            <td class="label">Door Code:</td>
+            <td class="detail">{{form.Door_Code}}</td>
+            <td width="100%"></td>
         </tr>
         
         <tr>
@@ -121,24 +122,24 @@
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">CT Version:</td> 
-            <td>{{form.CT_Version}}</td>
-            <td></td>
+            <td class="label">CT Version:</td> 
+            <td class="detail">{{form.CT_Version}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Ivanti:</td>
-            <td>{{form.Ivanti}}</td>
-            <td></td>
+            <td class="label">Ivanti:</td>
+            <td class="detail">{{form.Ivanti}}</td>
+            <td width="100%"></td>
         </tr>
 
         <tr>
-            <td align="right" style="padding-right:10px;">Notes:</td>
-            <td colspan="2">{{form.Note}}</td>
+            <td class="label">Notes:</td>
+            <td class="detail">{{form.Note}}</td>
+            <td width="100%"></td>
         </tr>
     </table>
 
-</div>
 </div>
 </form>
 {% endblock %}

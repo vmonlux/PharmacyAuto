@@ -311,10 +311,6 @@ table.masterlist{
 }
 
 table.detail{
-    position: absolute;
-    top: 450px;
-    margin-left: auto;
-    margin-right: auto;
     font-family: Lato, sans-serif;
     color: #39373E;
     text-transform: uppercase;
@@ -322,12 +318,10 @@ table.detail{
     font-size: 1.8em;
     font-weight: bold;
     text-align: left;
+    padding: 5px;
     width: 100%;
     height: 10px;
     white-space: nowrap;
-    left: 30px;
-    margin-top: 0px;
-    margin-bottom: 0px; 
     vertical-align: top;
     border-collapse: collapse;
     z-index: 1;

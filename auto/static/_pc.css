@@ -489,16 +489,16 @@ input[type=text]{
     color: black;
     font-size: 1.1em;
     width: 10em;
-    height: 1.1em;
+    height: 1.5em;
 }
 input[type=checkbox]{
     text-align: right;
     padding: 5px;
     background: whitesmoke;
     color: black;
-    font-size: 1.1em;
-    width: 1.1em;
-    height: 1.1em;
+    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
 }
 div.select{
     font-family: "MS PGothic", Tahoma, sans-serif;

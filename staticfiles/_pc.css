@@ -487,18 +487,18 @@ input[type=text]{
     padding: 5px;
     background: whitesmoke;
     color: black;
-    font-size: 2em;
+    font-size: 1.1em;
     width: 10em;
-    height: 1.5em;
+    height: 1.1em;
 }
 input[type=checkbox]{
     text-align: right;
     padding: 5px;
     background: whitesmoke;
     color: black;
-    font-size: 2em;
-    width: 2em;
-    height: 2em;
+    font-size: 1.1em;
+    width: 1.1em;
+    height: 1.1em;
 }
 div.select{
     font-family: "MS PGothic", Tahoma, sans-serif;
@@ -506,9 +506,9 @@ div.select{
     padding: 5px;
     background: whitesmoke;
     color: black;
-    font-size: 2em;
+    font-size: 1.1em;
     width: 10em;
-    height: 1.5em;
+    height: 1.1em;
 }
 
 
@@ -518,9 +518,9 @@ div.select{
     padding: 5px;
     background: whitesmoke;
     color: black;
-    font-size: 2em;
-    width: 10em;
-    height: 1.5em;
+    font-size: 1.1em;
+    width: 1.1em;
+    height: 1.1em;
 }
 
 

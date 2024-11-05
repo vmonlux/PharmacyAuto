@@ -500,7 +500,7 @@ input[type=checkbox]{
     width: 2em;
     height: 2em;
 }
-select{
+div.select{
     font-family: "MS PGothic", Tahoma, sans-serif;
     text-align: right;
     padding: 5px;

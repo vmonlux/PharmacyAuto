@@ -248,7 +248,7 @@ th.list{
     font-size: 1.6em;
     font-weight: bold;
     background-color: whitesmoke;
-    height: 50px;
+    height: 80px;
     z-index: 10;
     position: sticky;
     top: 0;
@@ -262,7 +262,7 @@ td.list{
     vertical-align: middle;
     text-align: left;
     font-weight: none;
-    height: 45px;
+    height: 80px;
     overflow: clip;
     border-collapse: collapse;
     border-top: 1px solid black;
@@ -274,7 +274,7 @@ a.link{
     top: 0;
     left: 0;
     vertical-align: top;
-    height: 42px;
+    height: 80px;
     width: calc(100% - 5px);
     text-align: right;
     cursor: 'pointer';

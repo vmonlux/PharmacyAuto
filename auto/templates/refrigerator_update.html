@@ -16,22 +16,6 @@
 
 {% block search %}
 
-<div class="search">
-    <table class='search'>
-        <tr>
-            <tr>
-                <td class="button"><input type=submit class='search' value="Save"></td>
-                <td class="button"><a class='search' href='{% url "viewRefrigerator" object.pk %}'>Cancel</a></td>
-                <td class="button"></td>
-                <td class="search"><h2>{{object.Facilities_Id}}</h2></td>
-                <td width="100%"></td>
-            </tr>
-    </table>
-</div>
-
-{% endblock %}
-
-{% block content %}
 <form method="POST" enctype="multipart/form-data">
     <!-- Form Error Messages -->
        {% if form.errors %}
@@ -57,6 +41,23 @@
        {% csrf_token %}
     
        <!-- Using the formset -->
+
+<div class="search">
+    <table class='search'>
+        <tr>
+            <tr>
+                <td class="button"><input type=submit class='search' value="Save"></td>
+                <td class="button"><a class='search' href='{% url "viewRefrigerator" object.pk %}'>Cancel</a></td>
+                <td class="button"></td>
+                <td class="search"><h2>{{object.Facilities_Id}}</h2></td>
+                <td width="100%"></td>
+            </tr>
+    </table>
+</div>
+
+{% endblock %}
+
+{% block content %}
 
        {% load widget_tweaks %}
 

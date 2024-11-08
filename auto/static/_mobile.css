@@ -134,7 +134,7 @@ div.search{
     position: absolute;
     top: 160px;
     left: 0;
-    height: 60px;
+    height: 80px;
     width: 100vw;
     background-color: black;
     overflow: clip;
@@ -164,7 +164,7 @@ input.search[type=search]{
     color: black;
     font-size: 1.5em;
     width: 600px;
-    height: 55px;
+    height: 80px;
 }
 input.search[type=submit]{
     font-family: "MS PGothic", Tahoma, sans-serif;
@@ -198,9 +198,9 @@ a.search{
 
 div.content{
     position: absolute;
-    top: 218px;
+    top: 238px;
     left: 0px;
-    height: calc(100vh - 220px);
+    height: calc(100vh - 240px);
     width: 100vw;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -272,11 +272,11 @@ td.list{
 
 a.link{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     vertical-align: top;
     height: 80px;
-    width: calc(100% - 5px);
+    width: 90vw;
     text-align: right;
     cursor: 'pointer';
     z-index: 9;

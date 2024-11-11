@@ -19,9 +19,9 @@
     <tr>
         <td class="button"> </td>
         <td><input name="q" type="search" class="search" placeholder="Search..."></td>
-        <td class="button"><input type="submit" class="search" value="Search">
+        <td class="button"><input type="submit" class="search" value="Search"></td>
         <td width="100%"></td>
-        </tr>
+    </tr>
 </table>
 </form>
 </div>
@@ -47,6 +47,7 @@
             <td class="list">{{ object.Omni_Id }}</td>
             <td class="list">{{ object.Omni_Description|truncatechars:28 }}</td>
             <td class="list">{{ object.Serial_Number }}</td>
+            <td width="100%"></td>
             <td class="list"><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
         </tr>
     {% endfor %}

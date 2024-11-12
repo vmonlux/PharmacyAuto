@@ -270,7 +270,7 @@ td.list{
 a.link{
     position: absolute;
     left: 0px;
-    margin: -40px;
+    margin: 0px;
     vertical-align: top;
     height: 80px;
     width: 99vw;

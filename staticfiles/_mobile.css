@@ -270,7 +270,6 @@ td.list{
     z-index: 5;
 }
 
-
 a.link{
     position: absolute;
     top: 0px;
@@ -280,7 +279,7 @@ a.link{
     width: 99vw;
     text-align: right;
     cursor: 'pointer';
-    z-index: 9;
+    z-index: 50;
     
 }
 a.link:hover{

@@ -38,7 +38,7 @@
             <th class="list">Medication</th>
             <th class="list">Key</th>
             <th class="list"> </th>
-            <th class="list"> </th>
+            <th> </th>
         </tr>
         </thead>
     {% for object in object_list %}
@@ -47,7 +47,7 @@
             <td class="list">{{ object.Refrigerator.Omnicell }}</td>
             <td class="list">{{ object.Medication }}</td>
             <td class="list">{{ object.Key }}</td>
-            <td class="list"><a class="link" href="{% url 'viewLockbox' object.pk %}">  </a></td>
+            <td><a class="link" href="{% url 'viewLockbox' object.pk %}">  </a></td>
         </tr>
     {% endfor %}
     </table>

@@ -224,7 +224,7 @@ table.list{
     font-weight: light;
     font-size: 1.5em;
     text-align: left;
-    width: calc(100% - 5px);
+    width: calc(100vw - 5px);
     height: 10px;
     white-space: nowrap;
     border-spacing: 0px; 
@@ -270,7 +270,7 @@ td.list{
 a.link{
     position: absolute;
     left: 0px;
-    top: 0px;
+    margin: -40px;
     vertical-align: top;
     height: 80px;
     width: 99vw;

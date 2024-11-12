@@ -234,7 +234,7 @@ table.list{
     border: 0px dotted black;
 }
 tr.list{
-    position: relative;
+    
     vertical-align: top;           
 }
 thead>tr>th{
@@ -251,7 +251,7 @@ th.list{
     height: 80px;
     position: sticky;
     top: 0;
-    box-shadow: 0px -5px 0px 2px whitesmoke;
+    
     border-bottom: solid 2px black;
 }
 td.list{
@@ -270,6 +270,7 @@ td.list{
 a.link{
     position: absolute;
     left: 0px;
+    top: 0px;
     vertical-align: top;
     height: 80px;
     width: 99vw;

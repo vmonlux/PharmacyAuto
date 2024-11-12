@@ -56,7 +56,7 @@ div.title{
     width: 100vw;
     overflow: clip;
     box-shadow: 0px 0px 0px 0px green inset;
-    z-index: 40;
+    z-index: 1;
 }
 table.title{
     background-color: #39373E;
@@ -79,7 +79,7 @@ div.menu{
     height: 80px;
     width: 100vw;
     box-shadow: 0px 0px 0px 0px blue inset;
-    z-index: 20;
+    z-index: 2;
 }
 table.menu{
     font-family: Lato, sans-serif;
@@ -139,7 +139,7 @@ div.search{
     background-color: black;
     overflow: clip;
     box-shadow: 0px 0px 0px 0px purple inset;
-    z-index: 30;
+    z-index: 3;
 }
 table.search{
     padding-left: 5px;
@@ -206,7 +206,7 @@ div.content{
     -webkit-overflow-scrolling: touch;
     background-color: white;
     box-shadow: 0px 0px 0px 0px red inset;
-    z-index: 10;
+    z-index: 4;
 }
 
 #body{
@@ -249,7 +249,6 @@ th.list{
     font-weight: bold;
     background-color: whitesmoke;
     height: 80px;
-    z-index: 10;
     position: sticky;
     top: 0;
     box-shadow: 0px -5px 0px 2px whitesmoke;
@@ -267,9 +266,7 @@ td.list{
     border-collapse: collapse;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    z-index: 5;
 }
-
 a.link{
     position: absolute;
     top: 0px;
@@ -279,7 +276,7 @@ a.link{
     width: 99vw;
     text-align: right;
     cursor: 'pointer';
-    z-index: 50;
+    z-index: 100;
     
 }
 a.link:hover{
@@ -299,7 +296,6 @@ table.detail{
     white-space: nowrap;
     vertical-align: top;
     border-collapse: collapse;
-    z-index: 1;
 }
 th.detail{
     background-color: #23395d;

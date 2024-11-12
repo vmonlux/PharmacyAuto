@@ -37,7 +37,7 @@
             <th class="list">Omnicell</th>
             <th class="list">Description</th>
             <th class="list">Serial</th>
-            <th class="list"> </th>
+            
             <th class="list"> </th>
         </tr>
         </thead>
@@ -47,7 +47,7 @@
             <td class="list">{{ object.Omni_Id }}</td>
             <td class="list">{{ object.Omni_Description|truncatechars:28 }}</td>
             <td class="list">{{ object.Serial_Number }}</td>
-            <td width="100%"></td>
+            
             <td class="list"><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
         </tr>
     {% endfor %}

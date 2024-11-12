@@ -280,7 +280,7 @@ a.link{
     width: 99vw;
     text-align: right;
     cursor: 'pointer';
-    z-index: 9;
+    z-index: 50;
     
 }
 a.link:hover{

@@ -38,7 +38,7 @@
             <th class="list">Description</th>
             <th class="list">Serial</th>
             
-            <th class="list"> </th>
+            <th> </th>
         </tr>
         </thead>
     {% for object in object_list %}
@@ -48,7 +48,7 @@
             <td class="list">{{ object.Omni_Description|truncatechars:28 }}</td>
             <td class="list">{{ object.Serial_Number }}</td>
             
-            <td class="list"><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
+            <td><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
         </tr>
     {% endfor %}
     </table>

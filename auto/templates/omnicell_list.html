@@ -48,7 +48,7 @@
             <td class="list">{{ object.Omni_Description|truncatechars:28 }}</td>
             <td class="list">{{ object.Serial_Number }}</td>
             
-            <td><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
+            <td class="link"><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
         </tr>
     {% endfor %}
     </table>

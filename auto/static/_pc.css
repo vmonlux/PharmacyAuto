@@ -286,6 +286,11 @@ td.list{
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
+td.link{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
 
 a.link{
     position: absolute;

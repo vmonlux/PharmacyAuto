@@ -28,6 +28,9 @@ class OmnicellList(ListView):
         queryset = super(OmnicellList, self).get_queryset()
         if query == None:
             return queryset
+        elif query == "emergency":
+            filter = queryset.filter(Emergency=True)
+            return filter
         else:
             filter = queryset.filter(
                 Q(Omni_Id__icontains=query) |

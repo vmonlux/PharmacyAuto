@@ -158,7 +158,7 @@ class RefrigeratorModel(models.Model):
     
     # Methods
     def __str__(self):
-        return self.id
+        return self.ModelName
 
 # class theclass(models.Model):
 #     """Class Description"""

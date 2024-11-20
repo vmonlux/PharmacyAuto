@@ -64,6 +64,8 @@ class Refrigerator(models.Model):
     Facilities_Id = models.CharField(max_length=50, blank=True, null=True)
     Omnicell = models.ForeignKey("Omnicell", on_delete=models.SET_NULL, blank=True, null=True)
     Type = models.CharField(max_length=50, blank=True, null=True)
+    Model = models.ForeignKey("RefrigeratorModel", on_delete=models.SET_NULL, blank=True, null=True)
+    Wheels = models.BooleanField(default=False)
     Broken = models.BooleanField(default=False)
 
     # Metadata
@@ -154,7 +156,7 @@ class RefrigeratorModel(models.Model):
 
     # Metadata
     class Meta:
-        ordering = ['id']
+        ordering = ['ModelName']
     
     # Methods
     def __str__(self):

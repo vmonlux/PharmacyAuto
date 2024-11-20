@@ -143,6 +143,7 @@ class RefrigeratorModel(models.Model):
 
     #Fields
     id = models.BigAutoField(primary_key=True)
+    Category = models.CharField(max_length=50, blank=True, null=True)
     ModelName = models.CharField(max_length=50, blank=True, null=True)
     Screen = models.BooleanField(default=False)
     Window = models.BooleanField(default=False)

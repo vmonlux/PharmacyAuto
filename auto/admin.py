@@ -12,4 +12,4 @@ admin.site.register(Site)
 admin.site.register(Building)
 admin.site.register(Aux)
 admin.site.register(Lockbox)
-
+admin.site.register(RefrigeratorModel)

@@ -201,6 +201,9 @@ class RefrigeratorList(ListView):
         queryset = super(RefrigeratorList, self).get_queryset()
         if query == None:
             return queryset
+        elif query =="none":
+            filter = queryset.filter(Model=None)
+            return filter
         else:
             filter = queryset.filter(
                 Q(Facilities_Id__icontains=query) |

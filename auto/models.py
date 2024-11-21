@@ -27,7 +27,7 @@ class Omnicell(models.Model):
     Emergency = models.BooleanField(default=False)
     Note = models.TextField(max_length=500, blank=True, null=True)
     
-    
+    Port_Name = models.CharField(max_length=10, blank=True, null=True)
     
 
     # Metadata
@@ -161,6 +161,22 @@ class RefrigeratorModel(models.Model):
     # Methods
     def __str__(self):
         return self.ModelName
+
+
+class portLocation(models.Model):
+    """Class Description"""
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    Description = models.CharField(max_length=50, blank=True, null=True)
+
+    # Metadata
+    class Meta:
+        ordering = ['id']
+    
+    # Methods
+    def __str__(self):
+        return self.id
 
 # class theclass(models.Model):
 #     """Class Description"""

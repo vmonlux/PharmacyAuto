@@ -206,7 +206,9 @@ class RefrigeratorList(ListView):
                 Q(Facilities_Id__icontains=query) |
                 Q(Omnicell__Omni_Id__icontains=query) |
                 Q(Omnicell__Omni_Description__icontains=query) |
-                Q(Type__icontains=query)
+                Q(Type__icontains=query) |
+                Q(Model__ModelName__icontains=query) |
+                Q(Model__Category__icontains=query)
             )
             return filter
     

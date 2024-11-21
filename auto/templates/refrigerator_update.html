@@ -79,7 +79,13 @@
 
         <tr>
             <td class="label">Model:</td>
-            <td class="detail">{{form.Type}}</td>
+            <td class="detail">{{form.Model|add_class:"dropdown"}}</td>
+            <td width="100%"></td>
+        </tr>
+
+        <tr>
+            <td class="label">Type:</td>
+            <td class="detail">{{object.Type}}</td>
             <td width="100%"></td>
         </tr>
 

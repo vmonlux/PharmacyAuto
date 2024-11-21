@@ -24,7 +24,7 @@ class LockboxForm(ModelForm):
 class RefrigeratorForm(ModelForm):
     class Meta:
         model = Refrigerator
-        fields = ['Facilities_Id', 'Type', 'Omnicell']
+        fields = ['Facilities_Id', 'Omnicell', 'Model']
         widgets = {
             'Facilities_Id': forms.TextInput(attrs={'class': 'inputField'}),
         }

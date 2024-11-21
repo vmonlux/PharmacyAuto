@@ -36,6 +36,7 @@
             <th class="list"> </th>
             <th class="list">Omnicell</th>
             <th class="list">Refrigerator</th>
+            <th class="list">Model</th>
             <th class="list">Type</th>
             
             <th> </th>
@@ -46,6 +47,7 @@
             <td class="list"></td>
             <td class="list">{{ object.Omnicell }}</td>
             <td class="list">{{ object.Facilities_Id }}</td>
+            <td class="list">{{object.Model}}</td>
             <td class="list">{{ object.Type }}</td>
             <td><a class="link" href="{% url 'viewRefrigerator' object.pk %}">  </a></td>
         </tr>

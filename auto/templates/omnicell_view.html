@@ -112,7 +112,7 @@
 
         <tr>
             {% for Refrigerator in Refrigerators %}              
-            <td class="detail"><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Type}}</a></td>               
+            <td class="detail"><a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>{{Refrigerator.Facilities_Id}}<br>{{Refrigerator.Model.Category}}<br>{{Refrigerator.Model.ModelName}}</a></td>               
             {% endfor %}
         </tr>
         {% endif %}

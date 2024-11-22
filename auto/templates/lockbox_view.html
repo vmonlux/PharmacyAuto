@@ -74,7 +74,12 @@
             <td class="detail"><a class="omni" href="{% url 'viewOmnicell' object.Refrigerator.Omnicell.pk %}">Go to<br>{{object.Refrigerator.Omnicell}}</a></td>
             {%endif%}
             {%if object.Refrigerator%}
-            <td class="detail"><a class="ref" href="{% url 'viewOmnicell' object.Refrigerator.pk %}">Go to<br>{{object.Refrigerator}}</a></td>
+            <td class="detail">
+                <a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>
+                    {{Refrigerator.Facilities_Id}}<br>
+                    {{Refrigerator.Model.Category}}<br>
+                    {{Refrigerator.Model.ModelName}}</a>
+            </td>
             {%endif%}
         </tr>
     </table>

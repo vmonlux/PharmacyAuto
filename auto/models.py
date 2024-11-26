@@ -29,6 +29,7 @@ class Omnicell(models.Model):
     
     Port_Name = models.CharField(max_length=10, blank=True, null=True)
     Port_Location = models.ForeignKey("portLocation", on_delete=models.SET_NULL, blank=True, null=True)
+    Boom = models.BooleanField(default=False)
     
 
     # Metadata

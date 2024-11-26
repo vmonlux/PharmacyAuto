@@ -28,6 +28,7 @@ class Omnicell(models.Model):
     Note = models.TextField(max_length=500, blank=True, null=True)
     
     Port_Name = models.CharField(max_length=10, blank=True, null=True)
+    Port_Location = models.ForeignKey("portLocation", on_delete=models.SET_NULL, blank=True, null=True)
     
 
     # Metadata

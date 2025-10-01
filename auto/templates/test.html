@@ -8,27 +8,21 @@
 
 {% block menu %}
 <div class="menu">
-    <table class="menu">
-        <tr>
-            <td><a class="menu select" href="{% url 'omnicells' %}">Omnicells</a></td>
-            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-            <td><a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a></td>
-        </tr>
-    </table>
+
+    <a class="menu select" href="{% url 'omnicells' %}">Omnicells</a>
+    <a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a>
+    <a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a>
+    
 </div>
 {% endblock %}
 
 {% block search %}
 <div class="search">
 <form action="" method="get">
-<table class='search'>
-    <tr>
-        <td class="button"> </td>
-        <td><input name="q" type="search" class="search" placeholder="Search..."></td>
-        <td class="button"><input type="submit" class="search" value="Search"></td>
-        <td width="100%"></td>
-    </tr>
-</table>
+
+<input name="q" type="search" class="search" placeholder="Search...">
+<input type="submit" class="search" value="Search">
+
 </form>
 </div>
 {% endblock %}

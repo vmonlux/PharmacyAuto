@@ -1,0 +1,58 @@
+:root {
+    --title-txt-font: "Co Headline Corp Light Regular", "Co Headline Bold", sans-serif!important;
+    --title-txt-color: #F9F6EE;
+    --title-txt-size: 100px;
+    --title-bg-color: #39373E;
+    --title-height: 80px;
+
+    --menu-txt-font: Lato, sans-serif;
+    --menu-txt-color: #f6f6f6;
+    --menu-txt-size: 100px;
+    --menu-bg-color: #525352;
+    --menu-height: 80px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+div{
+    box-shadow: 1px 1px 1px 1px green inset;
+}
+
+div.title{
+    position: absolute;
+    left: 0px;
+    width: 100vw;
+    height: var(--title-height);
+    overflow: clip;
+    z-index: 40;
+
+    font-family: var(--title-txt-font);
+    color: var(--title-txt-color);
+    background-color: var(--title-bg-color);
+    font-size: var(--title-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.menu{
+    position: absolute;
+    left: 0px;
+    width: 100vw;
+    height: var(--menu-height);
+    overflow: clip;
+    z-index: 20;
+
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}

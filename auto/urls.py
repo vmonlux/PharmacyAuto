@@ -45,5 +45,7 @@ urlpatterns = [
     path('master/refrigerator', FlexMaster.as_view(), name='flexmaster'),
     path('master/lockbox', LockMaster.as_view(), name='lockmaster'),
     path('master/aux', AuxMaster.as_view(), name='auxmaster'),
+
+    path('test/', TestView.as_view(), name='test'),
 ]
 

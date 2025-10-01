@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.contrib import messages
 from django.views.generic.list import ListView
+from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.db.models import Q
 from django.http import HttpResponse, FileResponse
@@ -13,6 +14,34 @@ from .models import *
 
 def backup(request):
     return render(request, 'backup.html')
+
+class TestView(ListView):
+    model = Omnicell
+    template_name="test.html"
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        queryset = super(OmnicellList, self).get_queryset()
+        if query == None:
+            return queryset
+        elif query == "emergency":
+            filter = queryset.filter(Emergency=True)
+            return filter
+        else:
+            filter = queryset.filter(
+                Q(Omni_Id__icontains=query) |
+                Q(Omni_Description__icontains=query) |
+                Q(Building__Name__icontains=query) |
+                Q(Area__icontains=query) |
+                Q(Serial_Number__icontains=query) |
+                Q(Model__Model__icontains=query)
+            )
+            return filter
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
 
 
 def home(request):

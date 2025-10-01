@@ -21,7 +21,7 @@ class TestView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get("q")
-        queryset = super(OmnicellList, self).get_queryset()
+        queryset = super(TestView, self).get_queryset()
         if query == None:
             return queryset
         elif query == "emergency":

@@ -10,6 +10,17 @@
     --menu-txt-size: 100px;
     --menu-bg-color: #525352;
     --menu-height: 80px;
+
+    --search-txt-font: Lato, sans-serif;
+    --search-txt-color: #f6f6f6;
+    --search-txt-size: 100px;
+    --saerch-bg-color: #525352;
+    --search-height: 80px;
+
+    --content-txt-font: Lato, sans-serif;
+    --content-txt-color: #f6f6f6;
+    --content-txt-size: 100px;
+    --content-bg-color: #525352;
 }
 
 body{
@@ -42,10 +53,50 @@ div.title{
 div.menu{
     position: absolute;
     left: 0px;
+    top: var(--title-height);
     width: 100vw;
     height: var(--menu-height);
     overflow: clip;
     z-index: 20;
+
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.search{
+    position: absolute;
+    left: 0px;
+    top: calc(var(--title-height)+var(--menu-height));
+    width: 100vw;
+    height: var(--search-height);
+    overflow: clip;
+    z-index: 30;
+
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.content{
+    position: absolute;
+    left: 0px;
+    top: calc(var(--title-height)+var(--menu-height)+var(--search-height));
+    width: 100vw;
+    height: calc(100vh - var(--title-height) - var(--menu-height) - var(--search-height));
+    overflow-x: clip;
+    overflow-y: auto;
+    z-index: 10;
 
     font-family: var(--menu-txt-font);
     color: var(--menu-txt-color);

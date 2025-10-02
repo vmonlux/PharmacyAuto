@@ -1,25 +1,25 @@
 :root {
     --title-txt-font: "Co Headline Corp Light Regular", "Co Headline Bold", sans-serif!important;
-    --title-txt-color: #F9F6EE;
-    --title-txt-size: 100px;
+    --title-txt-color: #f6f6f6;
+    --title-txt-size: 70px;
     --title-bg-color: #39373E;
     --title-height: 80px;
 
     --menu-txt-font: Lato, sans-serif;
     --menu-txt-color: #f6f6f6;
-    --menu-txt-size: 70px;
+    --menu-txt-size: 60px;
     --menu-bg-color: #525352;
     --menu-height: 80px;
 
     --search-txt-font: Lato, sans-serif;
     --search-txt-color: #f6f6f6;
-    --search-txt-size: 100px;
+    --search-txt-size: 50px;
     --saerch-bg-color: #525352;
     --search-height: 70px;
 
     --content-txt-font: Lato, sans-serif;
     --content-txt-color: black;
-    --content-txt-size: 70px;
+    --content-txt-size: 50px;
     --content-bg-color: white;
 }
 
@@ -91,6 +91,19 @@ div.menu{
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+
+div.menu button{
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+}
+div.menu a{
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
 }
 
 div.search{

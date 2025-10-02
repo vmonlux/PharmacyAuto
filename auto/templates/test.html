@@ -6,13 +6,19 @@
     <link rel="stylesheet" type="text/css" href="{% static 'mobile.css' %}"> 
 {% endblock %}
 
+{% block header %}
+
+<h1>OmniMaster</h1>
+
+{% endblock %}
+
 {% block menu %}
 <div class="menu">
 
     <a class="menu select" href="{% url 'omnicells' %}">Omnicells</a>
     <a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a>
     <a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a>
-    
+
 </div>
 {% endblock %}
 

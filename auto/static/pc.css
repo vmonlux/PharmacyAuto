@@ -26,6 +26,7 @@
 body{
     width: 100vw;
     height: 100vh;
+    overflow: clip;
 }
 
 div{
@@ -57,6 +58,13 @@ div.title{
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+
+div.title h1{
+    font-family: var(--title-txt-font);
+    color: var(--title-txt-color);
+    background-color: var(--title-bg-color);
+    font-size: var(--title-txt-size);
 }
 
 div.menu{

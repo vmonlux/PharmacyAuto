@@ -7,7 +7,7 @@
 
     --menu-txt-font: Lato, sans-serif;
     --menu-txt-color: #f6f6f6;
-    --menu-txt-size: 100px;
+    --menu-txt-size: 70px;
     --menu-bg-color: #525352;
     --menu-height: 80px;
 
@@ -15,12 +15,12 @@
     --search-txt-color: #f6f6f6;
     --search-txt-size: 100px;
     --saerch-bg-color: #525352;
-    --search-height: 80px;
+    --search-height: 70px;
 
     --content-txt-font: Lato, sans-serif;
-    --content-txt-color: #f6f6f6;
-    --content-txt-size: 100px;
-    --content-bg-color: #525352;
+    --content-txt-color: black;
+    --content-txt-size: 70px;
+    --content-bg-color: white;
 }
 
 body{
@@ -35,6 +35,7 @@ div{
 
 div.wrap{
     position: absolute;
+    display: block;
     left: 0;
     top: 0;
     height: 100vh;
@@ -49,6 +50,9 @@ div.title{
     height: var(--title-height);
     overflow: clip;
     z-index: 40;
+
+    display: flex;
+    flex-direction: row;
 
     font-family: var(--title-txt-font);
     color: var(--title-txt-color);
@@ -76,6 +80,9 @@ div.menu{
     overflow: clip;
     z-index: 20;
 
+    display: flex;
+    flex-direction: row;
+
     font-family: var(--menu-txt-font);
     color: var(--menu-txt-color);
     background-color: var(--menu-bg-color);
@@ -94,6 +101,9 @@ div.search{
     height: var(--search-height);
     overflow: clip;
     z-index: 30;
+
+    display: flex;
+    flex-direction: row;
 
     font-family: var(--menu-txt-font);
     color: var(--menu-txt-color);
@@ -114,6 +124,9 @@ div.content{
     overflow-x: clip;
     overflow-y: auto;
     z-index: 10;
+
+    display: flex;
+    flex-direction: column;
 
     font-family: var(--menu-txt-font);
     color: var(--menu-txt-color);

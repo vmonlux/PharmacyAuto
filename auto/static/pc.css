@@ -1,15 +1,15 @@
 :root {
     --title-txt-font: "Co Headline Corp Light Regular", "Co Headline Bold", sans-serif!important;
     --title-txt-color: #f6f6f6;
-    --title-txt-size: 70px;
+    --title-txt-size: 50px;
     --title-bg-color: #39373E;
     --title-height: 80px;
 
     --menu-txt-font: Lato, sans-serif;
     --menu-txt-color: #f6f6f6;
-    --menu-txt-size: 60px;
+    --menu-txt-size: 50px;
     --menu-bg-color: #525352;
-    --menu-height: 80px;
+    --menu-height: 70px;
 
     --search-txt-font: Lato, sans-serif;
     --search-txt-color: #f6f6f6;
@@ -50,6 +50,7 @@ div.title{
     height: var(--title-height);
     overflow: clip;
     z-index: 40;
+    padding: 5px;
 
     display: flex;
     flex-direction: row;
@@ -69,6 +70,7 @@ div.title h1{
     color: var(--title-txt-color);
     background-color: var(--title-bg-color);
     font-size: var(--title-txt-size);
+    margin: 0px;
 }
 
 div.menu{
@@ -109,7 +111,7 @@ div.menu a{
 div.search{
     position: absolute;
     left: 0px;
-    top: calc(var(--title-height)+var(--menu-height));
+    top: calc(var(--title-height) + var(--menu-height));
     width: 100vw;
     height: var(--search-height);
     overflow: clip;
@@ -126,6 +128,16 @@ div.search{
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+
+div.search form{
+    position: absolute;
+    left: 0px;
+    top: calc(var(--title-height) + var(--menu-height));
+    width: 100vw;
+    height: var(--search-height);
+    overflow: clip;
+    z-index: 30;
 }
 
 div.content{

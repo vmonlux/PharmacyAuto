@@ -143,7 +143,7 @@ div.search form{
 div.content{
     position: absolute;
     left: 0px;
-    top: calc(var(--title-height)+var(--menu-height)+var(--search-height));
+    bottom: 100vh;
     width: 100vw;
     height: calc(100vh - var(--title-height) - var(--menu-height) - var(--search-height));
     overflow-x: clip;
@@ -153,10 +153,10 @@ div.content{
     display: flex;
     flex-direction: column;
 
-    font-family: var(--menu-txt-font);
-    color: var(--menu-txt-color);
-    background-color: var(--menu-bg-color);
-    font-size: var(--menu-txt-size);
+    font-family: var(--content-txt-font);
+    color: var(--content-txt-color);
+    background-color: var(--content-bg-color);
+    font-size: var(--content-txt-size);
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */

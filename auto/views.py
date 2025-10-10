@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.views.generic.list import ListView
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import DetailView
 from django.db.models import Q
 from django.http import HttpResponse, FileResponse
 
@@ -42,19 +43,16 @@ class TestView(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-
-
 def home(request):
     return render(request, 'home.html')
 
-class OmnicellList(ListView):
+class OmniList(ListView):
     model = Omnicell
-    context_object_name = 'omnicell_list'
-    template_name = 'omnicell_list.html'
+    template_name = 'omni/omni_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
-        queryset = super(OmnicellList, self).get_queryset()
+        queryset = super(OmniList, self).get_queryset()
         if query == None:
             return queryset
         elif query == "emergency":
@@ -75,10 +73,9 @@ class OmnicellList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-
-class OmnicellView(UpdateView):
+class OmniView(DetailView):
     model = Omnicell
-    template_name = 'omnicell_view.html'
+    template_name = 'omni/omni_view.html'
     form_class = OmnicellForm
     
     def get_context_data(self, **kwargs):
@@ -89,20 +86,20 @@ class OmnicellView(UpdateView):
 
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Updated")
-        return super(OmnicellView, self).form_valid(form)
+        return super(OmniView, self).form_valid(form)
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("omnicellView", kwargs={'pk': pk})
+        return reverse_lazy("omniView", kwargs={'pk': pk})
 
-class OmnicellUpdate(UpdateView):
+class OmniUpdate(UpdateView):
     model = Omnicell
-    template_name = 'omnicell_update.html'
+    template_name = 'omni/omni_update.html'
     form_class = OmnicellForm
     
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Updated")
-        return super(OmnicellUpdate, self).form_valid(form)
+        return super(OmniUpdate, self).form_valid(form)
     
     def get_success_url(self):
         pk = self.kwargs['pk']
@@ -110,8 +107,7 @@ class OmnicellUpdate(UpdateView):
 
 class AuxList(ListView):
     model = Aux
-    context_object_name = 'aux_list'
-    template_name = 'aux_list.html'
+    template_name = 'auxx/aux_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
@@ -133,10 +129,9 @@ class AuxList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-
 class AuxView(UpdateView):
     model = Aux
-    template_name = 'aux_view.html'
+    template_name = 'aux/aux_view.html'
     form_class = AuxForm
     
     def get_context_data(self, **kwargs):
@@ -164,14 +159,13 @@ class AuxUpdate(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy("viewAux", kwargs={'pk': pk})
 
-class LockboxList(ListView):
+class BoxList(ListView):
     model = Lockbox
-    context_object_name = 'lockbox_list'
-    template_name = 'lockbox_list.html'
+    template_name = 'box/box_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
-        queryset = super(LockboxList, self).get_queryset()
+        queryset = super(BoxList, self).get_queryset()
         if query == None:
             return queryset
         else:
@@ -188,10 +182,9 @@ class LockboxList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-
-class LockboxView(UpdateView):
+class BoxView(UpdateView):
     model = Lockbox
-    template_name = 'lockbox_view.html'
+    template_name = 'box_view.html'
     form_class = LockboxForm
     
     def get_context_data(self, **kwargs):
@@ -200,20 +193,20 @@ class LockboxView(UpdateView):
 
     def form_valid(self, form):
         messages.success(self.request, "Lockbox Updated")
-        return super(LockboxView, self).form_valid(form)
+        return super(BoxView, self).form_valid(form)
     
     def get_success_url(self):
         pk = self.kwargs['pk']
         return reverse_lazy("viewLockbox", kwargs={'pk': pk})
 
-class LockboxUpdate(UpdateView):
+class BoxUpdate(UpdateView):
     model = Lockbox
-    template_name = 'lockbox_update.html'
+    template_name = 'box/box_update.html'
     form_class = LockboxForm
     
     def form_valid(self, form):
         messages.success(self.request, "Lockbox Updated")
-        return super(LockboxUpdate, self).form_valid(form)
+        return super(BoxUpdate, self).form_valid(form)
     
     def get_success_url(self):
         pk = self.kwargs['pk']

@@ -1,4 +1,201 @@
-@media only screen and (min-width: 991px){
+/* style for desktop devices */
+@media (max-resolution: 1.9dppx){
+    :root{
+        --header-height: 80px;
+        --header-font: "Co Headline Bold";
+        --menu-height: 70px;
+        --menu-font: Lato;
+        --search-height: 50px;
+        --search-font: Lato;
+        --content-font: Lato;
+        --footer-height: 30px;
+        --footer-font: Lato;
+    }
+    div.wrap{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+        overflow: clip;
+        max-width: 1800px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.header{
+        color: var(--header-txt-color);
+        background-color: var(--header-bg-color);
+        height: var(--header-height);
+        font-family: var(--header-font);
+        user-select: none;
+
+        display: flex;
+        flex-direction: row;
+    }
+    div.header a{
+        position: relative;
+        height: var(--header-height);
+        width: auto;
+        overflow: clip;
+        padding-right: 20px;
+        user-select: none;
+    }
+    div.header img{
+        position: relative;
+        height: var(--header-height);
+        width: auto;
+        overflow: clip;
+        
+        user-select: none;
+    }
+    div.header div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: var(--header-height);
+        padding: 0px;
+    }
+    div.header h1{
+        text-transform: uppercase;
+        margin: 0px;
+    }
+    div.header h2{
+        font-size: 20px;
+        font-weight: 100;
+        font-style: italic;
+        margin: 0px;
+    }
+
+    div.menu{
+        color: var(--menu-txt-color);
+        background-color: var(--menu-bg-color);
+        height: var(--menu-height);
+        overflow: clip;
+        user-select: none;
+
+        display: flex;
+        flex-direction: row;
+        align-items: normal;
+        justify-content: flex-start;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+    div.menu form{
+        height: inherit;
+        width: 100%;
+        display: inherit;
+    }
+    div.menu span{
+        order: 1;
+        display: flex;
+        flex-direction: row;
+        overflow-y: clip;
+        overflow-x: auto;
+        
+    }
+    div.menu span::-webkit-scrollbar{
+        height: 1px;
+    }
+    div.menu button{
+        order: 1;
+        height: calc(var(--menu-height) - 10px);
+        margin: 5px;
+        min-width: 150px;
+        max-width: 500px;
+        width: auto;
+        font-size: 14pt;
+    }
+    div.menu button.select{
+        order: 0;
+        background-color: var(--header-bg-color);
+        color: var(--header-txt-color);
+    }
+    div.menu button.log{
+        order: 2;
+        margin-left: auto;
+    }
+    div.menu a.log{
+        order: 2;
+        min-width: 200px;
+        max-width: 500px;
+        width: auto;
+        margin-left: auto;
+    }
+
+    div.search{
+        color: var(--search-txt-color);
+        background-color: var(--search-bg-color);
+        height: var(--search-height);
+        user-select: none;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    div.search a{
+        order: 1;
+        height: calc(var(--search-height) - 5px);
+        margin: 5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        min-width: 100px;
+        max-width: 300px;
+        width: auto;
+    }
+    div.search button{
+        order: 1;
+        height: calc(var(--search-height) - 5px);
+        margin: 5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        min-width: 100px;
+        max-width: 300px;
+        width: auto;
+    }
+    div.search button.search{
+        margin-left: auto;
+        order: 2;
+        height: calc(var(--search-height) - 5px);
+        font-size: 18pt;
+    }
+    div.search input[type=search]{
+        order: 3;
+        height: calc(var(--search-height) - 5px);
+        font-size: 18pt;
+        margin-left: 10px;
+        margin-right: 2px;
+        padding-left: 10px;
+    }
+
+    div.content{
+        color: var(--content-txt-color);
+        background-color: var(--content-bg-color);
+        height: calc(100vh - var(--header-height) - var(--menu-height) - var(--search-height) - var(--footer-height));
+        overflow-x: clip;
+        overflow-y: auto;
+        padding: 5px;
+    }
+
+    div.footer{
+        color: var(--footer-txt-color);
+        background-color: var(--footer-bg-color);
+        height: var(--footer-height);
+        user-select: none;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+/* @media only screen and (min-width: 991px){
 
 * {
     margin: 0;
@@ -476,4 +673,4 @@ a.search:hover, a.search:focus, input[type=submit]:hover, input[type=submit]:foc
     transition: 500ms;
 }
 
-}
+} */

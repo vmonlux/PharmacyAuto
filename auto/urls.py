@@ -25,17 +25,17 @@ urlpatterns = [
     
     path('backup/', views.backup, name="backup"),
     
-    path('omnicell/', OmnicellList.as_view(), name='omnicells'),
-    path('omnicell/view/<int:pk>', OmnicellView.as_view(), name='viewOmnicell'),
-    path('omnicell/update/<int:pk>', OmnicellUpdate.as_view(), name='updateOmnicell'),
+    path('omni/', OmniList.as_view(), name='omni-list'),
+    path('omni/view/<int:pk>', OmniView.as_view(), name='viewOmnicell'),
+    path('omni/update/<int:pk>', OmniUpdate.as_view(), name='updateOmnicell'),
     
     path('aux/', AuxList.as_view(), name='auxs'),
     path('aux/view/<int:pk>', AuxView.as_view(), name='viewAux'),
     path('aux/view/<int:pk>', AuxUpdate.as_view(), name='updateAux'),
     
-    path('refrigerator/', RefrigeratorList.as_view(), name='refrigerators'),
-    path('refrigerator/view/<int:pk>', RefrigeratorView.as_view(), name='viewRefrigerator'),
-    path('refrigerator/update/<int:pk>', RefrigeratorUpdate.as_view(), name='updateRefrigerator'),
+    path('ref/', RefrigeratorList.as_view(), name='ref-list'),
+    path('ref/view/<int:pk>', RefrigeratorView.as_view(), name='ref-view'),
+    path('ref/update/<int:pk>', RefrigeratorUpdate.as_view(), name='ref-update'),
     
     path('lockbox/', LockboxList.as_view(), name='lockboxes'),
     path('lockbox/view/<int:pk>', LockboxView.as_view(), name='viewLockbox'),

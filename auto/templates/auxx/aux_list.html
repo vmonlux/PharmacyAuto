@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+<a class="vMenu" href="{% url 'omnicells' %}">Omnicells</a>
+<a class="vMenu" href="{% url 'refrigerators' %}">Refrigerators</a>
+<a class="vMenuSelect" href="{% url 'auxs' %}">Aux</a>
+<a class="vMenu" href="{% url 'lockboxes' %}">Lockbox</a>
+{% endblock %}
+
+{% block search %}
+<h1>Aux Towers</h1>
+<input name="q" type="search" placeholder="Search...">
+<button type="submit">Search</button>
+{% endblock %}
+
+{% block content %}
+<div class="list">
+    <a class="rowLink" href="{% url 'newAux' %}"><button>
+        {{ object.Omnicell }}
+        {{ object.Serial_Number }}
+        {{ object.Model }}
+    </button></a>
+
+    <a class="rowLink" href="{% url 'viewAux' object.pk %}"><button>
+        {{ object.Omnicell }}
+        {{ object.Serial_Number }}
+        {{ object.Model }}
+    </button></a>
+    
+</div>
+
+{% for object in object_list %}
+    <tr class="rowList">
+        <td class="tdList">{{ object.Omnicell }}</td>
+        <td class="tdList">{{ object.Serial_Number }}</td>
+        <td class="tdList">{{ object.Model }}</td>
+        <td><a class="rowLink" href="{% url 'viewAux' object.pk %}">  </a></td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+</div>
+{% endblock %}

@@ -2,14 +2,59 @@
 <html lang="en">
 <head>
     <title>Pharmacy Automation - Omni Master</title>
-
     {% load static %}
     <link href="https://db.onlinewebfonts.com/c/1a4d54b0835ab704ab312c1053401429?family=Co+Headline+Bold" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/d285466708775c42c08001b9040b1daa?family=Co+Headline+Corp+Light+Regular" rel="stylesheet">
+    <style>
+        {% if user.is_authenticated %}
+        {% if user.Theme %}
+        {% else %}
+        :root{
+            --header-bg-color: #39373E;
+            --header-txt-color: #F9F6EE;
+            --menu-bg-color: #525352;
+            --menu-txt-color: #FFFFFF;
+            --menu-btn-bg-color: #f6f6f6;
+            --menu-btn-txt-color: #39373E;
+            --search-bg-color: #386e94;
+            --search-txt-color: #FFFFFF;
+            --content-bg-color:#141313;
+            --content-txt-color: #f2f2f2;
+            --footer-bg-color: #4d516d;
+            --footer-txt-color: #000000;
+            --select-bg-color: #52941f;
+            --select-txt-color: #F9F6EE;
+            --alert-bg-color: #740202;
+            --alert-txt-color: #F9F6EE;
+            }
+        {% endif %}
+        {% else %}
+        :root{
+            --header-bg-color: #39373E;
+            --header-txt-color: #F9F6EE;
+            --menu-bg-color: #525352;
+            --menu-txt-color: #FFFFFF;
+            --menu-btn-bg-color: #f6f6f6;
+            --menu-btn-txt-color: #39373E;
+            --search-bg-color: #386e94;
+            --search-txt-color: #FFFFFF;
+            --content-bg-color:#141313;
+            --content-txt-color: #f2f2f2;
+            --footer-bg-color: #4d516d;
+            --footer-txt-color: #000000;
+            --select-bg-color: #52941f;
+            --select-txt-color: #F9F6EE;
+            --alert-bg-color: #740202;
+            --alert-txt-color: #F9F6EE;
+            }
+        {% endif %}
+    </style>
 
     {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static '_pc.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'content_pc.css' %}"> 
     <link rel="stylesheet" type="text/css" href="{% static '_mobile.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'content_pc.css' %}"> 
     {% endblock %}
     
 </head>
@@ -17,33 +62,30 @@
 <body>
     
     <div class="wrap">
-        {% block header %}
-        
+
         <div class="title">
-            <table class="title">
-                <tr>
-                    <td><h1>OmniMaster</h1></td>
-                </tr>
-            </table>
+        {% block header %}       
+            OmniMaster
+        {% endblock %}
         </div>
+
+        <div class="menu">
+        {% block menu %} 
         
         {% endblock %}
-
-        {% block menu %} 
-        <div class="menu">
         </div>
-        {% endblock %}
 
-        {% block search %}
         <div class="search">
-        </div>
+        {% block search %}
+        
         {% endblock %}
+        </div>
 
-        {% block content %}
         <div class="content">
-        </div>
+        {% block content %}
+        
         {% endblock %}
-
+        </div>
         {% block footer %} {% endblock %}
 
     </div>

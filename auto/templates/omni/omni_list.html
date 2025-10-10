@@ -1,15 +1,9 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-<div class="menu">
-    <table class="menu">
-        <tr>
-            <td><a class="menu select" href="{% url 'omnicells' %}">Omnicells</a></td>
-            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-            <td><a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a></td>
-        </tr>
-    </table>
-</div>
+<a class="select" href="{% url 'omni-list' %}"><button type=button>Omnicells</button></a>
+<a href="{% url 'ref-list' %}"><button type=button>Refrigerators</button></a>
+<a href="{% url 'box-list' %}"><button type=button>Lockboxes</button></a>
 {% endblock %}
 
 {% block search %}
@@ -28,30 +22,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="content">
 
-    <table class="list">
-        <thead>
-        <tr class="list">
-            <th class="list"> </th>
-            <th class="list">Omnicell</th>
-            <th class="list">Description</th>
-            <th class="list">Serial</th>
-            
-            <th> </th>
-        </tr>
-        </thead>
-    {% for object in object_list %}
-        <tr class="list">
-            <td class="list">{%if object.Emergency%}<font style="font-weight:400;color:red;">&#x26A0;</font>{%endif%}</td>
-            <td class="list">{{ object.Omni_Id }}</td>
-            <td class="list">{{ object.Omni_Description|truncatechars:28 }}</td>
-            <td class="list">{{ object.Serial_Number }}</td>
-            
-            <td class="link"><a class="link" href="{% url 'viewOmnicell' object.pk %}">  </a></td>
-        </tr>
-    {% endfor %}
-    </table>
+<div class="list">
+
+<a class="new" href=""><button type=button>
+    New Omnicell
+</button></a>
+{% for object in object_list %}
+
+<a class="new" href=""><button type=button>
+    {{object.Name}}
+</button></a>
+        
+{% endfor %}
 
 </div>
 {% endblock %}

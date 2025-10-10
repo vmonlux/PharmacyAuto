@@ -1,0 +1,27 @@
+@font-face{
+            font-family: "Co Headline Bold";
+            src: url("https://db.onlinewebfonts.com/t/1a4d54b0835ab704ab312c1053401429.eot");
+            src: url("https://db.onlinewebfonts.com/t/1a4d54b0835ab704ab312c1053401429.eot?#iefix")format("embedded-opentype"),
+                url("https://db.onlinewebfonts.com/t/1a4d54b0835ab704ab312c1053401429.woff")format("woff"),
+                url("https://db.onlinewebfonts.com/t/1a4d54b0835ab704ab312c1053401429.woff2")format("woff2"),
+                url("https://db.onlinewebfonts.com/t/1a4d54b0835ab704ab312c1053401429.ttf")format("truetype"),
+                url("https://db.onlinewebfonts.com/t/1a4d54b0835ab704ab312c1053401429.svg#Co Headline Bold")format("svg");
+            font-weight:normal;
+            font-style:normal;
+            font-display:swap;
+        }
+
+:root{
+        --header-height: 70px;
+        --header-font: "Co Headline Bold";
+        --menu-height: 70px;
+        --menu-font: Lato;
+        --search-height: 50px;
+        --search-font: Lato;
+        --content-font: Lato;
+        --footer-height: 30px;
+        --footer-font: Lato;
+  
+    }
+
+    

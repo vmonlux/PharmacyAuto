@@ -3,8 +3,6 @@
 <head>
     <title>Pharmacy Automation - Omni Master</title>
     {% load static %}
-    <link href="https://db.onlinewebfonts.com/c/1a4d54b0835ab704ab312c1053401429?family=Co+Headline+Bold" rel="stylesheet">
-    <link href="https://db.onlinewebfonts.com/c/d285466708775c42c08001b9040b1daa?family=Co+Headline+Corp+Light+Regular" rel="stylesheet">
     <style>
         {% if user.is_authenticated %}
         {% if user.Theme %}
@@ -38,7 +36,7 @@
             --menu-btn-txt-color: #39373E;
             --search-bg-color: #386e94;
             --search-txt-color: #FFFFFF;
-            --content-bg-color:#141313;
+            --content-bg-color: #141313;
             --content-txt-color: #f2f2f2;
             --footer-bg-color: #4d516d;
             --footer-txt-color: #000000;
@@ -48,9 +46,12 @@
             --alert-txt-color: #F9F6EE;
             }
         {% endif %}
+        
     </style>
-
+    <link href="https://db.onlinewebfonts.com/c/1a4d54b0835ab704ab312c1053401429?family=Co+Headline+Bold" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/d285466708775c42c08001b9040b1daa?family=Co+Headline+Corp+Light+Regular" rel="stylesheet">
     {% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '_pc.css' %}"> 
     <link rel="stylesheet" type="text/css" href="{% static 'content_pc.css' %}"> 
     <link rel="stylesheet" type="text/css" href="{% static '_mobile.css' %}"> 
@@ -62,8 +63,8 @@
 <body>
     
     <div class="wrap">
-
-        <div class="title">
+        <form method="post" action="{% url 'logout' %}">
+        <div class="header">
         {% block header %}       
             OmniMaster
         {% endblock %}
@@ -74,6 +75,11 @@
         
         {% endblock %}
         </div>
+        </form>
+
+        {% block form %}
+        <form>
+        {% endblock %}
 
         <div class="search">
         {% block search %}
@@ -86,7 +92,14 @@
         
         {% endblock %}
         </div>
-        {% block footer %} {% endblock %}
+
+        {% block endform %}
+        </form>
+        {% endblock %}
+
+        {% block footer %} 
+        {% endblock %}
+
 
     </div>
 </body>

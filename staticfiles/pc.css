@@ -1,0 +1,164 @@
+:root {
+    --title-txt-font: "Co Headline Corp Light Regular", "Co Headline Bold", sans-serif!important;
+    --title-txt-color: #f6f6f6;
+    --title-txt-size: 50px;
+    --title-bg-color: #39373E;
+    --title-height: 70px;
+
+    --menu-txt-font: Lato, sans-serif;
+    --menu-txt-color: #f6f6f6;
+    --menu-txt-size: 50px;
+    --menu-bg-color: #525352;
+    --menu-height: 70px;
+
+    --search-txt-font: Lato, sans-serif;
+    --search-txt-color: #f6f6f6;
+    --search-txt-size: 50px;
+    --saerch-bg-color: #525352;
+    --search-height: 70px;
+
+    --content-txt-font: Lato, sans-serif;
+    --content-txt-color: black;
+    --content-txt-size: 35px;
+    --content-bg-color: white;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: clip;
+}
+
+div{
+    box-shadow: 1px 1px 1px 1px green inset;
+}
+
+div.wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: clip;
+
+    display: flex;
+    flex-direction: column;
+}
+
+div.title{
+    width: 100vw;
+    height: var(--title-height);
+    overflow: clip;
+    z-index: 40;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: var(--title-txt-font);
+    color: var(--title-txt-color);
+    background-color: var(--title-bg-color);
+    font-size: var(--title-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.title h1{
+    font-family: var(--title-txt-font);
+    color: var(--title-txt-color);
+    background-color: var(--title-bg-color);
+    font-size: var(--title-txt-size);
+    margin: 0px;
+}
+
+div.menu{
+    position: absolute;
+    left: 0px;
+    top: var(--title-height);
+    width: 100vw;
+    height: var(--menu-height);
+    overflow: clip;
+    z-index: 20;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.menu button{
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+}
+div.menu a{
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+    text-decoration: none;
+}
+
+div.search{
+    position: absolute;
+    left: 0px;
+    top: calc(var(--title-height) + var(--menu-height));
+    width: 100vw;
+    height: var(--search-height);
+    overflow: clip;
+    z-index: 30;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: var(--menu-txt-font);
+    color: var(--menu-txt-color);
+    background-color: var(--menu-bg-color);
+    font-size: var(--menu-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.search form{
+    position: absolute;
+    left: 0px;
+    top: calc(var(--title-height) + var(--menu-height));
+    width: 100vw;
+    height: var(--search-height);
+    overflow: clip;
+    z-index: 30;
+}
+
+div.content{
+    position: absolute;
+    left: 0px;
+    top: calc(var(--title-height) + var(--menu-height) + var(--search-height));
+    width: 100vw;
+    height: calc(100vh - var(--title-height) - var(--menu-height) - var(--search-height));
+    overflow-x: clip;
+    overflow-y: auto;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--content-txt-font);
+    color: var(--content-txt-color);
+    background-color: var(--content-bg-color);
+    font-size: var(--content-txt-size);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}

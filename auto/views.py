@@ -76,21 +76,12 @@ class OmniList(ListView):
 class OmniView(DetailView):
     model = Omnicell
     template_name = 'omni/omni_view.html'
-    form_class = OmnicellForm
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["Refrigerators"] = Refrigerator.objects.filter(Omnicell=self.kwargs['pk'])
         context["Auxs"] = Aux.objects.filter(Omnicell=self.kwargs['pk'])
         return context
-
-    def form_valid(self, form):
-        messages.success(self.request, "Omnicell Updated")
-        return super(OmniView, self).form_valid(form)
-    
-    def get_success_url(self):
-        pk = self.kwargs['pk']
-        return reverse_lazy("omniView", kwargs={'pk': pk})
 
 class OmniUpdate(UpdateView):
     model = Omnicell
@@ -103,7 +94,7 @@ class OmniUpdate(UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("viewOmnicell", kwargs={'pk': pk})
+        return reverse_lazy("omni-view", kwargs={'pk': pk})
 
 class AuxList(ListView):
     model = Aux
@@ -129,22 +120,13 @@ class AuxList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-class AuxView(UpdateView):
+class AuxView(DetailView):
     model = Aux
     template_name = 'aux/aux_view.html'
-    form_class = AuxForm
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-
-    def form_valid(self, form):
-        messages.success(self.request, "Aux Updated")
-        return super(AuxView, self).form_valid(form)
-    
-    def get_success_url(self):
-        pk = self.kwargs['pk']
-        return reverse_lazy("viewAux", kwargs={'pk': pk})
 
 class AuxUpdate(UpdateView):
     model = Aux
@@ -157,7 +139,7 @@ class AuxUpdate(UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("viewAux", kwargs={'pk': pk})
+        return reverse_lazy("aux-view", kwargs={'pk': pk})
 
 class BoxList(ListView):
     model = Lockbox
@@ -182,22 +164,13 @@ class BoxList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-class BoxView(UpdateView):
+class BoxView(DetailView):
     model = Lockbox
     template_name = 'box_view.html'
-    form_class = LockboxForm
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-
-    def form_valid(self, form):
-        messages.success(self.request, "Lockbox Updated")
-        return super(BoxView, self).form_valid(form)
-    
-    def get_success_url(self):
-        pk = self.kwargs['pk']
-        return reverse_lazy("viewLockbox", kwargs={'pk': pk})
 
 class BoxUpdate(UpdateView):
     model = Lockbox
@@ -210,17 +183,15 @@ class BoxUpdate(UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("viewLockbox", kwargs={'pk': pk})
+        return reverse_lazy("box-view", kwargs={'pk': pk})
 
-
-class RefrigeratorList(ListView):
+class RefList(ListView):
     model = Refrigerator
-    context_object_name = 'refrigerator_list'
-    template_name = 'refrigerator_list.html'
+    template_name = 'ref/ref_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
-        queryset = super(RefrigeratorList, self).get_queryset()
+        queryset = super(RefList, self).get_queryset()
         if query == None:
             return queryset
         elif query =="none":
@@ -241,35 +212,26 @@ class RefrigeratorList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-class RefrigeratorView(UpdateView):
+class RefView(DetailView):
     model = Refrigerator
-    template_name = 'refrigerator_view.html'
-    form_class = RefrigeratorForm
+    template_name = 'ref/ref_view.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
 
-    def form_valid(self, form):
-        messages.success(self.request, "Refrigerator Updated")
-        return super(RefrigeratorView, self).form_valid(form)
-    
-    def get_success_url(self):
-        pk = self.kwargs['pk']
-        return reverse_lazy("refrigeratorView", kwargs={'pk': pk})
-
-class RefrigeratorUpdate(UpdateView):
+class RefUpdate(UpdateView):
     model = Refrigerator
     template_name = 'refrigerator_update.html'
     form_class = RefrigeratorForm
     
     def form_valid(self, form):
         messages.success(self.request, "Refrigerator Updated")
-        return super(RefrigeratorUpdate, self).form_valid(form)
+        return super(RefUpdate, self).form_valid(form)
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("viewRefrigerator", kwargs={'pk': pk})
+        return reverse_lazy("ref-view", kwargs={'pk': pk})
     
 
 # Master table views

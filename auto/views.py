@@ -54,6 +54,7 @@ def home(request):
 class UserList(LoginRequiredMixin, ListView):
     model = get_user_model()
     template_name = 'account/account_list.html'
+    context_object_name = "object"
     
     def get_queryset(self):
         set = super().get_queryset()
@@ -81,6 +82,7 @@ class UserCreate(LoginRequiredMixin, CreateView):
     model = get_user_model()
     template_name = 'account/account_create.html'
     form_class = UserCreateForm
+    context_object_name = "object"
     
     def get_success_url(self):
         return reverse_lazy('account-view', kwargs={'pk': self.object.pk})
@@ -88,11 +90,13 @@ class UserCreate(LoginRequiredMixin, CreateView):
 class UserView(LoginRequiredMixin, DetailView):
     model = get_user_model()
     template_name = 'account/account_view.html'
+    context_object_name = "object"
 
 class UserUpdate(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     form_class = UserEditForm
     template_name = 'account/account_update.html'
+    context_object_name = "object"
     
     def get_success_url(self):
         url = reverse('account-view', kwargs={'pk':self.object.pk})

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu/account.html' %}
+{% endblock %}
+
+{% block form %}
+<form method="post">
+    {% csrf_token %}
+{% endblock %}
+
+{% block search %}
+
+<a href="{% url 'account-list' %}"><button type=button>
+    Cancel
+</button></a>
+
+<button type=submit>Save</button>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="form-view">
+    <span>
+    {% if form.errors %}
+        {% for field in form %}
+            {% if field.errors %}
+            <ul>
+                {% for error in field.errors %}
+                    <li>{{error}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    </span>
+
+    <span>
+        <label for="id_email">Email:</label>
+        {{form.email}}
+    </span>
+
+    <span>
+        <label for="id_last_name">Name:</label>
+        <h1>F</h1>{{form.first_name}} <h1>L</h1>{{form.last_name}}
+    </span>
+
+    <span>
+        <label>System Admin:</label>
+        {{form.is_staff}}
+    </span>
+
+
+</div>
+
+
+{% endblock %}

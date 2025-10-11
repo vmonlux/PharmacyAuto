@@ -9,6 +9,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.db.models import Q
 from django.http import HttpResponse, FileResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
 
 from auto.forms import *
 from .models import *
@@ -46,7 +49,55 @@ class TestView(ListView):
 def home(request):
     return render(request, 'home.html')
 
-class OmniList(ListView):
+# Database User Object
+
+class UserList(LoginRequiredMixin, ListView):
+    model = get_user_model()
+    template_name = 'account/account_list.html'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        if query:
+            filter = queryset.filter(
+                Q(username__icontains=query) |
+                Q(email__icontains=query) |
+                Q(first_name__icontains=query) |
+                Q(last_name__icontains=query)
+            )
+            return filter
+        else:
+            return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        query = self.request.GET.get('q')
+        if query:
+            context['query'] = query
+        return context
+    
+class UserCreate(LoginRequiredMixin, CreateView):
+    model = get_user_model()
+    template_name = 'account/account_create.html'
+    form_class = UserCreateForm
+    
+    def get_success_url(self):
+        return reverse_lazy('account-view', kwargs={'pk': self.object.pk})
+    
+class UserView(LoginRequiredMixin, DetailView):
+    model = get_user_model()
+    template_name = 'account/account_view.html'
+
+class UserUpdate(LoginRequiredMixin, UpdateView):
+    model = get_user_model()
+    form_class = UserEditForm
+    template_name = 'account/account_update.html'
+    
+    def get_success_url(self):
+        url = reverse('account-view', kwargs={'pk':self.object.pk})
+        return url
+
+class OmniList(LoginRequiredMixin, ListView):
     model = Omnicell
     template_name = 'omni/omni_list.html'
     
@@ -73,7 +124,7 @@ class OmniList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-class OmniView(DetailView):
+class OmniView(LoginRequiredMixin, DetailView):
     model = Omnicell
     template_name = 'omni/omni_view.html'
     
@@ -83,7 +134,7 @@ class OmniView(DetailView):
         context["Auxs"] = Aux.objects.filter(Omnicell=self.kwargs['pk'])
         return context
 
-class OmniCreate(CreateView):
+class OmniCreate(LoginRequiredMixin, CreateView):
     model = Omnicell
     template_name = 'omni/omni_create.html'
     form_class = OmnicellCreateForm
@@ -95,7 +146,7 @@ class OmniCreate(CreateView):
     def get_success_url(self):
         return reverse_lazy("omni-view", kwargs={'pk': self.object.pk})
 
-class OmniUpdate(UpdateView):
+class OmniUpdate(LoginRequiredMixin, UpdateView):
     model = Omnicell
     template_name = 'omni/omni_update.html'
     form_class = OmnicellForm
@@ -108,7 +159,7 @@ class OmniUpdate(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy("omni-view", kwargs={'pk': pk})
 
-class AuxList(ListView):
+class AuxList(LoginRequiredMixin, ListView):
     model = Aux
     template_name = 'auxx/aux_list.html'
     
@@ -132,7 +183,7 @@ class AuxList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-class AuxView(DetailView):
+class AuxView(LoginRequiredMixin, DetailView):
     model = Aux
     template_name = 'aux/aux_view.html'
     
@@ -140,7 +191,7 @@ class AuxView(DetailView):
         context = super().get_context_data(**kwargs)
         return context
 
-class AuxUpdate(UpdateView):
+class AuxUpdate(LoginRequiredMixin, UpdateView):
     model = Aux
     template_name = 'aux_update.html'
     form_class = AuxForm
@@ -153,7 +204,7 @@ class AuxUpdate(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy("aux-view", kwargs={'pk': pk})
 
-class BoxList(ListView):
+class BoxList(LoginRequiredMixin, ListView):
     model = Lockbox
     template_name = 'box/box_list.html'
     
@@ -176,7 +227,7 @@ class BoxList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-class BoxView(DetailView):
+class BoxView(LoginRequiredMixin, DetailView):
     model = Lockbox
     template_name = 'box/box_view.html'
     
@@ -184,7 +235,7 @@ class BoxView(DetailView):
         context = super().get_context_data(**kwargs)
         return context
 
-class BoxCreate(CreateView):
+class BoxCreate(LoginRequiredMixin, CreateView):
     model = Lockbox
     template_name = 'box/box_create.html'
     form_class = LockboxForm
@@ -197,7 +248,7 @@ class BoxCreate(CreateView):
 
         return reverse_lazy("box-view", kwargs={'pk': self.object.pk})
     
-class BoxUpdate(UpdateView):
+class BoxUpdate(LoginRequiredMixin, UpdateView):
     model = Lockbox
     template_name = 'box/box_update.html'
     form_class = LockboxForm
@@ -210,7 +261,7 @@ class BoxUpdate(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy("box-view", kwargs={'pk': pk})
 
-class RefList(ListView):
+class RefList(LoginRequiredMixin, ListView):
     model = Refrigerator
     template_name = 'ref/ref_list.html'
     
@@ -237,7 +288,7 @@ class RefList(ListView):
         context = super().get_context_data(**kwargs)
         return context
     
-class RefView(DetailView):
+class RefView(LoginRequiredMixin, DetailView):
     model = Refrigerator
     template_name = 'ref/ref_view.html'
     
@@ -245,7 +296,7 @@ class RefView(DetailView):
         context = super().get_context_data(**kwargs)
         return context
 
-class RefCreate(CreateView):
+class RefCreate(LoginRequiredMixin, CreateView):
     model = Refrigerator
     template_name = 'ref/ref_create.html'
     form_class = RefrigeratorCreateForm
@@ -257,7 +308,7 @@ class RefCreate(CreateView):
     def get_success_url(self):
         return reverse_lazy("omni-view", kwargs={'pk': self.object.pk})
     
-class RefUpdate(UpdateView):
+class RefUpdate(LoginRequiredMixin, UpdateView):
     model = Refrigerator
     template_name = 'ref/ref_update.html'
     form_class = RefrigeratorForm
@@ -270,21 +321,20 @@ class RefUpdate(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy("ref-view", kwargs={'pk': pk})
     
-
 # Master table views
 
-class OmniMaster(ListView):
+class OmniMaster(LoginRequiredMixin, ListView):
     model = Omnicell
     template_name='omni_table.html'
 
-class FlexMaster(ListView):
+class FlexMaster(LoginRequiredMixin, ListView):
     model = Refrigerator
     template_name='flex_table.html'
 
-class LockMaster(ListView):
+class LockMaster(LoginRequiredMixin, ListView):
     model = Lockbox
     template_name='lockbox_table.html'
 
-class AuxMaster(ListView):
+class AuxMaster(LoginRequiredMixin, ListView):
     model = Aux
     template_name='aux_table.html'

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu/account.html' %}
+{% endblock %}
+
+{% block search %}
+<a href="{% url 'account-update' object.pk %}"><button type=button>
+    Edit
+</button></a>
+{% endblock %}
+
+{% block content %}
+<div class="form-view">
+ 
+    <span>
+        <label for="id_email">Email:</label>
+        <p>{{object.email}}</p>
+    </span>
+
+    <span>
+        <label for="id_last_name">Name:</label>
+        <p>{{object.first_name}} {{object.last_name}}</p>
+    </span>
+
+    <span>
+        <label>System Admin:</label>
+        <p>{{object.is_staff}}</p>
+    </span>
+                          
+</div>
+{% endblock %}

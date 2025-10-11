@@ -1,7 +1,27 @@
 from django import forms
 from django.forms import ModelForm
 from django.forms.fields import Field
+from django.contrib.auth import get_user_model
 from auto.models import *
+
+class UserCreateForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = (
+            'email',
+            'first_name',
+            'last_name',
+            'is_staff'
+        )
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = (
+            'first_name',
+            'last_name',
+            'is_staff'
+        )
 
 class OmnicellCreateForm(ModelForm):
     class Meta:

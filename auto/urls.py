@@ -15,16 +15,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls.static import static
 from django.urls import path, include
+from django.conf import settings
 from . import views
+from django.contrib.auth.views import LoginView
 from auto.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
+    
     path('', views.home, name="home"),
     
     path('backup/', views.backup, name="backup"),
+    
+    path('account/', UserList.as_view(), name='account-list'),
+    path('account/create/', UserCreate.as_view(), name='account-create'),
+    path('account/view/<int:pk>', UserView.as_view(), name='account-view'),
+    path('account/update/<int:pk>', UserUpdate.as_view(), name='account-update'),
     
     path('omni/', OmniList.as_view(), name='omni-list'),
     path('omni/create/', OmniCreate.as_view(), name='omni-create'),
@@ -53,3 +63,7 @@ urlpatterns = [
     path('test/', TestView.as_view(), name='test'),
 ]
 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]

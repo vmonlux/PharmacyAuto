@@ -14,6 +14,10 @@
         font-size: 18pt;
         height: 80px;
     }
+    div.content div.login p{
+        padding-left: 30px;
+        max-width: 2000px;
+    }
     div.content div.login button,a{
         width: 70%;
         height: 100px;

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+<form>
+
+<a class="log" href="{% url 'home' %}"><button type=button class="log">Cancel</button></a>
+</form>
+{% endblock %}
+
+{% block form %}
+
+{% endblock %}
+
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<div class="login">
+  
+  {% if form.errors %}
+  <span>
+      {% for field in form %}
+          {% if field.errors %}
+          <ul>
+              {% for error in field.errors %}
+                  <li>{{error}}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+      {% endfor %}
+  </span>
+  {% endif %}
+
+  {% if form.non_field_errors %}
+    <span>
+      <ul>
+        {% for error in form.non_field_errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </span>
+    {% endif %}
+    
+
+  <span><label for="id_username">Email:</label> {{ form.username }}</span>
+  <span><label for="id_password">Password:</label> {{ form.password }}</span>
+  <input type="hidden" name="next" value="{{ next }}">
+  <button type="submit">Login</button>
+  
+  <a href="{% url 'password_reset' %}"><button type=button>Reset Password</button></a>
+    
+</div>
+</form>
+{% endblock %}

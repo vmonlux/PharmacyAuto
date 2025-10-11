@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="viewer">
+<table class="masterlist">
+    <tr>
+        <th>Omni ID</th>
+        <th>Hospital</th>
+        <th>Area</th>
+        <th>Room</th>
+        <th>Serial No</th>
+        <th>Description</th>
+        <th>Model</th>
+        <th>CT Version</th>
+        <th>PC Name</th>
+        <th>Emergency</th>
+    </tr>
+
+    {% for object in object_list %}
+    <tr class="list">
+        <td class="list">{{object.Omni_Id}}</td>
+        <td class="list">{%if object.Building%}{{object.Building}}{%endif%}</td>
+        <td class="list">{%if object.Area%}{{object.Area}}{%endif%}</td>
+        <td class="list">{%if object.Room%}{{object.Room}}{%endif%}</td>
+        <td class="list">{{object.Serial_Number}}</td>
+        <td class="list">{{object.Omni_Description}}</td>
+        <td class="list">{%if object.Model%}{{object.Model}}{%endif%}</td>
+        <td class="list">{%if object.CT_Version%}{{object.CT_Version}}{%endif%}</td>
+        <td class="list">{%if object.PC_Name%}{{object.PC_Name}}{%endif%}</td>
+        <td class="list">{%if object.Emergency%}EMERGENCY{%endif%}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}
+

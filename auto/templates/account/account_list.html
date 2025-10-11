@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu/account.html' %}
+{% endblock %}
+
+{% block search %}
+<input name="q" type="search" class="search" placeholder="Search...">
+<button type=submit>Search</button>
+{% endblock %}
+
+{% block content %}
+
+<div class="list">
+
+<a class="new" href="{% url 'account-create' %}"><button class="new" type=button>
+    New Account
+</button></a>
+
+{% for object in object_list %}
+<a href="{% url 'account-view' object.pk %}"><button type=button>
+    {{object.email}}
+</button></a>
+{% endfor %}
+
+</div>
+{% endblock %}

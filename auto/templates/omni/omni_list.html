@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-<a class="select" href="{% url 'omni-list' %}"><button class="select" type=button>Omnicells</button></a>
-<a href="{% url 'ref-list' %}"><button type=button>Refrigerators</button></a>
-<a href="{% url 'box-list' %}"><button type=button>Lockboxes</button></a>
+{% include 'menu/omni.html' %}
 {% endblock %}
 
 {% block search %}

@@ -1,145 +1,96 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-
-<div class="menu">
-    <table class="menu">
-        <tr>
-            <td><a class="menu select" href="{% url 'omnicells' %}">Omnicells</a></td>
-            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-            <td><a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a></td>
-        </tr>
-    </table>
-</div>
-
+{% include 'menu/omni.html' %}
 {% endblock %}
 
 {% block search %}
 
-<div class="search">
-    <table class="search">
-        <tr>
-            <td class="button"><a class="search" href="{% url 'updateOmnicell' object.pk %}">EDIT</a></td>
-            <td class="button"></td>
-            <td class="button"></td>
-            <td><h2>{{object.Omni_Id}}</h2></td>
-            <td width="100%"></td>
-        </tr>
-    </table>
-</div>
+<a href="{% url 'omni-update' object.pk %}"><button type=button>
+    Edit
+</button></a>
 
 {% endblock %}
 
 {% block content %}
 
-<div class="content">
+<div class="form-view">
+    <h1>Hardware</h1>
+    <span>
+        <label for="id_Omni_Description">Description:</label>
+        <p>{{object.Omni_Description}}</p>
+    </span>
 
-    <table class='detail'>
-        <tr>
-            <th colspan=100 class="detail">Hardware</th>
-        </tr>
-        <tr>
-            <td class="label">Description:</td>
-            <td class="detail">{{object.Omni_Description}}</td>
-            <td width="100%"></td>
-        </tr>
+    <span>
+        <label for="id_Serial_Number">Serial:</label>
+        <p>{{object.Serial_Number}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Serial #:</td>
-            <td class="detail">{{object.Serial_Number}}</td>
-        </tr>
+    <span>
+        <label for="id_Model">Model:</label>
+        <p>{{object.Model}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Model:</td>
-            <td class="detail">{{object.Model}}</td>
-        </tr>
+    <h1>Location</h1>
+    <span>
+        <label for="id_Building">Building:</label>
+        <p>{{object.Building}}</p>
+    </span>
 
-        <tr>
-            <th colspan=100 class="detail">Location</th>
-        </tr>
+    <span>
+        <label for="id_Area">Area:</label>
+        <p>{{object.Area}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Building:</td>
-            <td class="detail">{{object.Building}}</td>
-            
-        </tr>
+    {% if object.Room %}
+    <span>
+        <label for="id_Room">Room:</label>
+        <p>{{object.Room}}</p>
+    </span>
+    {% endif %}
 
-        <tr>
-            <td class="label">Area:</td>
-            <td class="detail">{{object.Area}}</td>
-            
-        </tr>
-        {% if object.Room %}
-        <tr>
-            <td class="label">Room:</td>
-            <td class="detail">{{object.Room}}</td>
-        </tr>
-        {% endif %}
-
-        {% if object.Door_Code %}
-        <tr>
-            <td class="label">Door Code:</td>
-            <td class="detail">{{object.Door_Code}}</td>
-        </tr>
-        {% endif %}
+    {% if object.Door_Code %}
+    <span>
+        <label for="id_Door_Code">Door Code:</label>
+        <p>{{object.Door_Code}}</p>
+    </span>
+    {% endif %}
         
-        <tr>
-            <th colspan=100 class="detail">Software</th>
-        </tr>
+    <h1>Software</h1>
+    <span>
+        <label for="id_CT_Version">CT Version:</label>
+        <p>{{object.CT_Version}}</p>
+    </span>
 
-        <tr>
-            <td class="label">CT Version:</td> 
-            <td class="detail">{{object.CT_Version}}</td>
-            
-        </tr>
+    <span>
+        <label for="id_Ivanti">Ivanti:</label>
+        <p>{% if object.Ivanti%}Yes{%else%}No{%endif%}</p>
+    </span>
 
-        <tr>
-            <td class="label">Ivanti:</td>
-            <td class="detail">{% if object.Ivanti %}Yes{%else%}No{%endif%}</td>
-            
-        </tr>
+    <span>
+        <label for="id_Note">Notes:</label>
+        <p>{{object.Note}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Notes:</td>
-            <td colspan="2" class="detail">{{ object.Note }}</td>
-        </tr>
-
-        
-        {% if Refrigerators %}
-        <tr>
-            <th colspan=100 class="detail">Refrigerators</th>
-        </tr>
-
-        <tr>
-            {% for Refrigerator in Refrigerators %}              
-            <td class="detail">
-                <a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>
-                    {{Refrigerator.Facilities_Id}}<br>
-                    {{Refrigerator.Model.Category}}<br>
-                    {{Refrigerator.Model.ModelName}}</a>
-            </td>               
-            {% endfor %}
-        </tr>
-        {% endif %}
-
-        {% if Auxs %}
-        <tr>
-            <th colspan=100 class="detail">Aux Units</th>
-        </tr>
-        <tr>
-            {% for Aux in Auxs %}              
-            <td>
-                <a class='aux' href='{% url "viewAux" Aux.pk %}'>{{Aux.Serial_Number}}
-                    <br>{{Aux.Model}}</a>
-            </td>               
-            {% endfor %}
-        </tr>
-        {% endif %}
-
-    </table>
-
+    {% if Refrigerators %}
+    <h1>Refrigerators</h1>
+    {% for Refrigerator in Refrigerators %}
+    <a href="{% url 'ref-view' object.pk %}"><button type=button>
+        {{object.Facilities_Id}} [{{object.Type}}]
+    </button></a>
+    {% endfor %}
+    {% endif %}
+                          
+    {% if Auxs %}
+    <h1>Aux Units</h1>
+    {% for Aux in Auxs %}              
+    <a href="{% url 'aux-view' Aux.pk %}"><button type=button>
+        {{Aux.Serial_Number}}
+    </button></a>              
+    {% endfor %}
+    {% endif %}
 
 </div>
-<br><br><Br><Br>
+
 
 {% endblock %}

@@ -19,14 +19,15 @@
         color: var(--header-txt-color);
         background-color: var(--header-bg-color);
         height: var(--header-height);
-        font-family: "Co Headline Corp Light Regular";
-        font-size: 40pt;
         user-select: none;
         display: flex;
         flex-direction: row;
         align-items: center;
         padding-left: 25px;
-        font-weight: 900;
+        font-family: "Co Headline Bold", "Co Headline";
+        font-weight: bold;
+        font-size: 40pt;
+        
     }
 
 

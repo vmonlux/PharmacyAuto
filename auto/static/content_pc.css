@@ -93,6 +93,8 @@
         color: var(--content-txt-color);
         border: solid black 2px;
         border-color: var(--content-txt-color);
+        text-align: left;
+        padding-left: 20px;
     }
     div.list button.new{
         background-color: var(--search-bg-color);

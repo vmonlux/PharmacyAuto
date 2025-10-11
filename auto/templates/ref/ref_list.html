@@ -1,59 +1,30 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-<div class="menu">
-    <table class="menu">
-        <tr>
-            <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
-            <td><a class="menu select" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-            <td><a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a></td>
-        </tr>
-    </table>
-</div>
+<a href="{% url 'omni-list' %}"><button type=button>Omnicells</button></a>
+<a class="select" href="{% url 'ref-list' %}"><button class="select" type=button>Refrigerators</button></a>
+<a href="{% url 'box-list' %}"><button type=button>Lockboxes</button></a>
 {% endblock %}
 
 {% block search %}
-<div class="search">
-<table class='search'>
-    <tr>
-        <td>
-            <form action="" method="get">
-                <input name="q" type="search" class="search" placeholder="Search..."> <input type="submit" class="search" value="Search">
-            </form>
-        </td>
-    </tr>
-</table>
-</div>
+<input name="q" type="search" class="search" placeholder="Search...">
+<button type=submit>Search</button>
 {% endblock %}
 
 {% block content %}
 
-<div class="content">
+<div class="list">
 
-    <table class="list">
-        <thead>
-        <tr class="list">
-            <th class="list"> </th>
-            <th class="list">Omnicell</th>
-            <th class="list">Refrigerator</th>
-            <th class="list">Model</th>
-            <th class="list">Type</th>
-            
-            <th> </th>
-        </tr>
-        </thead>
-    {% for object in object_list %}
-        <tr class="list">
-            <td class="list"></td>
-            <td class="list">{{ object.Omnicell }}</td>
-            <td class="list">{{ object.Facilities_Id }}</td>
-            <td class="list">{{object.Model}}</td>
-            <td class="list">{{ object.Type }}</td>
-            <td><a class="link" href="{% url 'viewRefrigerator' object.pk %}">  </a></td>
-        </tr>
-    {% endfor %}
-    </table>
+<a class="new" href=""><button type=button>
+    New Refrigerator
+</button></a>
+{% for object in object_list %}
+
+<a href="{% url 'ref-view' object.pk %}"><button type=button>
+    {{object.Omnicell.Omni_Id}} | {{object.Facilities_Id}}
+</button></a>
+        
+{% endfor %}
 
 </div>
-
 {% endblock %}

@@ -1,57 +1,30 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-<div class="menu">
-    <table class="menu">
-        <tr>
-            <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
-            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-            <td><a class="menu select" href="{% url 'lockboxes' %}">Lockboxes</a></td>
-        </tr>
-    </table>
-</div>
+<a href="{% url 'omni-list' %}"><button type=button>Omnicells</button></a>
+<a href="{% url 'ref-list' %}"><button type=button>Refrigerators</button></a>
+<a class="select" href="{% url 'box-list' %}"><button class="select" type=button>Lockboxes</button></a>
 {% endblock %}
 
 {% block search %}
-<div class="search">
-<table class='search'>
-    <tr>
-        <td>
-            <form action="" method="get">
-                <input name="q" type="search" class="search" placeholder="Search..."> <input type="submit" class="search" value="Search">
-            </form>
-        </td>
-    </tr>
-</table>
-</div>
+<input name="q" type="search" class="search" placeholder="Search...">
+<button type=submit>Search</button>
 {% endblock %}
 
 {% block content %}
 
-<div class="content">
+<div class="list">
 
-    <table class="list">
-        <thead>
-        <tr class="list">
-            <th class="list"> </th>
-            <th class="list">Omnicell</th>
-            <th class="list">Medication</th>
-            <th class="list">Key</th>
-            <th class="list"> </th>
-            <th> </th>
-        </tr>
-        </thead>
-    {% for object in object_list %}
-        <tr class="list">
-            <td class="list"></td>
-            <td class="list">{{ object.Refrigerator.Omnicell }}</td>
-            <td class="list">{{ object.Medication }}</td>
-            <td class="list">{{ object.Key }}</td>
-            <td><a class="link" href="{% url 'viewLockbox' object.pk %}">  </a></td>
-        </tr>
-    {% endfor %}
-    </table>
+<a class="new" href=""><button type=button>
+    New Lockbox
+</button></a>
+{% for object in object_list %}
+
+<a href="{% url 'box-view' object.pk %}"><button type=button>
+    {{object.Refrigerator.Omnicell.Omni_Id}} | {{object.Refrigerator.Facilities_Id}} - {{object.Medication}}
+</button></a>
+        
+{% endfor %}
 
 </div>
-
 {% endblock %}

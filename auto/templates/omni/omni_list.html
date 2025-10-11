@@ -1,24 +1,14 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-<a class="select" href="{% url 'omni-list' %}"><button type=button>Omnicells</button></a>
+<a class="select" href="{% url 'omni-list' %}"><button class="select" type=button>Omnicells</button></a>
 <a href="{% url 'ref-list' %}"><button type=button>Refrigerators</button></a>
 <a href="{% url 'box-list' %}"><button type=button>Lockboxes</button></a>
 {% endblock %}
 
 {% block search %}
-<div class="search">
-<form action="" method="get">
-<table class='search'>
-    <tr>
-        <td class="button"> </td>
-        <td><input name="q" type="search" class="search" placeholder="Search..."></td>
-        <td class="button"><input type="submit" class="search" value="Search"></td>
-        <td width="100%"></td>
-    </tr>
-</table>
-</form>
-</div>
+<input name="q" type="search" class="search" placeholder="Search...">
+<button type=submit>Search</button>
 {% endblock %}
 
 {% block content %}
@@ -30,8 +20,8 @@
 </button></a>
 {% for object in object_list %}
 
-<a class="new" href=""><button type=button>
-    {{object.Name}}
+<a href="{% url 'omni-view' object.pk %}"><button type=button>
+    {{object.Omni_Id}} | {{object.Omni_Description}}
 </button></a>
         
 {% endfor %}

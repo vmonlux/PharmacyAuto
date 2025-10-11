@@ -69,8 +69,8 @@
     }
     div.menu button.select{
         order: 0;
-        background-color: var(--header-bg-color);
-        color: var(--header-txt-color);
+        background-color: rgb(15, 99, 15);
+        color: whitesmoke;
     }
     div.menu button.log{
         order: 2;

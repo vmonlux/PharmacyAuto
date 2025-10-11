@@ -246,7 +246,7 @@ class RefCreate(CreateView):
     
 class RefUpdate(UpdateView):
     model = Refrigerator
-    template_name = 'refrigerator_update.html'
+    template_name = 'ref/ref_update.html'
     form_class = RefrigeratorForm
     
     def form_valid(self, form):

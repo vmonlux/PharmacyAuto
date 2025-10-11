@@ -10,7 +10,12 @@
         align-items: center;
         border: solid black 1px;
     }
-    div.content div.login input, label, button, p{
+    div.content div.login p{
+        padding-left: 100px;
+        padding-right: 100px;
+        font-size: 30pt;
+    }
+    div.content div.login input, label, button{
         font-size: 18pt;
         height: 80px;
     }

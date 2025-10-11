@@ -2,7 +2,7 @@
 @media (min-resolution: 2dppx){
     :root{
         --header-height: 80px;
-        --header-font: Lato;
+        --header-font: "Co Headline Bold", "Co Headline";
         --menu-height: 90px;
         --menu-font: Lato;
         --search-height: 100px;
@@ -33,7 +33,7 @@
         height: var(--header-height);
         font-family: var(--header-font);
         user-select: none;
-
+        font-size: 56pt;
         display: flex;
         flex-direction: row;
     }

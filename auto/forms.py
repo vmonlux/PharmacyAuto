@@ -2,12 +2,13 @@ from django import forms
 from django.forms import ModelForm
 from django.forms.fields import Field
 from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 from auto.models import *
 
-class UserCreateForm(forms.ModelForm):
+class UserCreateForm(UserCreationForm):
     class Meta:
         model = get_user_model()
-        fields = (
+        fields = UserCreationForm.Meta.fields + (
             'email',
             'first_name',
             'last_name',

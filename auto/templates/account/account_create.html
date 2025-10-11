@@ -38,7 +38,7 @@
 
     <span>
         <label for="id_email">Email:</label>
-        {{form.email}}
+        {{form.username}}
     </span>
 
     <span>
@@ -50,6 +50,10 @@
         <label>System Admin:</label>
         {{form.is_staff}}
     </span>
+
+    {{form.email.as_hidden}}
+    {{form.password1.as_hidden}}
+    {{form.password2.as_hidden}}
 
 
 </div>

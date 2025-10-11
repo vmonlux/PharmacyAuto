@@ -84,6 +84,23 @@ class UserCreate(LoginRequiredMixin, CreateView):
     form_class = UserCreateForm
     context_object_name = "object"
     
+    def get_initial(self):
+        initial = super().get_initial()
+        random_password = User.objects.make_random_password()
+        initial['password1'] = random_password
+        initial['password2'] = random_password
+        return initial
+    
+    def form_valid(self, form):
+        form.instance.email = form.cleaned_data['username']
+        random_password = User.objects.make_random_password()
+        form.instance.password1 = random_password
+        form.instance.password2 = random_password
+        user = form.save(commit=False)
+
+        user.save()
+        return super().form_valid(form)
+    
     def get_success_url(self):
         return reverse_lazy('account-view', kwargs={'pk': self.object.pk})
     

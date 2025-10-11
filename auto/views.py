@@ -56,8 +56,9 @@ class UserList(LoginRequiredMixin, ListView):
     template_name = 'account/account_list.html'
     
     def get_queryset(self):
-        queryset = super().get_queryset()
+        set = super().get_queryset()
         query = self.request.GET.get('q')
+        queryset = set.filter(is_active=True)
         if query:
             filter = queryset.filter(
                 Q(username__icontains=query) |

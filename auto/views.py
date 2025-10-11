@@ -82,6 +82,12 @@ class UserCreate(LoginRequiredMixin, CreateView):
     template_name = 'account/account_create.html'
     form_class = UserCreateForm
     
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.set_unusable_password()  # Set a password that cannot be used for login
+        self.object.save()
+        return redirect(self.get_success_url())
+    
     def get_success_url(self):
         return reverse_lazy('account-view', kwargs={'pk': self.object.pk})
     

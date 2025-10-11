@@ -10,17 +10,13 @@
 {% endblock %}
 
 {% block search %}
-
 <a href="{% url 'omni-view' object.pk %}"><button type=button>
     Cancel
 </button></a>
-
 <button type=submit>Save</button>
-
 {% endblock %}
 
 {% block content %}
-
 <div class="form-view">
     
     {% if form.errors %}
@@ -97,6 +93,4 @@
 
 
 </div>
-
-
 {% endblock %}

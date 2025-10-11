@@ -20,7 +20,7 @@
         background-color: var(--header-bg-color);
         height: var(--header-height);
         font-family: "Co Headline Corp Light Regular";
-        font-size: 30pt;
+        font-size: 40pt;
         user-select: none;
         display: flex;
         flex-direction: row;
@@ -65,8 +65,10 @@
         min-width: 150px;
         max-width: 500px;
         width: auto;
+        font-family: var(--menu-font);
         font-size: 14pt;
-        font-weight: bold;
+        font-weight: 200;
+        text-transform: uppercase;
     }
     div.menu button.select{
         order: 0;

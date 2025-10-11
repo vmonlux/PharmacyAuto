@@ -40,9 +40,10 @@ urlpatterns = [
     path('ref/view/<int:pk>', RefView.as_view(), name='ref-view'),
     path('ref/update/<int:pk>', RefUpdate.as_view(), name='ref-update'),
     
-    path('lockbox/', BoxList.as_view(), name='box-list'),
-    path('lockbox/view/<int:pk>', BoxView.as_view(), name='box-view'),
-    path('lockbox/update/<int:pk>', BoxUpdate.as_view(), name='box-update'),
+    path('box/', BoxList.as_view(), name='box-list'),
+    path('box/create/', BoxCreate.as_view(), name='box-create'),
+    path('box/view/<int:pk>', BoxView.as_view(), name='box-view'),
+    path('box/update/<int:pk>', BoxUpdate.as_view(), name='box-update'),
 
     path('master/omnicell', OmniMaster.as_view(), name='omnimaster'),
     path('master/refrigerator', FlexMaster.as_view(), name='flexmaster'),

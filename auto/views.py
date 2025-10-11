@@ -178,12 +178,25 @@ class BoxList(ListView):
     
 class BoxView(DetailView):
     model = Lockbox
-    template_name = 'box_view.html'
+    template_name = 'box/box_view.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
 
+class BoxCreate(CreateView):
+    model = Lockbox
+    template_name = 'box/box_create.html'
+    form_class = LockboxForm
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Lockbox Created")
+        return super(BoxCreate, self).form_valid(form)
+    
+    def get_success_url(self):
+
+        return reverse_lazy("box-view", kwargs={'pk': self.object.pk})
+    
 class BoxUpdate(UpdateView):
     model = Lockbox
     template_name = 'box/box_update.html'
@@ -239,7 +252,7 @@ class RefCreate(CreateView):
     
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Created")
-        return super(OmniCreate, self).form_valid(form)
+        return super(RefCreate, self).form_valid(form)
     
     def get_success_url(self):
         return reverse_lazy("omni-view", kwargs={'pk': self.object.pk})

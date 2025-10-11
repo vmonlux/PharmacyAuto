@@ -5,15 +5,12 @@
 {% endblock %}
 
 {% block search %}
-
 <a href="{% url 'omni-update' object.pk %}"><button type=button>
     Edit
 </button></a>
-
 {% endblock %}
 
 {% block content %}
-
 <div class="form-view">
     <h1>Hardware</h1>
     <span>
@@ -90,9 +87,5 @@
     {% endfor %}
     {% endif %}
                           
-    
-
 </div>
-
-
 {% endblock %}

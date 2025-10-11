@@ -1,88 +1,40 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-
-<div class="menu">
-    <table class="menu">
-        <tr>
-            <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
-            <td><a class="menu" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-            <td><a class="menu select" href="{% url 'lockboxes' %}">Lockboxes</a></td>
-        </tr>
-    </table>
-</div>
-
+<a href="{% url 'omni-list' %}"><button type=button>Omnicells</button></a>
+<a href="{% url 'ref-list' %}"><button type=button>Refrigerators</button></a>
+<a class="select" href="{% url 'box-list' %}"><button class="select" type=button>Lockboxes</button></a>
 {% endblock %}
 
+
 {% block search %}
-
-<div class="search">
-    <table class="search">
-        <tr>
-            <td class="button"><a class="search" href="{% url 'updateLockbox' object.pk %}">EDIT</a></td>
-            <td class="button"></td>
-            <td class="button"></td>
-            <td><h2>
-                {{ object.Refrigerator.Omnicell}}
-                {% if object.Medication %}
-                 | {{object.Medication}} Lockbox
-                {% endif %}
-            </h2></td>
-            <td width="100%"></td>
-        </tr>
-    </table>
-</div>
-
+<a href="{% url 'box-update' object.pk %}"><button type=button>
+    Edit
+</button></a>
 {% endblock %}
 
 {% block content %}
+<div class="form-view">
 
-<div class="content">
+    <span>
+        <label for="id_Refrigerator">Refrigerator:</label>
+        <p>{{object.Refrigerator}}</p>
+    </span>
 
-    <table class='detail'>
-        <tr>
-            <th colspan=100 class="detail">Details</th>
-        </tr>
-        <tr>
-            <td class="label">Omnicell</td>
-            <td class="detail">{{object.Refrigerator.Omnicell}}</td>
-            <td width="100%"></td>
-        </tr>
+    <span>
+        <label for="id_Medication">Medication:</label>
+        <p>{{object.Medication}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Key:</td>
-            <td class="detail">{{object.Key}}</td>
-        </tr>
+    <span>
+        <label for="id_Description">Description:</label>
+        <p>{{object.Description}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Medication:</td>
-            <td class="detail">{{object.Medication}}</td>
-        </tr>
+    <span>
+        <label for="id_Key">Key:</label>
+        <p>{{object.Key}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Description:</td>
-            <td class="detail">{{object.Description}}</td>
-        </tr>
-
-        <tr>
-            <th colspan=100 class="detail">Related Objects</th>
-        </tr>
-
-        <tr>
-            <td class="label"></td>
-            {%if object.Refrigerator.Omnicell%}
-            <td class="detail"><a class="omni" href="{% url 'viewOmnicell' object.Refrigerator.Omnicell.pk %}">Go to<br>{{object.Refrigerator.Omnicell}}</a></td>
-            {%endif%}
-            {%if object.Refrigerator%}
-            <td class="detail">
-                <a class='ref' href='{% url "viewRefrigerator" Refrigerator.pk %}'>
-                    {{Refrigerator.Facilities_Id}}<br>
-                    {{Refrigerator.Model.Category}}<br>
-                    {{Refrigerator.Model.ModelName}}</a>
-            </td>
-            {%endif%}
-        </tr>
-    </table>
 </div>
-
 {% endblock %}

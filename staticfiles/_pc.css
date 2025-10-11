@@ -1,6 +1,6 @@
 /* style for desktop devices */
 @media (max-resolution: 1.9dppx){
-    
+
     div.wrap{
         position: absolute;
         top: 0px;
@@ -20,15 +20,15 @@
         background-color: var(--header-bg-color);
         height: var(--header-height);
         font-family: "Co Headline Corp Light Regular";
+        font-size: 30pt;
         user-select: none;
         display: flex;
         flex-direction: row;
-        text-transform: uppercase;
+        align-items: center;
+        padding-left: 25px;
+        font-weight: 900;
     }
-    div.header h1{
-        font-family: "Co Headline Corp Light Regular";
-        margin: 0px;
-    }
+
 
     div.menu{
         color: var(--menu-txt-color);
@@ -45,21 +45,18 @@
         padding-right: 10px;
 
     }
-    div.menu form{
-        height: inherit;
-        width: 100%;
-        display: inherit;
-    }
     div.menu span{
         order: 1;
         display: flex;
         flex-direction: row;
         overflow-y: clip;
-        overflow-x: auto;
-        
+        overflow-x: auto; 
     }
     div.menu span::-webkit-scrollbar{
         height: 1px;
+    }
+    div.menu a{
+        width: auto;
     }
     div.menu button{
         order: 1;

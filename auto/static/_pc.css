@@ -89,7 +89,7 @@
         background-color: var(--search-bg-color);
         height: var(--search-height);
         user-select: none;
-
+        padding: 5px;
         display: flex;
         flex-direction: row;
         align-items: center;

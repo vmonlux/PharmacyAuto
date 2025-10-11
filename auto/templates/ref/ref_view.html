@@ -1,64 +1,42 @@
 {% extends 'base.html' %}
 
 {% block menu %}
-
-<div class="menu">
-    <table class="menu">
-        <tr>
-            <td><a class="menu" href="{% url 'omnicells' %}">Omnicells</a></td>
-            <td><a class="menu select" href="{% url 'refrigerators' %}">Refrigerators</a></td>
-            <td><a class="menu" href="{% url 'lockboxes' %}">Lockboxes</a></td>
-        </tr>
-    </table>
-</div>
-
+{% include 'menu/ref.html' %}
 {% endblock %}
 
 {% block search %}
 
-<div class="search">
-    <table class="search">
-        <tr>
-            <td class="button"><a class="search" href="{% url 'updateRefrigerator' object.pk %}">EDIT</a></td>
-            <td class="button"></td>
-            <td class="button"></td>
-            <td><h2>{{object.Facilities_Id}}</h2></td>
-            <td width="100%"></td>
-        </tr>
-    </table>
-</div>
+<a href="{% url 'ref-update' object.pk %}"><button type=button>
+    Edit
+</button></a>
 
 {% endblock %}
 
 {% block content %}
 
-<div class="content">
+<div class="form-view">
+    <h1>Hardware</h1>
 
-    <table class='detail'>
-        <tr>
-            <th colspan=100 class="detail">Hardware</th>
-        </tr>
-        <tr>
-            <td class="label">Facilities ID:</td>
-            <td class="detail">{{object.Facilities_Id}}</td>
-            <td width="100%"></td>
-        </tr>
+    <span>
+        <label for="id_Facilities_Id">Facilities ID:</label>
+        <p>{{object.Facilities_Id}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Omnicell:</td>
-            <td class="detail">{{object.Omnicell}}</td>
-        </tr>
+    <span>
+        <label for="id_Omnicell:">Omnicell:</label>
+        <p>{{object.Omnicell:}}</p>
+    </span>
 
-        <tr>
-            <td class="label">Size:</td>
-            <td class="detail">{{object.Model.Category}}</td>
-        </tr>
-        
-        <tr>
-            <td class="label">Model:</td>
-            <td class="detail">{{object.Model}}</td>
-        </tr>
-    </table>
+    <span>
+        <label for="id_Category:">Size:</label>
+        <p>{{object.Category:}}</p>
+    </span>
+
+    <span>
+        <label for="id_Model:">Model:</label>
+        <p>{{object.Model:}}</p>
+    </span>
+
 </div>
 
 

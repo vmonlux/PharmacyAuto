@@ -83,6 +83,18 @@ class OmniView(DetailView):
         context["Auxs"] = Aux.objects.filter(Omnicell=self.kwargs['pk'])
         return context
 
+class OmniCreate(CreateView):
+    model = Omnicell
+    template_name = 'omni/omni_create.html'
+    form_class = OmnicellCreateForm
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Omnicell Created")
+        return super(OmniCreate, self).form_valid(form)
+    
+    def get_success_url(self):
+        return reverse_lazy("omni-view", kwargs={'pk': self.object.pk})
+
 class OmniUpdate(UpdateView):
     model = Omnicell
     template_name = 'omni/omni_update.html'
@@ -220,6 +232,18 @@ class RefView(DetailView):
         context = super().get_context_data(**kwargs)
         return context
 
+class RefCreate(CreateView):
+    model = Refrigerator
+    template_name = 'ref/ref_create.html'
+    form_class = RefrigeratorCreateForm
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Omnicell Created")
+        return super(OmniCreate, self).form_valid(form)
+    
+    def get_success_url(self):
+        return reverse_lazy("omni-view", kwargs={'pk': self.object.pk})
+    
 class RefUpdate(UpdateView):
     model = Refrigerator
     template_name = 'refrigerator_update.html'

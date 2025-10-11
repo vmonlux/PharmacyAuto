@@ -27,6 +27,7 @@ urlpatterns = [
     path('backup/', views.backup, name="backup"),
     
     path('omni/', OmniList.as_view(), name='omni-list'),
+    path('omni/create/', OmniCreate.as_view(), name='omni-create'),
     path('omni/view/<int:pk>', OmniView.as_view(), name='omni-view'),
     path('omni/update/<int:pk>', OmniUpdate.as_view(), name='omni-update'),
     
@@ -35,6 +36,7 @@ urlpatterns = [
     path('aux/update/<int:pk>', AuxUpdate.as_view(), name='aux-update'),
     
     path('ref/', RefList.as_view(), name='ref-list'),
+    path('ref/create/', RefCreate.as_view(), name='ref-create'),
     path('ref/view/<int:pk>', RefView.as_view(), name='ref-view'),
     path('ref/update/<int:pk>', RefUpdate.as_view(), name='ref-update'),
     

@@ -31,6 +31,15 @@
         <p>{{object.Model}}</p>
     </span>
 
+    {% if Auxs %}
+    <h1>Aux Units</h1>
+    {% for Aux in Auxs %}              
+    <a href="{% url 'aux-view' Aux.pk %}"><button type=button>
+        {{Aux.Serial_Number}}
+    </button></a>      
+    {% endfor %}
+    {% endif %}
+
     <h1>Location</h1>
     <span>
         <label for="id_Building">Building:</label>
@@ -81,14 +90,7 @@
     {% endfor %}
     {% endif %}
                           
-    {% if Auxs %}
-    <h1>Aux Units</h1>
-    {% for Aux in Auxs %}              
-    <a href="{% url 'aux-view' Aux.pk %}"><button type=button>
-        {{Aux.Serial_Number}}
-    </button></a>              
-    {% endfor %}
-    {% endif %}
+    
 
 </div>
 

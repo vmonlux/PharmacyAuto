@@ -11,7 +11,7 @@
 
 {% block search %}
 
-<a href="{% url 'omni-view' object.pk %}"><button type=button>
+<a href="{% url 'omni-list' %}"><button type=button>
     Cancel
 </button></a>
 
@@ -22,9 +22,8 @@
 {% block content %}
 
 <div class="form-view">
-    
-    {% if form.errors %}
     <span>
+    {% if form.errors %}
         {% for field in form %}
             {% if field.errors %}
             <ul>
@@ -34,13 +33,13 @@
             </ul>
             {% endif %}
         {% endfor %}
-    </span>
     {% endif %}
-    
+    </span>
+
     <h1>Hardware</h1>
     <span>
         <label for="id_Omni_Id">Omnicell ID:</label>
-        <p>{{object.Omni_Id}}</p>
+        {{form.Omni_Id}}
     </span>
 
     <span>

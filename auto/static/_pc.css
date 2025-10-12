@@ -41,12 +41,12 @@
         
     }
 
-
     div.menu{
         color: var(--menu-txt-color);
         background-color: var(--menu-bg-color);
         height: var(--menu-height);
-        overflow: clip;
+        overflow-x: auto;
+        overflow-y: clip;
         user-select: none;
         font-family: var(--menu-font);
         display: flex;

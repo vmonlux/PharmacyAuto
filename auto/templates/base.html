@@ -92,6 +92,7 @@
     
     <div class="wrap">
         <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
         <div class="header">
         {% block header %}       
             OmniMaster

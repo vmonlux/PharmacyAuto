@@ -2,8 +2,16 @@ from django import forms
 from django.forms import ModelForm
 from django.forms.fields import Field
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, SetPasswordForm
 from auto.models import *
+
+class CustomSetPasswordForm(SetPasswordForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add custom attributes to fields, e.g., placeholders
+        self.fields['new_password1'].widget.attrs['placeholder'] = 'New Password'
+        self.fields['new_password2'].widget.attrs['placeholder'] = 'Confirm New Password'
+
 
 class UserCreateForm(UserCreationForm):
     class Meta:

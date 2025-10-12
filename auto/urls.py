@@ -20,12 +20,13 @@ from django.urls import path, include
 from django.conf import settings
 from . import views
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import views as auth_views
 from auto.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
+    
+    
     
     path('', views.home, name="home"),
     
@@ -65,5 +66,7 @@ urlpatterns = [
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += [
+    path('accounts/login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('accounts/reset/<uidb64>/<token>/', views.CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('accounts/', include('django.contrib.auth.urls')),
 ]

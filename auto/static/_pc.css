@@ -1,7 +1,11 @@
 /* style for desktop devices */
 @media (max-resolution: 1.9dppx){
 
-    div.wrap{
+    body{
+        background-color: black;
+    }
+
+    div.overwrap{
         position: absolute;
         top: 0px;
         left: 0px;
@@ -10,9 +14,16 @@
         padding: 0px;
         margin: 0px;
         overflow: clip;
-        max-width: 1800px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+
+    div.wrap{
+        min-width: 700px;
+        width: 100%;
+        max-width: 2000px;
+        align-items: stretch;
     }
 
     div.header{

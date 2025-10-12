@@ -11,7 +11,8 @@ from django.db.models import Q
 from django.http import HttpResponse, FileResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, authenticate, login
+from django.contrib.auth.views import PasswordResetConfirmView
 
 from auto.forms import *
 from .models import *
@@ -50,6 +51,16 @@ def home(request):
     return render(request, 'home.html')
 
 # Database User Object
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = "registration/password_reset_confirm.html"
+    success_url = reverse_lazy('home')
+    
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        user = form.user
+        login(self.request, user)
+        return response
 
 class UserList(LoginRequiredMixin, ListView):
     model = get_user_model()

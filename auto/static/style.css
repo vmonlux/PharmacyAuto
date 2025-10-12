@@ -4,12 +4,12 @@
         --header-height: 70px;
         --header-font: "Co Headline Bold";
         --menu-height: 70px;
-        --menu-font: Lato;
+        --menu-font: "Lato", sans-serif;
         --search-height: 60px;
-        --search-font: Lato;
-        --content-font: Lato;
+        --search-font: "Lato", sans-serif;
+        --content-font: "Lato", sans-serif;
         --footer-height: 30px;
-        --footer-font: Lato;
+        --footer-font: "Lato", sans-serif;
   
     }
 

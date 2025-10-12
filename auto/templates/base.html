@@ -23,6 +23,12 @@
             font-weight:normal;
             font-style:normal;
         }
+        @font-face{
+            font-family: "Lato";
+            src: {% static 'font/LatoWeb-Regular.ttf' %}
+        }
+
+
         {% if user.is_authenticated %}
         {% if user.Theme %}
         {% else %}
@@ -81,6 +87,8 @@
 </head>
 
 <body>
+
+    <div class="overwrap">
     
     <div class="wrap">
         <form method="post" action="{% url 'logout' %}">
@@ -120,6 +128,8 @@
         {% block footer %} 
         {% endblock %}
 
+
+    </div>
 
     </div>
 </body>

@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block search %}
+<a href="{% url 'omnimaster' %}" style="float:left;"><button type=button></button>
+    Master Table
+</button></a>
+
 <input name="q" type="search" class="search" placeholder="Search...">
 <button type=submit>Search</button>
 {% endblock %}

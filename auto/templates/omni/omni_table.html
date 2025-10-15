@@ -6,39 +6,52 @@
 
 {% block content %}
 
-<div id="viewer">
-<table class="masterlist">
-    <tr>
-        <th>Omni ID</th>
-        <th>Hospital</th>
-        <th>Area</th>
-        <th>Room</th>
-        <th>Serial No</th>
-        <th>Description</th>
-        <th>Model</th>
-        <th>CT Version</th>
-        <th>PC Name</th>
-        <th>Emergency</th>
-    </tr>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <td>{% now "F d, Y" %}</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>Hospital</td>
+                    <td>Area</td>
+                    <td>Room</td>
+                    <td>Serial Number</td>
+                    <td>Description</td>
+                    <td>Type</td>
+                    <td>Model</td>
+                    <td>Software Version</td>
+                    <td>Computer Name</td>
+                    <td>Notes</td>
+                    <td>Emergency</td>
+                    <td>Ivanti</td>
+                    <td>Lockbox</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                <tr>
+                    <td>{{object.Omni_Id}}</td>
+                    <td>{{object.Building}}</td>
+                    <td>{{object.Area}}</td>
+                    <td>{{object.Room}}</td>
+                    <td>{{object.Serial_Number}}</td>
+                    <td>{{object.Omni_Description}}</td>
+                    <td>{{object.Type}}</td>
+                    <td>{{object.Model}}</td>
+                    <td>{{object.CT_Version}}</td>
+                    <td>{{object.PC_Name}}</td>
+                    <td>{{object.Note}}</td>
+                    <td>{{object.Emergency}}</td>
+                    <td>{{object.Ivanti}}</td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-    {% for object in object_list %}
-    <tr class="list">
-        <td class="list">{{object.Omni_Id}}</td>
-        <td class="list">{%if object.Building%}{{object.Building}}{%endif%}</td>
-        <td class="list">{%if object.Area%}{{object.Area}}{%endif%}</td>
-        <td class="list">{%if object.Room%}{{object.Room}}{%endif%}</td>
-        <td class="list">{{object.Serial_Number}}</td>
-        <td class="list">{{object.Omni_Description}}</td>
-        <td class="list">{%if object.Model%}{{object.Model}}{%endif%}</td>
-        <td class="list">{%if object.CT_Version%}{{object.CT_Version}}{%endif%}</td>
-        <td class="list">{%if object.PC_Name%}{{object.PC_Name}}{%endif%}</td>
-        <td class="list">{%if object.Emergency%}EMERGENCY{%endif%}</td>
-    </tr>
-    {% endfor %}
-
-</table>
-
-</div>
 
 {% endblock %}
 

@@ -358,7 +358,7 @@ class RefUpdate(LoginRequiredMixin, UpdateView):
 
 class OmniMaster(LoginRequiredMixin, ListView):
     model = Omnicell
-    template_name='omni_table.html'
+    template_name='omni/omni_table.html'
 
 class FlexMaster(LoginRequiredMixin, ListView):
     model = Refrigerator

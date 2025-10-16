@@ -26,40 +26,38 @@ from auto.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    
-    
     path('', views.home, name="home"),
     
     path('backup/', views.backup, name="backup"),
     
-    path('account/', UserList.as_view(), name='account-list'),
-    path('account/create/', UserCreate.as_view(), name='account-create'),
-    path('account/view/<int:pk>', UserView.as_view(), name='account-view'),
-    path('account/update/<int:pk>', UserUpdate.as_view(), name='account-update'),
+    path('db/account/', UserList.as_view(), name='account-list'),
+    path('db/account/create/', UserCreate.as_view(), name='account-create'),
+    path('db/account/view/<int:pk>', UserView.as_view(), name='account-view'),
+    path('db/account/update/<int:pk>', UserUpdate.as_view(), name='account-update'),
     
-    path('omni/', OmniList.as_view(), name='omni-list'),
-    path('omni/create/', OmniCreate.as_view(), name='omni-create'),
-    path('omni/view/<int:pk>', OmniView.as_view(), name='omni-view'),
-    path('omni/update/<int:pk>', OmniUpdate.as_view(), name='omni-update'),
+    path('db/omni/', OmniList.as_view(), name='omni-list'),
+    path('db/omni/create/', OmniCreate.as_view(), name='omni-create'),
+    path('db/omni/view/<int:pk>', OmniView.as_view(), name='omni-view'),
+    path('db/omni/update/<int:pk>', OmniUpdate.as_view(), name='omni-update'),
     
-    path('aux/', AuxList.as_view(), name='aux-list'),
-    path('aux/view/<int:pk>', AuxView.as_view(), name='aux-view'),
-    path('aux/update/<int:pk>', AuxUpdate.as_view(), name='aux-update'),
+    path('db/aux/', AuxList.as_view(), name='aux-list'),
+    path('db/aux/view/<int:pk>', AuxView.as_view(), name='aux-view'),
+    path('db/aux/update/<int:pk>', AuxUpdate.as_view(), name='aux-update'),
     
-    path('ref/', RefList.as_view(), name='ref-list'),
-    path('ref/create/', RefCreate.as_view(), name='ref-create'),
-    path('ref/view/<int:pk>', RefView.as_view(), name='ref-view'),
-    path('ref/update/<int:pk>', RefUpdate.as_view(), name='ref-update'),
+    path('db/ref/', RefList.as_view(), name='ref-list'),
+    path('db/ref/create/', RefCreate.as_view(), name='ref-create'),
+    path('db/ref/view/<int:pk>', RefView.as_view(), name='ref-view'),
+    path('db/ref/update/<int:pk>', RefUpdate.as_view(), name='ref-update'),
     
-    path('box/', BoxList.as_view(), name='box-list'),
-    path('box/create/', BoxCreate.as_view(), name='box-create'),
-    path('box/view/<int:pk>', BoxView.as_view(), name='box-view'),
-    path('box/update/<int:pk>', BoxUpdate.as_view(), name='box-update'),
+    path('db/box/', BoxList.as_view(), name='box-list'),
+    path('db/box/create/', BoxCreate.as_view(), name='box-create'),
+    path('db/box/view/<int:pk>', BoxView.as_view(), name='box-view'),
+    path('db/box/update/<int:pk>', BoxUpdate.as_view(), name='box-update'),
 
-    path('master/omnicell', OmniMaster.as_view(), name='omnimaster'),
-    path('master/refrigerator', FlexMaster.as_view(), name='flexmaster'),
-    path('master/lockbox', LockMaster.as_view(), name='lockmaster'),
-    path('master/aux', AuxMaster.as_view(), name='auxmaster'),
+    path('db/master/omnicell', OmniMaster.as_view(), name='omnimaster'),
+    path('db/master/refrigerator', FlexMaster.as_view(), name='flexmaster'),
+    path('db/master/lockbox', LockMaster.as_view(), name='lockmaster'),
+    path('db/master/aux', AuxMaster.as_view(), name='auxmaster'),
 
     path('test/', TestView.as_view(), name='test'),
 ]

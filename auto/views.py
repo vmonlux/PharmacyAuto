@@ -64,7 +64,7 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 
 class UserList(LoginRequiredMixin, ListView):
     model = get_user_model()
-    template_name = 'account/account_list.html'
+    template_name = 'db/account/account_list.html'
     context_object_name = "object"
     
     def get_queryset(self):
@@ -91,7 +91,7 @@ class UserList(LoginRequiredMixin, ListView):
     
 class UserCreate(LoginRequiredMixin, CreateView):
     model = get_user_model()
-    template_name = 'account/account_create.html'
+    template_name = 'db/account/account_create.html'
     form_class = UserCreateForm
     context_object_name = "object"
     
@@ -117,13 +117,13 @@ class UserCreate(LoginRequiredMixin, CreateView):
     
 class UserView(LoginRequiredMixin, DetailView):
     model = get_user_model()
-    template_name = 'account/account_view.html'
+    template_name = 'db/account/account_view.html'
     context_object_name = "object"
 
 class UserUpdate(LoginRequiredMixin, UpdateView):
     model = get_user_model()
     form_class = UserEditForm
-    template_name = 'account/account_update.html'
+    template_name = 'db/account/account_update.html'
     context_object_name = "object"
     
     def get_success_url(self):
@@ -132,7 +132,7 @@ class UserUpdate(LoginRequiredMixin, UpdateView):
 
 class OmniList(LoginRequiredMixin, ListView):
     model = Omnicell
-    template_name = 'omni/omni_list.html'
+    template_name = 'db/omni/omni_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
@@ -159,7 +159,7 @@ class OmniList(LoginRequiredMixin, ListView):
     
 class OmniView(LoginRequiredMixin, DetailView):
     model = Omnicell
-    template_name = 'omni/omni_view.html'
+    template_name = 'db/omni/omni_view.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -169,7 +169,7 @@ class OmniView(LoginRequiredMixin, DetailView):
 
 class OmniCreate(LoginRequiredMixin, CreateView):
     model = Omnicell
-    template_name = 'omni/omni_create.html'
+    template_name = 'db/omni/omni_create.html'
     form_class = OmnicellCreateForm
     
     def form_valid(self, form):
@@ -181,7 +181,7 @@ class OmniCreate(LoginRequiredMixin, CreateView):
 
 class OmniUpdate(LoginRequiredMixin, UpdateView):
     model = Omnicell
-    template_name = 'omni/omni_update.html'
+    template_name = 'db/omni/omni_update.html'
     form_class = OmnicellForm
     
     def form_valid(self, form):
@@ -194,7 +194,7 @@ class OmniUpdate(LoginRequiredMixin, UpdateView):
 
 class AuxList(LoginRequiredMixin, ListView):
     model = Aux
-    template_name = 'auxx/aux_list.html'
+    template_name = 'db/auxx/aux_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
@@ -218,7 +218,7 @@ class AuxList(LoginRequiredMixin, ListView):
     
 class AuxView(LoginRequiredMixin, DetailView):
     model = Aux
-    template_name = 'aux/aux_view.html'
+    template_name = 'db/auxx/aux_view.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -226,7 +226,7 @@ class AuxView(LoginRequiredMixin, DetailView):
 
 class AuxUpdate(LoginRequiredMixin, UpdateView):
     model = Aux
-    template_name = 'aux_update.html'
+    template_name = 'db/auxx/aux_update.html'
     form_class = AuxForm
     
     def form_valid(self, form):
@@ -239,7 +239,7 @@ class AuxUpdate(LoginRequiredMixin, UpdateView):
 
 class BoxList(LoginRequiredMixin, ListView):
     model = Lockbox
-    template_name = 'box/box_list.html'
+    template_name = 'db/box/box_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
@@ -262,7 +262,7 @@ class BoxList(LoginRequiredMixin, ListView):
     
 class BoxView(LoginRequiredMixin, DetailView):
     model = Lockbox
-    template_name = 'box/box_view.html'
+    template_name = 'db/box/box_view.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -270,7 +270,7 @@ class BoxView(LoginRequiredMixin, DetailView):
 
 class BoxCreate(LoginRequiredMixin, CreateView):
     model = Lockbox
-    template_name = 'box/box_create.html'
+    template_name = 'db/box/box_create.html'
     form_class = LockboxForm
     
     def form_valid(self, form):
@@ -283,7 +283,7 @@ class BoxCreate(LoginRequiredMixin, CreateView):
     
 class BoxUpdate(LoginRequiredMixin, UpdateView):
     model = Lockbox
-    template_name = 'box/box_update.html'
+    template_name = 'db/box/box_update.html'
     form_class = LockboxForm
     
     def form_valid(self, form):
@@ -296,7 +296,7 @@ class BoxUpdate(LoginRequiredMixin, UpdateView):
 
 class RefList(LoginRequiredMixin, ListView):
     model = Refrigerator
-    template_name = 'ref/ref_list.html'
+    template_name = 'db/ref/ref_list.html'
     
     def get_queryset(self):
         query = self.request.GET.get("q")
@@ -323,7 +323,7 @@ class RefList(LoginRequiredMixin, ListView):
     
 class RefView(LoginRequiredMixin, DetailView):
     model = Refrigerator
-    template_name = 'ref/ref_view.html'
+    template_name = 'db/ref/ref_view.html'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -331,7 +331,7 @@ class RefView(LoginRequiredMixin, DetailView):
 
 class RefCreate(LoginRequiredMixin, CreateView):
     model = Refrigerator
-    template_name = 'ref/ref_create.html'
+    template_name = 'db/ref/ref_create.html'
     form_class = RefrigeratorCreateForm
     
     def form_valid(self, form):
@@ -343,7 +343,7 @@ class RefCreate(LoginRequiredMixin, CreateView):
     
 class RefUpdate(LoginRequiredMixin, UpdateView):
     model = Refrigerator
-    template_name = 'ref/ref_update.html'
+    template_name = 'db/ref/ref_update.html'
     form_class = RefrigeratorForm
     
     def form_valid(self, form):
@@ -358,7 +358,7 @@ class RefUpdate(LoginRequiredMixin, UpdateView):
 
 class OmniMaster(LoginRequiredMixin, ListView):
     model = Omnicell
-    template_name='omni/omni_table.html'
+    template_name='db/omni/omni_table.html'
 
 class FlexMaster(LoginRequiredMixin, ListView):
     model = Refrigerator
@@ -366,8 +366,8 @@ class FlexMaster(LoginRequiredMixin, ListView):
 
 class LockMaster(LoginRequiredMixin, ListView):
     model = Lockbox
-    template_name='lockbox_table.html'
+    template_name='db/box/lockbox_table.html'
 
 class AuxMaster(LoginRequiredMixin, ListView):
     model = Aux
-    template_name='aux_table.html'
+    template_name='db/auxx/aux_table.html'

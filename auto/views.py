@@ -371,3 +371,14 @@ class LockMaster(LoginRequiredMixin, ListView):
 class AuxMaster(LoginRequiredMixin, ListView):
     model = Aux
     template_name='db/auxx/aux_table.html'
+
+# Dashboard Views
+
+class DashView(LoginRequiredMixin, TemplateView):
+    template_name = 'dash/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        upgrades = Omnicell.objects.filter(~Q(CT_Version='28.5.13.21'))
+        context["Upgrades"] = upgrades
+        return context

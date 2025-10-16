@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 {% block menu %}
-{% if user.is_authenticated %}
 {% include 'menu/main.html' %}
-{% else %}
-<a href="{% url 'login' %}"><button type=button>Login</button></a>
-{% endif %}
 {% endblock %}
 

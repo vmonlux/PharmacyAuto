@@ -60,6 +60,8 @@ urlpatterns = [
     path('db/master/aux', AuxMaster.as_view(), name='auxmaster'),
 
     path('test/', TestView.as_view(), name='test'),
+
+    path('dash/', DashView.as_view(), name='dash'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

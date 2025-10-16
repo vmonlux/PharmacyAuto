@@ -380,7 +380,17 @@ class DashView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         upgrades = Omnicell.objects.filter(~Q(CT_Version='28.5.13.21'))
+        nt = upgrades.filter(Building__Name="NT").count()
+        st = upgrades.filter(Building__Name="ST").count()
+        ub = upgrades.filter(Building__Name="HVN").count()
+        total = upgrades.count()
+        offsite = total - nt - st - ub
         context["Upgrades"] = upgrades
+        context["Total"] = total
+        context["NT"] = nt
+        context["ST"] = st
+        context["UB"] = ub
+        context["OFF"] = offsite
         return context
 
 class OmniDashUpdate(LoginRequiredMixin, UpdateView):

@@ -83,12 +83,14 @@
     {% endblock %}
 
     <style>
-        .master{
-            margin-right: auto;
+        div.header span{
+            margin-left: auto;
+            font-family: "Lato", sans-serif;
+            font-size: 28pt;
         }
         div.search span{
             order: 2;
-            margin-left: auto;
+            margin-left: 400px;
         }
     </style>
 
@@ -106,6 +108,11 @@
         <div class="header">
         {% block header %}       
             OmniMaster
+            {% if user.is_authenticated %}
+            <span>
+                {{user.first_name}} {{user.last_name}}
+            </span>
+            {% endif %}
         {% endblock %}
         </div>
 

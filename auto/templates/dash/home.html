@@ -12,7 +12,7 @@
     <h3>Offsite: ((OFF))</h3>
     <div class="content">
     {% for Omni in Upgrades %}
-    <a href="{% url 'dash-omni' Omni.pk %}"><button>
+    <a href="{% url 'dash-omni' Omni.pk %}"><button type="button">
         {{Omni.Omni_Id}}
     </button></a>
     {% endfor %}

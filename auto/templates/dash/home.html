@@ -6,10 +6,10 @@
 <div class="dash-box">
     <h1>Version Upgrades</h1>
     <h2>Remaining: {{Total}}/{{Omni_Tot}} <progress max="{{Omni_Tot}}" value="{{Total}}"></progress></h2>
-    <h3>North Tower: {{NT}} <progress max="{{NT_Tot}}" value="{{NT}}"></progress></h2></h3>
-    <h3>South Tower: {{ST}} <progress max="{{ST_Tot}}" value="{{ST}}"></progress></h2></h3>
+    <h3>North Tower: {{NT}}/{{NT_Tot}} <progress max="{{NT_Tot}}" value="{{NT}}"></progress></h2></h3>
+    <h3>South Tower: {{ST}}/{{ST_Tot}} <progress max="{{ST_Tot}}" value="{{ST}}"></progress></h2></h3>
     <h3>HVN Tower: {{UB}}/{{UB_Tot}} <progress max="{{UB_Tot}}" value="{{UB}}"></progress></h2></h3>
-    <h3>Offsite: {{OFF}} <progress max="{{OFF_Tot}}" value="{{OFF}}"></progress></h2></h3>
+    <h3>Offsite: {{OFF}}/{{OFF_Tot}} <progress max="{{OFF_Tot}}" value="{{OFF}}"></progress></h2></h3>
     <div class="content">
     {% for Omni in Upgrades %}
     <a href="{% url 'dash-omni' Omni.pk %}"><button type="button">

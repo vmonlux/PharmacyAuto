@@ -400,7 +400,7 @@ class OmniDashUpdate(LoginRequiredMixin, UpdateView):
     
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Updated")
-        return super(OmniUpdate, self).form_valid(form)
+        return super(OmniDashUpdate, self).form_valid(form)
     
     def get_success_url(self):
         return reverse_lazy("dash")

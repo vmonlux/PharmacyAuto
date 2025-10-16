@@ -379,18 +379,29 @@ class DashView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        upgrades = Omnicell.objects.filter(~Q(CT_Version='28.5.13.21'))
+        omnis = Omnicell.objects.all()
+        upgrades = omnis.filter(~Q(CT_Version='28.5.13.21'))
         nt = upgrades.filter(Building__Name="NT").count()
+        nt_tot = omnis.filter(Building__Name="NT").count()
         st = upgrades.filter(Building__Name="ST").count()
+        st_tot = omnis.filter(Building__Name="ST").count()
         ub = upgrades.filter(Building__Name="HVN").count()
+        ub_tot = omnis.filter(Building__Name="HVN").count()
+        omni_tot = omnis.count()
         total = upgrades.count()
         offsite = total - nt - st - ub
+        offsite_tot = omni_tot - nt_tot - st_tot - ub_tot
         context["Upgrades"] = upgrades
         context["Total"] = total
+        context["Omni_Tot"] = omni_tot
         context["NT"] = nt
+        context["NT_Tot"] = nt_tot
         context["ST"] = st
+        context["ST_Tot"] = st_tot
         context["UB"] = ub
+        context["UB_Tot"] = ub_tot
         context["OFF"] = offsite
+        context["OFF_Tot"] = offsite_tot
         return context
 
 class OmniDashUpdate(LoginRequiredMixin, UpdateView):

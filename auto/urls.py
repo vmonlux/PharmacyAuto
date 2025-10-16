@@ -62,6 +62,7 @@ urlpatterns = [
     path('test/', TestView.as_view(), name='test'),
 
     path('dash/', DashView.as_view(), name='dash'),
+    path('dash/omni/<int:pk>', OmniDashUpdate.as_view(), name="dash-omni"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

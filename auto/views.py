@@ -382,3 +382,15 @@ class DashView(LoginRequiredMixin, TemplateView):
         upgrades = Omnicell.objects.filter(~Q(CT_Version='28.5.13.21'))
         context["Upgrades"] = upgrades
         return context
+
+class OmniDashUpdate(LoginRequiredMixin, UpdateView):
+    model = Omnicell
+    template_name = 'db/omni/omni_update.html'
+    form_class = OmnicellForm
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Omnicell Updated")
+        return super(OmniUpdate, self).form_valid(form)
+    
+    def get_success_url(self):
+        return reverse_lazy("dash")

@@ -394,14 +394,19 @@ class DashView(LoginRequiredMixin, TemplateView):
         context["Upgrades"] = upgrades
         context["Total"] = total
         context["Omni_Tot"] = omni_tot
+        context["Omni_Rem"] = omni_tot - total
         context["NT"] = nt
         context["NT_Tot"] = nt_tot
+        context["NT_Rem"] = nt_tot - nt
         context["ST"] = st
         context["ST_Tot"] = st_tot
+        context["ST_Rem"] = st_tot - st
         context["UB"] = ub
         context["UB_Tot"] = ub_tot
+        context["UB_Rem"] = ub_tot - ub
         context["OFF"] = offsite
         context["OFF_Tot"] = offsite_tot
+        context["OFF_Rem"] = offsite_tot - offsite
         return context
 
 class OmniDashUpdate(LoginRequiredMixin, UpdateView):

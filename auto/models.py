@@ -2,9 +2,26 @@ from django.db import models
 from django.db.models import Sum, Avg, Count, Min, Max
 from django.contrib.auth.models import AbstractUser
 from datetime import date, datetime, timedelta
+from colorfield.fields import ColorField
 
 class User(AbstractUser):
     pass
+
+class Theme(models.Model):
+    Name = models.CharField(max_length=50, blank=False, null=False)
+    Header_BG = ColorField(default="#1d3557")
+    Header_Txt = ColorField(default="#FFFFFF")
+    Menu_BG = ColorField(default="#000000")
+    Menu_Txt = ColorField(default="#FFFFFF")
+    Search_BG = ColorField(default="#598baf")
+    Search_Txt = ColorField(default="#FFFFFF")
+    Content_BG = ColorField(default="#FFFFFF")
+    Content_Txt = ColorField(default="#000000")
+    Footer_BG = ColorField(default="#4d516d")
+    Footer_Txt = ColorField(default="#000000")
+    
+    def __str__(self):
+        return self.Name
 
 class Omnicell(models.Model):
     """ Class for storing Omnicells """

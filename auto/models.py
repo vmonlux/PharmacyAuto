@@ -5,7 +5,7 @@ from datetime import date, datetime, timedelta
 from colorfield.fields import ColorField
 
 class User(AbstractUser):
-    pass
+    Theme = models.ForeignKey("Theme", on_delete=models.PROTECT, blank=True, null=True)
 
 class Theme(models.Model):
     Name = models.CharField(max_length=50, blank=False, null=False)

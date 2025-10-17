@@ -380,7 +380,7 @@ class DashView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         omnis = Omnicell.objects.all()
-        upgrades = omnis.filter(~Q(CT_Version='28.5.13.21'))
+        upgrades = omnis.exclude(CT_Version='28.5.13.21')
         nt = upgrades.filter(Building__Name="NT").count()
         nt_tot = omnis.filter(Building__Name="NT").count()
         st = upgrades.filter(Building__Name="ST").count()

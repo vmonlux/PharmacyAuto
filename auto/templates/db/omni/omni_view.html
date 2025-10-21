@@ -12,80 +12,103 @@
 
 {% block content %}
 <div class="form-view">
-    <h1>Hardware</h1>
-    <span>
-        <label for="id_Omni_Description">Description:</label>
-        <p>{{object.Omni_Description}}</p>
-    </span>
+    <h1>Omnicell Info</h1>
+    <div class="grid">
+        <div class="dash-box">
+            <h1>Hardware</h1>
+            <span>
+                <label for="id_Omni_Description">Description:</label>
+                <p>{{object.Omni_Description}}</p>
+            </span>
 
-    <span>
-        <label for="id_Serial_Number">Serial:</label>
-        <p>{{object.Serial_Number}}</p>
-    </span>
+            <span>
+                <label for="id_Serial_Number">Serial:</label>
+                <p>{{object.Serial_Number}}</p>
+            </span>
 
-    <span>
-        <label for="id_Model">Model:</label>
-        <p>{{object.Model}}</p>
-    </span>
+            <span>
+                <label for="id_Model">Model:</label>
+                <p>{{object.Model}}</p>
+            </span>
+        </div>
 
-    {% if Auxs %}
-    <h1>Aux Units</h1>
-    {% for Aux in Auxs %}              
-    <a href="{% url 'aux-view' Aux.pk %}"><button type=button>
-        {{Aux.Serial_Number}}
-    </button></a>      
-    {% endfor %}
-    {% endif %}
+        {% if Auxs %}
+        <div class="dash-box">
+            <h1>Aux Units</h1>
+            {% for Aux in Auxs %}              
+            <a href="{% url 'aux-view' Aux.pk %}"><button type=button>
+                {{Aux.Serial_Number}}
+            </button></a>      
+            {% endfor %}
+        </div>
+        {% endif %}
 
-    <h1>Location</h1>
-    <span>
-        <label for="id_Building">Building:</label>
-        <p>{{object.Building}}</p>
-    </span>
+        <div class="dash-box">
+            <h1>Location</h1>
+            <span>
+                <label for="id_Building">Building:</label>
+                <p>{{object.Building}}</p>
+            </span>
 
-    <span>
-        <label for="id_Area">Area:</label>
-        <p>{{object.Area}}</p>
-    </span>
+            <span>
+                <label for="id_Area">Area:</label>
+                <p>{{object.Area}}</p>
+            </span>
 
-    {% if object.Room %}
-    <span>
-        <label for="id_Room">Room:</label>
-        <p>{{object.Room}}</p>
-    </span>
-    {% endif %}
+            {% if object.Room %}
+            <span>
+                <label for="id_Room">Room:</label>
+                <p>{{object.Room}}</p>
+            </span>
+            {% endif %}
 
-    {% if object.Door_Code %}
-    <span>
-        <label for="id_Door_Code">Door Code:</label>
-        <p>{{object.Door_Code}}</p>
-    </span>
-    {% endif %}
+            {% if object.Door_Code %}
+            <span>
+                <label for="id_Door_Code">Door Code:</label>
+                <p>{{object.Door_Code}}</p>
+            </span>
+            {% endif %}
+        </div>
+    
+        <div class="dash-box">
+            <h1>Software</h1>
+            <span>
+                <label for="id_CT_Version">CT Version:</label>
+                <p>{{object.CT_Version}}</p>
+            </span>
+
+            <span>
+                <label for="id_Ivanti">Ivanti:</label>
+                <p>{% if object.Ivanti%}Yes{%else%}No{%endif%}</p>
+            </span>
+
+            <span>
+                <label for="id_Note">Notes:</label>
+                <p>{{object.Note}}</p>
+            </span>
+        </div>
+
+        {% if Refrigerators %}
+        <div class="dash-box">
+            <h1>Refrigerators</h1>
+            {% for Refrigerator in Refrigerators %}
+            <a href="{% url 'ref-view' object.pk %}"><button type=button>
+                {{object.Facilities_Id}} [{{object.Type}}]
+            </button></a>
+            {% endfor %}
+        </div>
+        {% endif %}
         
-    <h1>Software</h1>
-    <span>
-        <label for="id_CT_Version">CT Version:</label>
-        <p>{{object.CT_Version}}</p>
-    </span>
+        <div class="dash-box">
+            <h1>Service Requests</h1>
+        </div>
 
-    <span>
-        <label for="id_Ivanti">Ivanti:</label>
-        <p>{% if object.Ivanti%}Yes{%else%}No{%endif%}</p>
-    </span>
+        <div class="dash-box">
+            <h1>Service Log</h1>
+        </div>
 
-    <span>
-        <label for="id_Note">Notes:</label>
-        <p>{{object.Note}}</p>
-    </span>
-
-    {% if Refrigerators %}
-    <h1>Refrigerators</h1>
-    {% for Refrigerator in Refrigerators %}
-    <a href="{% url 'ref-view' object.pk %}"><button type=button>
-        {{object.Facilities_Id}} [{{object.Type}}]
-    </button></a>
-    {% endfor %}
-    {% endif %}
+    </div>
+    
                           
 </div>
 {% endblock %}

@@ -159,7 +159,7 @@ class Lockbox(models.Model):
         return str(self.Refrigerator) + " | " + str(self.Medication)
 
 class RefrigeratorModel(models.Model):
-    """Class Description"""
+    """Class for storing refrigerator models"""
 
     #Fields
     id = models.BigAutoField(primary_key=True)
@@ -182,7 +182,7 @@ class RefrigeratorModel(models.Model):
 
 
 class portLocation(models.Model):
-    """Class Description"""
+    """Class for storing port locations"""
 
     #Fields
     id = models.BigAutoField(primary_key=True)
@@ -195,6 +195,45 @@ class portLocation(models.Model):
     # Methods
     def __str__(self):
         return self.Description
+    
+class Organization(models.Model):
+    """Class for storing organizational groups"""
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    Name = models.CharField(max_length=50, blank=True, null=True)
+
+    # Metadata
+    class Meta:
+        ordering = ['id']
+    
+    # Methods
+    def __str__(self):
+        return self.id
+
+class ServiceItem(models.Model):
+    """Class Description"""
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    Omnicell = models.ForeignKey("Omnicell", on_delete=models.SET_NULL, blank=True, null=True)
+    Summary = models.CharField(max_length=100, blank=True, null=True)
+    Note = models.TextField(max_length=500, blank=True, null=True)
+    Solved = models.BooleanField(default=False)
+    Opened =models.DateTimeField(blank=True, null=True)
+    Opened_By = models.ForeignKey("User", on_delete=models.SET_NULL, blank=True, null=True, related_name='opener')
+    Closed =models.DateTimeField(blank=True, null=True)
+    Closed_By = models.ForeignKey("User", on_delete=models.SET_NULL, blank=True, null=True, related_name='closer')
+    Ivanti_T = models.CharField(max_length=20, blank=True, null=True)
+    Omni_T = models.CharField(max_length=20, blank=True, null=True)
+
+    # Metadata
+    class Meta:
+        ordering = ['id']
+    
+    # Methods
+    def __str__(self):
+        return self.id
 
 # class theclass(models.Model):
 #     """Class Description"""

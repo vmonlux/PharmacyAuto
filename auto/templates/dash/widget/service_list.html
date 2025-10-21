@@ -1,0 +1,22 @@
+<div class="dash-box">
+    <h1>Service Requests</h1>
+    <div class="content">
+    <a href="" class="new"><button type="button" class="new">
+        NEW
+    </button></a>
+    {% for Omni in Requests %}
+    <a href="{% url 'dash-omni' Omni.pk %}"><button type="button">
+        {{Omni.Omni_Id}}
+    </button></a>
+    {% endfor %}
+    <a href=""><button type="button">
+        (( Omni )) | ((Summary))
+    </button></a>
+    <a href=""><button type="button">
+        (( Omni )) | ((Summary))
+    </button></a>
+    <a href=""><button type="button">
+        (( Omni )) | ((Summary))
+    </button></a>
+    </div>
+</div>

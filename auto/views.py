@@ -362,7 +362,7 @@ class RefCreate(LoginRequiredMixin, CreateView):
         return super(RefCreate, self).form_valid(form)
     
     def get_success_url(self):
-        return reverse_lazy("omni-view", kwargs={'pk': self.object.pk})
+        return reverse_lazy("ref-view", kwargs={'pk': self.object.pk})
     
 class RefUpdate(LoginRequiredMixin, UpdateView):
     model = Refrigerator
@@ -382,7 +382,7 @@ class RefUpdate(LoginRequiredMixin, UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("dash")
+        return reverse_lazy("ref-view", kwargs={'pk': self.object.pk})
 
 class SrList(LoginRequiredMixin, ListView):
     model = ServiceItem
@@ -467,6 +467,7 @@ class DashView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        org = self.request.user.Org
         omnis = Omnicell.objects.all()
         
         # CT Upgrade Hooks
@@ -502,9 +503,11 @@ class DashView(LoginRequiredMixin, TemplateView):
         requests = ServiceItem.objects.exclude(Solved=True).order_by('Omnicell')
         context["Requests"] = requests
     
-        # Unorged Hooks
-        unorged = Refrigerator.objects.filter(Org=None)
-        context["Unorged"] = unorged
+        # Spare Fridge Hooks
+        spare = Refrigerator.objects.filter(Org=org, Omnicell=None, Broken=False)
+        context["Spare"] = spare
+        broken = Refrigerator.objects.filter(Org=org, Broken=True)
+        context["Broken"] = broken
         return context
 
 class OmniDashUpdate(LoginRequiredMixin, UpdateView):

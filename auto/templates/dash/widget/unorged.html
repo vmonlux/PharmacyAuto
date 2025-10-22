@@ -3,7 +3,7 @@
     <div class="content">
     {% for Refrigerator in Spare %}
     <a href="{% url 'ref-update' Refrigerator.pk %}"><button type="button">
-        {{Refrigerator.Facilities_Id}}
+        {{Refrigerator.Facilities_Id}} [{{Refrigerator.Model.Category}}]
     </button></a>
     {% endfor %}
     </div>

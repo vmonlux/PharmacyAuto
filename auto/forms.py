@@ -61,7 +61,7 @@ class LockboxForm(ModelForm):
 class RefrigeratorCreateForm(ModelForm):
     class Meta:
         model = Refrigerator
-        fields = ['Facilities_Id', 'Omnicell', 'Model']
+        fields = ['Facilities_Id', 'Omnicell', 'Model', 'Org']
         widgets = {
             'Facilities_Id': forms.TextInput(attrs={'class': 'inputField'}),
         }
@@ -69,7 +69,7 @@ class RefrigeratorCreateForm(ModelForm):
 class RefrigeratorForm(ModelForm):
     class Meta:
         model = Refrigerator
-        fields = ['Facilities_Id', 'Omnicell', 'Model']
+        fields = ['Facilities_Id', 'Omnicell', 'Model', 'Org']
         widgets = {
             'Facilities_Id': forms.TextInput(attrs={'class': 'inputField'}),
         }

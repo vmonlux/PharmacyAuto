@@ -205,7 +205,7 @@ class OmniUpdate(LoginRequiredMixin, UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("dash")
+        return reverse_lazy("omni-view", kwargs={'pk': self.object.pk})
 
 class AuxList(LoginRequiredMixin, ListView):
     model = Aux
@@ -350,6 +350,13 @@ class RefCreate(LoginRequiredMixin, CreateView):
     template_name = 'db/ref/ref_create.html'
     form_class = RefrigeratorCreateForm
     
+    def get_initial(self):
+        org = self.request.user.Org
+        initial = super().get_initial()
+        if self.object.Org is None:
+            initial["Org"] = org
+        return initial
+    
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Created")
         return super(RefCreate, self).form_valid(form)
@@ -362,13 +369,20 @@ class RefUpdate(LoginRequiredMixin, UpdateView):
     template_name = 'db/ref/ref_update.html'
     form_class = RefrigeratorForm
     
+    def get_initial(self):
+        org = self.request.user.Org
+        initial = super().get_initial()
+        if self.object.Org is None:
+            initial["Org"] = org
+        return initial
+    
     def form_valid(self, form):
         messages.success(self.request, "Refrigerator Updated")
         return super(RefUpdate, self).form_valid(form)
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("ref-view", kwargs={'pk': pk})
+        return reverse_lazy("dash")
 
 class SrList(LoginRequiredMixin, ListView):
     model = ServiceItem
@@ -489,7 +503,7 @@ class DashView(LoginRequiredMixin, TemplateView):
         context["Requests"] = requests
     
         # Unorged Hooks
-        unorged = omnis.filter(Org=None)
+        unorged = Refrigerator.objects.filter(Org=None)
         context["Unorged"] = unorged
         return context
 

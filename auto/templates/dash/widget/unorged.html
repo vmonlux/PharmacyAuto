@@ -1,9 +1,9 @@
 <div class="dash-box">
-    <h1>Unorganized Omnis</h1>
+    <h1>Unorganized Refs</h1>
     <div class="content">
-    {% for Omni in Unorged %}
-    <a href="{% url 'omni-update' Omni.pk %}"><button type="button">
-        {{Omni.Omni_Id}} | {{Omni.Summary}}
+    {% for Refrigerator in Unorged %}
+    <a href="{% url 'ref-update' Refrigerator.pk %}"><button type="button">
+        {{Refrigerator.Facilities_Id}}
     </button></a>
     {% endfor %}
     </div>

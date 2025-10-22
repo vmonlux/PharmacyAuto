@@ -226,7 +226,7 @@ class Organization(models.Model):
     
     # Methods
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 class ServiceItem(models.Model):
     """Class Description"""

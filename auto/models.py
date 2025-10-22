@@ -28,6 +28,7 @@ class Omnicell(models.Model):
 
     #Fields
     id = models.BigAutoField(primary_key=True)
+    Org = Model = models.ForeignKey("Organization", on_delete=models.SET_NULL, blank=True, null=True)
     Omni_Id = models.CharField(max_length=50, blank=True, null=True)
     Omni_Description = models.CharField(max_length=50, blank=True, null=True)
     Serial_Number = models.CharField(max_length=7, blank=True, null=True)
@@ -35,6 +36,7 @@ class Omnicell(models.Model):
     CT_Version = models.CharField(max_length=10, blank=True, null=True)
     PC_Name = models.CharField(max_length=20, blank=True, null=True)
     Ivanti = models.BooleanField(default=False)
+    HD_Type = models.ForeignKey("HdType", on_delete=models.SET_NULL, blank=True, null=True)
     
     Site = models.ForeignKey("Site", on_delete=models.SET_NULL, blank=True, null=True)
     Building = models.ForeignKey("Building", on_delete=models.SET_NULL, blank=True, null=True)
@@ -55,6 +57,21 @@ class Omnicell(models.Model):
     # Methods
     def __str__(self):
         return str(self.Omni_Id)
+
+class HdType(models.Model):
+    """Class Description"""
+
+    #Fields
+    id = models.BigAutoField(primary_key=True)
+    Name = models.CharField(max_length=50, blank=True, null=True)
+
+    # Metadata
+    class Meta:
+        ordering = ['id']
+    
+    # Methods
+    def __str__(self):
+        return str(self.id)
 
 class Aux(models.Model):
     """ Class for storing Aux Towers """

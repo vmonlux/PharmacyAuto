@@ -38,7 +38,7 @@
         <label for="id_Omni_Id">Omnicell ID:</label>
         <p>{{object.Omni_Id}}</p>
     </span>
-
+ 
     <span>
         <label for="id_Omni_Description">Description:</label>
         {{form.Omni_Description}}
@@ -54,7 +54,33 @@
         {{form.Model}}
     </span>
 
+    <h1>E-Box</h1>
+    <span>
+        <label for="id_CT_Version">CT Version:</label>
+        {{form.CT_Version}}
+    </span>
+
+    <span>
+        <label for="id_Ivanti">Ivanti:</label>
+        {{form.Ivanti}}
+    </span>
+
+    <span>
+        <label for="id_HD_Type">HD Type:</label>
+        {{form.HD_Type}}
+    </span>
+
+    <h1>Notes</h1>
+    <span>
+        {{form.Note}}
+    </span>
+
     <h1>Location</h1>
+    <span>
+        <label for="id_Org">Organization:</label>
+        {{form.Org}}
+    </span>
+
     <span>
         <label for="id_Building">Building:</label>
         {{form.Building}}
@@ -75,21 +101,7 @@
         {{form.Door_Code}}
     </span>
         
-    <h1>Software</h1>
-    <span>
-        <label for="id_CT_Version">CT Version:</label>
-        {{form.CT_Version}}
-    </span>
-
-    <span>
-        <label for="id_Ivanti">Ivanti:</label>
-        {{form.Ivanti}}
-    </span>
-
-    <span>
-        <label for="id_Note">Notes:</label>
-        {{form.Note}}
-    </span>
+    
 
 
 </div>

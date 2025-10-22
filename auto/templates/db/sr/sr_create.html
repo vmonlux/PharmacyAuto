@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu/db/sr.html' %}
+{% endblock %}
+
+{% block form %}
+<form method="post">
+    {% csrf_token %}
+{% endblock %}
+
+{% block search %}
+<a href="{% url 'sr-list' %}"><button type=button>
+    Cancel
+</button></a>
+<button type=submit>Save</button>
+{% endblock %}
+
+{% block content %}
+<div class="form-view">
+
+    <span>
+        <label for="id_Refrigerator">Omnicell:</label>
+        {{form.Omnicell}}
+    </span>
+
+    <span>
+        <label for="id_Summary">Summary:</label>
+        {{form.Summary}}
+    </span>
+
+    <span>
+        <label for="id_Note">Note:</label>
+        {{form.Note}}
+    </span>
+
+    <span>
+        <label for="id_Solved">Solved:</label>
+        {{form.Solved}}
+    </span>
+
+    <span>
+        <label for="id_Solved">Solved:</label>
+        {{form.Solved}}
+    </span>
+
+    <span>
+        <label for="id_Ivanti_T">Ivanti Ticket #:</label>
+        {{form.Ivanti_T}}
+    </span>
+
+    <span>
+        <label for="id_Omni_T">Omnicell Ticket #:</label>
+        {{form.Omni_T}}
+    </span>
+
+    <span>
+        <label for="id_Opened">Opened:</label>
+        {{form.Opened}}
+    </span>
+
+    <span>
+        <label for="id_Opened_By">Opened By:</label>
+        {{form.Opened_By}}
+    </span>
+
+    <span>
+        <label for="id_Closed">Closed:</label>
+        {{form.Closed}}
+    </span>
+
+    <span>
+        <label for="id_Closed_By">Closed By:</label>
+        {{form.Closed_By}}
+    </span>
+
+</div>
+{% endblock %}

@@ -165,6 +165,7 @@ class OmniView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context["Refrigerators"] = Refrigerator.objects.filter(Omnicell=self.kwargs['pk'])
         context["Auxs"] = Aux.objects.filter(Omnicell=self.kwargs['pk'])
+        context["Requests"] = ServiceItem.objects.exclude(Solved=True).filter(Omnicell=self.kwargs['pk'])
         return context
 
 class OmniCreate(LoginRequiredMixin, CreateView):
@@ -380,6 +381,8 @@ class DashView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         omnis = Omnicell.objects.all()
+        
+        # CT Upgrade Hooks
         upgrades = omnis.exclude(CT_Version='28.5.13.21')
         nt = upgrades.filter(Building__Name="NT").count()
         nt_tot = omnis.filter(Building__Name="NT").count()
@@ -407,6 +410,10 @@ class DashView(LoginRequiredMixin, TemplateView):
         context["OFF"] = offsite
         context["OFF_Tot"] = offsite_tot
         context["OFF_Rem"] = offsite_tot - offsite
+        
+        # SR Hooks
+        requests = ServiceItem.objects.exclude(Solved=True).order_by('Omnicell')
+        context["Requests"] = requests
         return context
 
 class OmniDashUpdate(LoginRequiredMixin, UpdateView):

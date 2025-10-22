@@ -16,95 +16,130 @@
     <div class="grid">
         <div class="dash-box">
             <h1>Hardware</h1>
-            <span>
-                <label for="id_Omni_Description">Description:</label>
-                <p>{{object.Omni_Description}}</p>
-            </span>
+            <div class="content">
+                <span>
+                    <label for="id_Omni_Id">Omni ID:</label>
+                    <p>{{object.Omni_Id}}</p>
+                </span>
 
-            <span>
-                <label for="id_Serial_Number">Serial:</label>
-                <p>{{object.Serial_Number}}</p>
-            </span>
+                <span>
+                    <label for="id_Omni_Description">Description:</label>
+                    <p>{{object.Omni_Description}}</p>
+                </span>
 
-            <span>
-                <label for="id_Model">Model:</label>
-                <p>{{object.Model}}</p>
-            </span>
+                <span>
+                    <label for="id_Serial_Number">Serial:</label>
+                    <p>{{object.Serial_Number}}</p>
+                </span>
+
+                <span>
+                    <label for="id_Model">Model:</label>
+                    <p>{{object.Model}}</p>
+                </span>
+            </div>
         </div>
 
         {% if Auxs %}
         <div class="dash-box">
             <h1>Aux Units</h1>
-            {% for Aux in Auxs %}              
-            <a href="{% url 'aux-view' Aux.pk %}"><button type=button>
-                {{Aux.Serial_Number}}
-            </button></a>      
-            {% endfor %}
+            <div class="content">
+                {% for Aux in Auxs %}              
+                <a href="{% url 'aux-view' Aux.pk %}"><button type=button>
+                    {{Aux.Serial_Number}}
+                </button></a>      
+                {% endfor %}
+            </div>
         </div>
         {% endif %}
 
         <div class="dash-box">
             <h1>Location</h1>
-            <span>
-                <label for="id_Building">Building:</label>
-                <p>{{object.Building}}</p>
-            </span>
+            <div class="content">
+                <span>
+                    <label for="id_Building">Building:</label>
+                    <p>{{object.Building}}</p>
+                </span>
 
-            <span>
-                <label for="id_Area">Area:</label>
-                <p>{{object.Area}}</p>
-            </span>
+                <span>
+                    <label for="id_Area">Area:</label>
+                    <p>{{object.Area}}</p>
+                </span>
 
-            {% if object.Room %}
-            <span>
-                <label for="id_Room">Room:</label>
-                <p>{{object.Room}}</p>
-            </span>
-            {% endif %}
+                {% if object.Room %}
+                <span>
+                    <label for="id_Room">Room:</label>
+                    <p>{{object.Room}}</p>
+                </span>
+                {% endif %}
 
-            {% if object.Door_Code %}
-            <span>
-                <label for="id_Door_Code">Door Code:</label>
-                <p>{{object.Door_Code}}</p>
-            </span>
-            {% endif %}
+                {% if object.Door_Code %}
+                <span>
+                    <label for="id_Door_Code">Door Code:</label>
+                    <p>{{object.Door_Code}}</p>
+                </span>
+                {% endif %}
+            </div>
         </div>
     
         <div class="dash-box">
             <h1>Software</h1>
-            <span>
-                <label for="id_CT_Version">CT Version:</label>
-                <p>{{object.CT_Version}}</p>
-            </span>
+            <div class="content">
+                <span>
+                    <label for="id_CT_Version">CT Version:</label>
+                    <p>{{object.CT_Version}}</p>
+                </span>
 
-            <span>
-                <label for="id_Ivanti">Ivanti:</label>
-                <p>{% if object.Ivanti%}Yes{%else%}No{%endif%}</p>
-            </span>
+                <span>
+                    <label for="id_Ivanti">Ivanti:</label>
+                    <p>{% if object.Ivanti%}Yes{%else%}No{%endif%}</p>
+                </span>
 
-            <span>
-                <label for="id_Note">Notes:</label>
-                <p>{{object.Note}}</p>
-            </span>
+            </div>
         </div>
+
+        {% if object.Note %}
+        <div class="dash-box">
+            <h1>Notes</h1>
+            <div class="content">
+                <span>
+                    <label for="id_Note"></label>
+                    <p>{{object.Note}}</p>
+                </span>
+            </div>
+        </div>
+        {% endif %}
 
         {% if Refrigerators %}
         <div class="dash-box">
             <h1>Refrigerators</h1>
-            {% for Refrigerator in Refrigerators %}
-            <a href="{% url 'ref-view' object.pk %}"><button type=button>
-                {{object.Facilities_Id}} [{{object.Type}}]
-            </button></a>
-            {% endfor %}
+            <div class="content">
+                {% for Refrigerator in Refrigerators %}
+                <a href="{% url 'ref-view' object.pk %}"><button type=button>
+                    {{Refrigerator.Facilities_Id}} [{{Refrigerator.Type}}]
+                </button></a>
+                {% endfor %}
+            </div>
         </div>
         {% endif %}
         
         <div class="dash-box">
             <h1>Service Requests</h1>
+            <div class="content">
+                <a href="" class="new"><button type=button  class="new">
+                    NEW
+                </button></a>
+                {% for Request in Requests %}
+                <a href="" class="new"><button type=button  class="new">
+                    {{Request.Summary}}
+                </button></a>
+                {% endfor %}
+            </div>
         </div>
 
         <div class="dash-box">
             <h1>Service Log</h1>
+            <div class="content">
+            </div>
         </div>
 
     </div>

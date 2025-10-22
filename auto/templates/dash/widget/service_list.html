@@ -4,9 +4,9 @@
     <a href="" class="new"><button type="button" class="new">
         NEW
     </button></a>
-    {% for Omni in Requests %}
-    <a href="{% url 'dash-omni' Omni.pk %}"><button type="button">
-        {{Omni.Omni_Id}}
+    {% for Request in Requests %}
+    <a href=""><button type="button">
+        {{Request.Omnicell.Omni_Id}} | {{Request.Summary}}
     </button></a>
     {% endfor %}
     <a href=""><button type="button">

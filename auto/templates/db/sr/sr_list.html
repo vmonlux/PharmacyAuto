@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu/db/sr.html' %}
+{% endblock %}
+
+{% block search %}
+<input name="q" type="search" class="search" placeholder="Search...">
+<button type=submit>Search</button>
+{% endblock %}
+
+{% block content %}
+
+<div class="list">
+
+<a class="new" href="{% url 'sr-create' %}"><button class="new" type=button>
+    New Service Request
+</button></a>
+{% for object in object_list %}
+
+<a href="{% url 'box-view' object.pk %}"><button type=button>
+    {{object.Omnicell.Omni_Id}} | {{object.Summary}}
+</button></a>
+        
+{% endfor %}
+
+</div>
+{% endblock %}

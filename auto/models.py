@@ -233,7 +233,7 @@ class ServiceItem(models.Model):
     
     # Methods
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 # class theclass(models.Model):
 #     """Class Description"""

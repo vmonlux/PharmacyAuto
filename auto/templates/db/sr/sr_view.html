@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu/db/sr.html' %}
+{% endblock %}
+
+
+{% block search %}
+<a href="{% url 'sr-update' object.pk %}"><button type=button>
+    Edit
+</button></a>
+{% endblock %}
+
+{% block content %}
+<div class="form-view">
+
+    <span>
+        <label for="id_Omnicell">Omnicell:</label>
+       <p>{{object.Omnicell}}</p>
+    </span>
+
+    <span>
+        <label for="id_Summary">Summary:</label>
+        <p>{{object.Summary}}</p>
+    </span>
+
+    <span>
+        <label for="id_Note">Note:</label>
+        <p>{{object.Note}}</p>
+    </span>
+
+    <span>
+        <label for="id_Solved">Solved:</label>
+        <p>{{object.Solved}}</p>
+    </span>
+
+    <span>
+        <label for="id_Solved">Solved:</label>
+        <p>{{object.Solved}}</p>
+    </span>
+
+    <span>
+        <label for="id_Ivanti_T">Ivanti Ticket #:</label>
+        <p>{{object.Ivanti_T}}</p>
+    </span>
+
+    <span>
+        <label for="id_Omni_T">Omnicell Ticket #:</label>
+        <p>{{object.Omni_T}}</p>
+    </span>
+
+    <span>
+        <label for="id_Opened">Opened:</label>
+        <p>{{object.Opened}}</p>
+    </span>
+
+    <span>
+        <label for="id_Opened_By">Opened By:</label>
+        <p>{{object.Opened_By}}</p>
+    </span>
+
+    <span>
+        <label for="id_Closed">Closed:</label>
+        <p>{{object.Closed}}</p>
+    </span>
+
+    <span>
+        <label for="id_Closed_By">Closed By:</label>
+        <p>{{object.Closed_By}}</p>
+    </span>
+
+</div>
+{% endblock %}

@@ -73,3 +73,10 @@ class RefrigeratorForm(ModelForm):
         widgets = {
             'Facilities_Id': forms.TextInput(attrs={'class': 'inputField'}),
         }
+        
+class ServiceItemForm(ModelForm):
+    class Meta:
+        model = ServiceItem
+        fields = ('__all__')
+
+

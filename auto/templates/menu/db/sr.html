@@ -1,0 +1,9 @@
+<a class="select" href="{% url 'omni-list' %}"><button class="select" type=button>Omnicells</button></a>
+<a href="{% url 'ref-list' %}"><button type=button>Refrigerators</button></a>
+<a href="{% url 'box-list' %}"><button type=button>Lockboxes</button></a>
+
+{% if user.is_staff%}
+<a href="{% url 'account-list' %}"><button type=button>Accounts</button></a>
+{% endif %}
+
+<button class="log" type=submit>Logout</button>

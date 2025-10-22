@@ -354,7 +354,65 @@ class RefUpdate(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         pk = self.kwargs['pk']
         return reverse_lazy("ref-view", kwargs={'pk': pk})
+
+class SrList(LoginRequiredMixin, ListView):
+    model = ServiceItem
+    template_name = 'db/sr/sr_list.html'
     
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        queryset = super(SrList, self).get_queryset()
+        if query == None:
+            return queryset
+        else:
+            
+            return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+    
+class SrView(LoginRequiredMixin, DetailView):
+    model = ServiceItem
+    template_name = 'db/sr/sr_view.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+class SrCreate(LoginRequiredMixin, CreateView):
+    model = ServiceItem
+    template_name = 'db/sr/sr_create.html'
+    form_class = ServiceItemForm
+    
+    def get_initial(self):
+        initial = super().get_initial()
+        o = self.request.GET['o']
+        if o:
+            initial['Omnicell'] = o
+        return initial
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Service Request Created")
+        return super(SrCreate, self).form_valid(form)
+    
+    def get_success_url(self):
+        return reverse_lazy("omni-view", kwargs={'pk': self.object.Omnicell.pk})
+    
+class SrUpdate(LoginRequiredMixin, UpdateView):
+    model = ServiceItem
+    template_name = 'db/sr/sr_update.html'
+    form_class = ServiceItemForm
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Service Request Updated")
+        return super(SrUpdate, self).form_valid(form)
+    
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy("omni-view", kwargs={'pk': self.object.Omnicell.pk})
+
+
 # Master table views
 
 class OmniMaster(LoginRequiredMixin, ListView):

@@ -53,6 +53,11 @@ urlpatterns = [
     path('db/box/create/', BoxCreate.as_view(), name='box-create'),
     path('db/box/view/<int:pk>', BoxView.as_view(), name='box-view'),
     path('db/box/update/<int:pk>', BoxUpdate.as_view(), name='box-update'),
+    
+    path('db/sr/', SrList.as_view(), name='sr-list'),
+    path('db/sr/create/', SrCreate.as_view(), name='sr-create'),
+    path('db/sr/view/<int:pk>', SrView.as_view(), name='sr-view'),
+    path('db/sr/update/<int:pk>', SrUpdate.as_view(), name='sr-update'),
 
     path('db/master/omnicell', OmniMaster.as_view(), name='omnimaster'),
     path('db/master/refrigerator', FlexMaster.as_view(), name='flexmaster'),

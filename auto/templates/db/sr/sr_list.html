@@ -18,7 +18,7 @@
 </button></a>
 {% for object in object_list %}
 
-<a href="{% url 'box-view' object.pk %}"><button type=button>
+<a href="{% url 'sr-view' object.pk %}"><button type=button>
     {{object.Omnicell.Omni_Id}} | {{object.Summary}}
 </button></a>
         

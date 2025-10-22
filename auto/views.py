@@ -135,13 +135,14 @@ class OmniList(LoginRequiredMixin, ListView):
     template_name = 'db/omni/omni_list.html'
     
     def get_queryset(self):
+        org = self.request.user.Org
         query = self.request.GET.get("q")
         queryset = super(OmniList, self).get_queryset()
         if query == None:
-            return queryset
+            return queryset.filter(Org=org)
         elif query == "emergency":
             filter = queryset.filter(Emergency=True)
-            return filter
+            return filter.filter(Org=org)
         else:
             filter = queryset.filter(
                 Q(Omni_Id__icontains=query) |
@@ -151,7 +152,7 @@ class OmniList(LoginRequiredMixin, ListView):
                 Q(Serial_Number__icontains=query) |
                 Q(Model__Model__icontains=query)
             )
-            return filter
+            return filter.filter(Org=org)
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -173,6 +174,12 @@ class OmniCreate(LoginRequiredMixin, CreateView):
     template_name = 'db/omni/omni_create.html'
     form_class = OmnicellCreateForm
     
+    def get_initial(self):
+        org = self.request.user.Org
+        initial = super().get_initial()
+        initial["Org"] = org
+        return initial
+    
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Created")
         return super(OmniCreate, self).form_valid(form)
@@ -184,6 +191,13 @@ class OmniUpdate(LoginRequiredMixin, UpdateView):
     model = Omnicell
     template_name = 'db/omni/omni_update.html'
     form_class = OmnicellForm
+    
+    def get_initial(self):
+        org = self.request.user.Org
+        initial = super().get_initial()
+        if self.object.Org is None:
+            initial["Org"] = org
+        return initial
     
     def form_valid(self, form):
         messages.success(self.request, "Omnicell Updated")
@@ -300,13 +314,14 @@ class RefList(LoginRequiredMixin, ListView):
     template_name = 'db/ref/ref_list.html'
     
     def get_queryset(self):
+        org = self.request.user.Org
         query = self.request.GET.get("q")
         queryset = super(RefList, self).get_queryset()
         if query == None:
-            return queryset
+            return queryset.filter(Org=org)
         elif query =="none":
             filter = queryset.filter(Model=None)
-            return filter
+            return filter.filter(Org=org)
         else:
             filter = queryset.filter(
                 Q(Facilities_Id__icontains=query) |
@@ -316,7 +331,7 @@ class RefList(LoginRequiredMixin, ListView):
                 Q(Model__ModelName__icontains=query) |
                 Q(Model__Category__icontains=query)
             )
-            return filter
+            return filter.filter(Org=org)
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -472,6 +487,10 @@ class DashView(LoginRequiredMixin, TemplateView):
         # SR Hooks
         requests = ServiceItem.objects.exclude(Solved=True).order_by('Omnicell')
         context["Requests"] = requests
+    
+        # Unorged Hooks
+        unorged = omnis.filter(Org=None)
+        context["Unorged"] = unorged
         return context
 
 class OmniDashUpdate(LoginRequiredMixin, UpdateView):

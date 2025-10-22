@@ -35,7 +35,7 @@ class UserEditForm(forms.ModelForm):
 class OmnicellCreateForm(ModelForm):
     class Meta:
         model = Omnicell
-        fields = ['Omni_Id', 'Serial_Number', 'Omni_Description', 'Emergency', 'Model', 'CT_Version', 'PC_Name', 'Ivanti', 'Port_Name', 'Port_Location', 'Site', 'Building', 'Boom', 'Area', 'Room', 'Door_Code', 'Note']
+        fields = ['Omni_Id', 'Serial_Number', 'Omni_Description', 'Emergency', 'Model', 'CT_Version', 'PC_Name', 'Ivanti', 'Port_Name', 'Port_Location', 'Site', 'Building', 'Boom', 'Area', 'Room', 'Door_Code', 'Note', 'Org', 'HD_Type']
         widgets = {
             'Serial_Number': forms.TextInput(attrs={'class': 'inputField'}),
         }

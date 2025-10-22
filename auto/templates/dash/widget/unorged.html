@@ -1,0 +1,10 @@
+<div class="dash-box">
+    <h1>Unorganized Omnis</h1>
+    <div class="content">
+    {% for Omni in Unorged %}
+    <a href="{% url 'omni-update' Omni.pk %}"><button type="button">
+        {{Omni.Omni_Id}} | {{Omni.Summary}}
+    </button></a>
+    {% endfor %}
+    </div>
+</div>

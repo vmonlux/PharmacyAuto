@@ -205,7 +205,7 @@ class OmniUpdate(LoginRequiredMixin, UpdateView):
     
     def get_success_url(self):
         pk = self.kwargs['pk']
-        return reverse_lazy("omni-view", kwargs={'pk': pk})
+        return reverse_lazy("dash")
 
 class AuxList(LoginRequiredMixin, ListView):
     model = Aux

@@ -5,6 +5,7 @@ from datetime import date, datetime, timedelta
 from colorfield.fields import ColorField
 
 class User(AbstractUser):
+    Org = models.ForeignKey("Organization", on_delete=models.SET_NULL, blank=True, null=True)
     Theme = models.ForeignKey("Theme", on_delete=models.PROTECT, blank=True, null=True)
 
 class Theme(models.Model):
@@ -28,7 +29,7 @@ class Omnicell(models.Model):
 
     #Fields
     id = models.BigAutoField(primary_key=True)
-    Org = Model = models.ForeignKey("Organization", on_delete=models.SET_NULL, blank=True, null=True)
+    Org = models.ForeignKey("Organization", on_delete=models.SET_NULL, blank=True, null=True)
     Omni_Id = models.CharField(max_length=50, blank=True, null=True)
     Omni_Description = models.CharField(max_length=50, blank=True, null=True)
     Serial_Number = models.CharField(max_length=7, blank=True, null=True)
@@ -71,13 +72,17 @@ class HdType(models.Model):
     
     # Methods
     def __str__(self):
-        return str(self.id)
+        if self.Name:
+            return self.Name
+        else:
+            return str(self.id)
 
 class Aux(models.Model):
     """ Class for storing Aux Towers """
 
     #Fields
     id = models.BigAutoField(primary_key=True)
+    Org = models.ForeignKey("Organization", on_delete=models.SET_NULL, blank=True, null=True)
     Omnicell = models.ForeignKey("Omnicell", on_delete=models.SET_NULL, blank=True, null=True)
     Serial_Number = models.CharField(max_length=7, blank=True, null=True)
     Model = models.ForeignKey("OmnicellModel", on_delete=models.SET_NULL, blank=True, null=True)   
@@ -96,6 +101,7 @@ class Refrigerator(models.Model):
 
     #Fields
     id = models.BigAutoField(primary_key=True)
+    Org = models.ForeignKey("Organization", on_delete=models.SET_NULL, blank=True, null=True)
     Facilities_Id = models.CharField(max_length=50, blank=True, null=True)
     Omnicell = models.ForeignKey("Omnicell", on_delete=models.SET_NULL, blank=True, null=True)
     Type = models.CharField(max_length=50, blank=True, null=True)
@@ -140,7 +146,10 @@ class Site(models.Model):
     
     # Methods
     def __str__(self):
-        return self.Name
+        if self.Name:
+            return self.Name
+        else:
+            return str(self.id)
     
 class Building(models.Model):
     """Class Description"""
@@ -155,7 +164,10 @@ class Building(models.Model):
     
     # Methods
     def __str__(self):
-        return self.Name
+        if self.Name:
+            return self.Name
+        else:
+            return str(self.id)
 
 class Lockbox(models.Model):
     """Class for storing lockboxes"""
@@ -195,7 +207,10 @@ class RefrigeratorModel(models.Model):
     
     # Methods
     def __str__(self):
-        return self.ModelName
+        if self.ModelName:
+            return self.ModelName
+        else:
+            return str(self.id)
 
 
 class portLocation(models.Model):
@@ -226,7 +241,10 @@ class Organization(models.Model):
     
     # Methods
     def __str__(self):
-        return str(self.id)
+        if self.Name:
+            return self.Name
+        else:
+            return str(self.id)
 
 class ServiceItem(models.Model):
     """Class Description"""

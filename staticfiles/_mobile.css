@@ -139,13 +139,20 @@
         align-items: center;
         justify-content: space-around;
     }
+    div.search span{
+        order: 2;
+        white-space: nowrap;
+    }
+    div.search span button{
+        font-size: 28pt;
+        max-width: 200px;
+    }
     div.search button{
         order: 1;
         height: calc(var(--search-height) - 10px);
-        font-size: 18pt;
+        font-size: 28pt;
         min-width: 300px;
-        max-width: 800px;
-        width: auto;
+        max-width: 700px;
         font-family: inherit;
         font-size: 28pt;
     }

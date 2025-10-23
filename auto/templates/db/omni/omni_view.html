@@ -132,6 +132,11 @@
         <div class="dash-box">
             <h1>Service Log</h1>
             <div class="content">
+            {% for Request in Logs %}
+            <a href="{% url 'sr-view' Request.pk %}"><button type=button>
+                {{Request.Summary}}
+            </button></a>
+            {% endfor %}
             </div>
         </div>
 

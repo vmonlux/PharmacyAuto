@@ -167,6 +167,7 @@ class OmniView(LoginRequiredMixin, DetailView):
         context["Refrigerators"] = Refrigerator.objects.filter(Omnicell=self.kwargs['pk'])
         context["Auxs"] = Aux.objects.filter(Omnicell=self.kwargs['pk'])
         context["Requests"] = ServiceItem.objects.exclude(Solved=True).filter(Omnicell=self.kwargs['pk'])
+        context["Logs"] = ServiceItem.objects.exclude(Solved=False).filter(Omnicell=self.kwargs['pk']).order_by('-Closed')
         return context
 
 class OmniCreate(LoginRequiredMixin, CreateView):
@@ -419,6 +420,9 @@ class SrCreate(LoginRequiredMixin, CreateView):
         o = self.request.GET['o']
         if o:
             initial['Omnicell'] = o
+        initial["Opened_By"] = self.request.user
+        now = datetime.now()
+        initial["Opened"] = now.strftime("%Y-%m-%d %H:%M:%S")
         return initial
     
     def form_valid(self, form):

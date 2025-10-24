@@ -506,11 +506,13 @@ class DashView(LoginRequiredMixin, TemplateView):
         requests = ServiceItem.objects.exclude(Solved=True).order_by('Omnicell')
         context["Requests"] = requests
     
-        # Spare Fridge Hooks
+        # Spare/Repair/Dead Fridge Hooks
         spare = Refrigerator.objects.filter(Org=org, Omnicell=None, Broken=False)
         context["Spare"] = spare
         broken = Refrigerator.objects.filter(Org=org, Broken=True)
-        context["Broken"] = broken
+        context["Repair"] = broken
+        
+
         return context
 
 class OmniDashUpdate(LoginRequiredMixin, UpdateView):

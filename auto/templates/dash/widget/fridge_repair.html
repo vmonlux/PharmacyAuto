@@ -1,0 +1,10 @@
+<div class="dash-box">
+    <h1>Broken Refrigerators</h1>
+    <div class="content">
+    {% for Refrigerator in Repair %}
+    <a href="{% url 'ref-update' Refrigerator.pk %}"><button type="button">
+        {{Refrigerator.Facilities_Id}} [{{Refrigerator.Model.Category}}]
+    </button></a>
+    {% endfor %}
+    </div>
+</div>

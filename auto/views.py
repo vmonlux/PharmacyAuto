@@ -354,8 +354,7 @@ class RefCreate(LoginRequiredMixin, CreateView):
     def get_initial(self):
         org = self.request.user.Org
         initial = super().get_initial()
-        if self.object.Org is None:
-            initial["Org"] = org
+        initial["Org"] = org
         return initial
     
     def form_valid(self, form):

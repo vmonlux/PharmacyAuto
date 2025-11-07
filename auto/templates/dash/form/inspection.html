@@ -13,7 +13,7 @@
 <a href=""><button type=button>
     Cancel
 </button></a>
-<button type=submit>Save</button>
+<button type=submit>Complete</button>
 {% endblock %}
 
 {% block content %}
@@ -36,10 +36,10 @@
     <h1>Omnicell Inpection Form</h1>
     <span>
         <label for="id_Omni_Id">Omnicell ID:</label>
-        <p>{{object.Omni_Id}}</p>
+        <p>{{object.Omni.Omni_Id}}</p>
     </span>
  
-    <h2>Point Inspection</h2>
+    <h1>7-Point Inspection</h1>
     <span>
         <label for="id_Omni_Id">Air Filter Cleared</label>
         <p>{{object.Omni_Id}}</p>
@@ -74,5 +74,12 @@
         <label for="id_Omni_Id">Scanner Functionality Check</label>
         <p>{{object.Omni_Id}}</p>
     </span>
+
+    <h1>Service Requests</h1>
+    <div class="grid">
+        <div class="dash-box">
+            <a><button type=button>New</button></a>
+        </div>
+    </div>
 </div>
 {% endblock %}

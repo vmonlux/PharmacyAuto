@@ -39,6 +39,7 @@ urlpatterns = [
     path('db/omni/create/', OmniCreate.as_view(), name='omni-create'),
     path('db/omni/view/<int:pk>', OmniView.as_view(), name='omni-view'),
     path('db/omni/update/<int:pk>', OmniUpdate.as_view(), name='omni-update'),
+    path('db/omni/inspect/<int:pk>', OmniInspect.as_view(), name='omni-inspect'),
     
     path('db/aux/', AuxList.as_view(), name='aux-list'),
     path('db/aux/view/<int:pk>', AuxView.as_view(), name='aux-view'),

@@ -526,3 +526,6 @@ class OmniDashUpdate(LoginRequiredMixin, UpdateView):
     
     def get_success_url(self):
         return reverse_lazy("dash")
+
+class OmniInspect(TemplateView):
+    template_name = 'dash/form/inspection.html'

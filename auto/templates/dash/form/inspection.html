@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu/db/omni.html' %}
+{% endblock %}
+
+{% block form %}
+<form method="post">
+    {% csrf_token %}
+{% endblock %}
+
+{% block search %}
+<a href=""><button type=button>
+    Cancel
+</button></a>
+<button type=submit>Save</button>
+{% endblock %}
+
+{% block content %}
+<div class="form-view">
+    
+    {% if form.errors %}
+    <span>
+        {% for field in form %}
+            {% if field.errors %}
+            <ul>
+                {% for error in field.errors %}
+                    <li>{{error}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endfor %}
+    </span>
+    {% endif %}
+    
+    <h1>Omnicell Inpection Form</h1>
+    <span>
+        <label for="id_Omni_Id">Omnicell ID:</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+ 
+    <h2>Point Inspection</h2>
+    <span>
+        <label for="id_Omni_Id">Air Filter Cleared</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+
+    <span>
+        <label for="id_Omni_Id">Label Printer Spool Check</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+
+    <span>
+        <label for="id_Omni_Id">Receipt Printer Spool Check</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+
+    <span>
+        <label for="id_Omni_Id">Flexlock Integrity Check</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+
+    <span>
+        <label for="id_Omni_Id">Flexlock Temp Offset Check</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+
+    <span>
+        <label for="id_Omni_Id">Scanner Mount Check</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+
+    <span>
+        <label for="id_Omni_Id">Scanner Functionality Check</label>
+        <p>{{object.Omni_Id}}</p>
+    </span>
+</div>
+{% endblock %}
